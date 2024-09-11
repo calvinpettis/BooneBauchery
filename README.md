@@ -1,12 +1,11 @@
-# Add Your Project Name Here
-# Add Your Team Name Here
+# Project: Boonebautchry
+# Team: Aerodactly
 
 Team Members
-* Member 1
-* Member 2
-* Member 3
-* Member 4
+* Calvin Pettis
+* Zachary Greene
+* Hunter Brickers
 
 # Project Description
 
-Add a brief description here.
+A text based, "choose your adventure" game. Where the playable character gets into all manners of debauchery!
