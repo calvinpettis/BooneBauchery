@@ -4,7 +4,7 @@ package edu.appstate.cs.projectname;
  * Hello world!
  *
  */
-public class App {
+public class Start {
     public static int sum(int x, int y) {
         return x + y;
     }
