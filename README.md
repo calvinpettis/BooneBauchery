@@ -1,5 +1,5 @@
-# Project: Boonebautchry
-# Team: Aerodactly
+# Project: Boonebauchery
+# Team: Aerodactyl
 
 Team Members
 * Calvin Pettis
