@@ -31,12 +31,12 @@
     <dependency>
       <groupId>org.openjfx</groupId> <!-- Added -Cal -->
       <artifactId>javafx-controls</artifactId>
-      <version>${javafx.version}</version>
+      <version>11</version>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId> <!-- Added -Cal -->
       <artifactId>javafx-fxml</artifactId>
-      <version>${javafx.version}</version>
+      <version>11</version>
     </dependency>
     <!-- If we need to add more plugins, add them here! -Cal -->
   </dependencies>
