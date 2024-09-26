@@ -4,17 +4,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class AnotherTest {
+import edu.appstate.cs.BooneBauchery.main.Helloworld;
+
+public class HelloWorldTest {
     
     @Test
     public void testNormalPercentComputation() {
-        float result = App.computePercent(50, 100);
-        assertEquals(50.0, result, "50 out of 100 is 50%");
+        Helloworld test = new Helloworld();
+        String result = test.test();
+        assertEquals("Hello, World!", result, "She's workin' baby.");
     }
 
-    @Test
-    public void testZeroDenominator() {
-        float result = App.computePercent(50, 0);
-        assertEquals(0.0, result, "Should get a 0.0 with 0.0 for denominator");
-    }
+//    @Test
+//    public void testZeroDenominator() {
+//        float result = App.computePercent(50, 0);
+//        assertEquals(0.0, result, "Should get a 0.0 with 0.0 for denominator");
+//    }
 }

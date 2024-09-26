@@ -1,5 +1,6 @@
 package edu.appstate.cs.projectname;
 
+import edu.appstate.cs.BooneBauchery.gui.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,9 +14,11 @@ public class AppTest
         assertTrue(true, "This should never fail");
     }
 
+    GUI constructorTest = new GUI();
+    String result = constructorTest.getBigLogo();
     @Test
-    public void testSum()
+    public void testConstructor()
     {
-        assertEquals(3, App.sum(1,2), "1 + 2 should be 3");
+        assertEquals("Hello, World!", result, "She's workin' baby.");
     }
 }

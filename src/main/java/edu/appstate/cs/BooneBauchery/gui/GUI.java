@@ -21,6 +21,11 @@ public class GUI {
     System.out.println("Hello World!");
   }
 
+  public String getBigLogo()
+  {
+    return bigLogo;
+  }
+
   
 
 
