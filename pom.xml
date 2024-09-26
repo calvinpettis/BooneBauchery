@@ -1,23 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>edu.appstate.cs</groupId>
-  <!-- TODO: Update the project name. This should all be 1 word. -->
+  <!-- TODO: Update the project name. Done -Cal-->
   <artifactId>BooneBauchery</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <!-- TODO: Update the project name. This can be multiple words. -->
+  <!-- TODO: Update the project name. Done -Cal-->
   <name>BooneBauchery</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- You can update this to a newer version. 8 is the minimum you will find. -->
-    <maven.compiler.target>8</maven.compiler.target>
-    <!-- You can update this to a newer version. 8 is the minimum you will find. -->
-    <maven.compiler.source>8</maven.compiler.source>
+    <!-- You can update this to a newer version. 8 is the minimum you will find. Changed to 11 -Cal -->
+    <maven.compiler.target>11</maven.compiler.target>
+    <!-- You can update this to a newer version. 8 is the minimum you will find. Changed to 11 -Cal  -->
+    <maven.compiler.source>11</maven.compiler.source>
   </properties>
 
   <dependencies>
@@ -27,6 +28,17 @@
       <version>5.9.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId> <!-- Added -Cal -->
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId> <!-- Added -Cal -->
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+    <!-- If we need to add more plugins, add them here! -Cal -->
   </dependencies>
 
   <build>
@@ -36,6 +48,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
+          <configuration> <!-- Added for java 11-Cal -->
+            <source>11</source>
+            <target>11</target>
+          </configuration> <!-- If anything messes up delete this
+          block of text ^ -Cal -->
         </plugin>
       </plugins>
     </pluginManagement>
@@ -46,9 +63,10 @@
         <version>3.5.1</version>
         <configuration>
           <transformers>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <!-- TODO: Update this to your actual entry point class name and package. -->
-              <mainClass>edu.appstate.cs.projectname.App</mainClass>
+            <transformer
+              implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <!-- TODO: Update this to your actual entry point class name and package. Done -Cal -->
+              <mainClass>edu.appstate.cs.BooneBauchery.main</mainClass>
             </transformer>
           </transformers>
         </configuration>
