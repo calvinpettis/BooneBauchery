@@ -19,6 +19,8 @@
     <maven.compiler.target>21</maven.compiler.target>
     <!-- Changed to 21 -Cal -->
     <maven.compiler.source>21</maven.compiler.source>
+    <!-- Added javafx version 21 -Cal -->
+    <javafx.version>21.0.0</javafx.version>
   </properties>
 
   <dependencies>
@@ -27,7 +29,19 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>5.9.1</version>
       <scope>test</scope>
+      </dependency>
+    <!-- Added javaFX 21 -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+      </dependency>
+    <!-- delete this block if some shit breaks ^ -->
       </dependencies>
 
   <build>
