@@ -15,10 +15,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- You can update this to a newer version. 8 is the minimum you will find. Changed to 11 -Cal -->
-    <maven.compiler.target>11</maven.compiler.target>
-    <!-- You can update this to a newer version. 8 is the minimum you will find. Changed to 11 -Cal  -->
-    <maven.compiler.source>11</maven.compiler.source>
+    <!-- Changed to 21 -Cal -->
+    <maven.compiler.target>21</maven.compiler.target>
+    <!-- Changed to 21 -Cal -->
+    <maven.compiler.source>21</maven.compiler.source>
   </properties>
 
   <dependencies>
@@ -28,18 +28,7 @@
       <version>5.9.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId> <!-- Added -Cal -->
-      <artifactId>javafx-controls</artifactId>
-      <version>11</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId> <!-- Added -Cal -->
-      <artifactId>javafx-fxml</artifactId>
-      <version>11</version>
-    </dependency>
-    <!-- If we need to add more plugins, add them here! -Cal -->
-  </dependencies>
+      </dependencies>
 
   <build>
     <pluginManagement>
@@ -48,11 +37,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
-          <configuration> <!-- Added for java 11-Cal -->
-            <source>11</source>
-            <target>11</target>
-          </configuration> <!-- If anything messes up delete this
-          block of text ^ -Cal -->
         </plugin>
       </plugins>
     </pluginManagement>
