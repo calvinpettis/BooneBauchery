@@ -1,4 +1,4 @@
-package edu.appstate.cs.BooneBauchery.gui;
+package edu.appstate.cs.BooneBauchery.display.gui;
 
 /**
  * Hello world!
