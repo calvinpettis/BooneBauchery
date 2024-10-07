@@ -29,7 +29,19 @@
       <version>5.9.1</version>
       <scope>test</scope>
       </dependency>
-      </dependencies>
+    <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml Added JavaFXML -Cal-->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls Added JavaFX Controls -Cal -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <pluginManagement>
