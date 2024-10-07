@@ -1,6 +1,6 @@
 package edu.appstate.cs.projectname;
 
-import edu.appstate.cs.BooneBauchery.gui.*;
+import edu.appstate.cs.BooneBauchery.display.gui.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

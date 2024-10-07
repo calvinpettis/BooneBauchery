@@ -39,3 +39,6 @@ build/
 
 ### Eclipse bin dir ###
 bin
+
+### No need to include this since this jar isn't a dependency
+dependency-reduced-pom.xml
