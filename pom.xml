@@ -20,7 +20,7 @@
     <!-- Changed to 21 -Cal -->
     <maven.compiler.source>21</maven.compiler.source>
     <!-- Added javafx version 21 -Cal -->
-    <javafx.version>21.0.0</javafx.version>
+    <javafx.version>21</javafx.version>
   </properties>
 
   <dependencies>
