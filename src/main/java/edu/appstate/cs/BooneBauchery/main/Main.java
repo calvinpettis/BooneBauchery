@@ -1,23 +1,26 @@
 package edu.appstate.cs.BooneBauchery.main;
 
+import edu.appstate.cs.BooneBauchery.display.Display;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 /**
  * Hello world!
  *
  */
-public class Main {
-  public static int sum(int x, int y) {
-    return x + y;
+public class Main extends Application {
+
+  public void start(Stage primaryStage)
+  {
+    Display display = new Display();
+    primaryStage = display.getMainStage();
+    primaryStage.setTitle("BooneBauchery");
+    primaryStage.setScene(display.getMainScene());
+    primaryStage.show();
   }
 
-  public static float computePercent(int numerator, int denominator) {
-    if (denominator == 0) {
-      return 0.0f;
-    } else {
-      return (numerator * 100.0f) / denominator;
-    }
-  }
 
   public static void main(String[] args) {
-    System.out.println("Hello World!");
+    launch(args);
   }
 }

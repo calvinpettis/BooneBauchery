@@ -12,7 +12,7 @@ public class HelloWorldTest {
     public void testNormalPercentComputation() {
         Helloworld test = new Helloworld();
         String result = test.test();
-        assertEquals("Hello, World!", result, "She's workin' baby.");
+        assertEquals("Hello, World!", result, "She's not workin' :(");
     }
 
 //    @Test
