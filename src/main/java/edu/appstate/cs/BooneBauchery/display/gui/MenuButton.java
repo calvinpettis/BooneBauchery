@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
  * Looks complicated, but you can copy & paste this class and just modify to make new ones! Can do this for lots of files.
  * We can still keep keyboard-based input for story, just nice to have a start button.
  */
-public class StartButton extends Button {
+public class MenuButton extends Button {
     //create a new button
     Button StartButton = new Button();
     //These are the paths to the font, and the style of buttons
@@ -28,7 +28,7 @@ public class StartButton extends Button {
      * Sets the button up.
      * @param text the String to be put in the button.
      */
-    public StartButton(String text)
+    public MenuButton(String text)
     {
         //put whatever is in the argument above onto the button
         setText(text);

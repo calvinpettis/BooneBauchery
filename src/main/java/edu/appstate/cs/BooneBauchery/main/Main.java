@@ -5,13 +5,15 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
- * Hello world!
+ * Applications are the entry point for javaFX. Need to have a start method for stuff to display. I guess we make a loop class that handles scene staging
+ * For the moment this loads a static window for testing
  *
  */
 public class Main extends Application {
 
   public void start(Stage primaryStage)
   {
+    //create window
     Display display = new Display();
     primaryStage = display.getMainStage();
     primaryStage.setTitle("BooneBauchery");
