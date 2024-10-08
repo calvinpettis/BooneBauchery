@@ -1,8 +1,6 @@
 package edu.appstate.cs.BooneBauchery.display;
-import javafx.event.EventHandler;
+import edu.appstate.cs.BooneBauchery.display.gui.StartButton;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -18,7 +16,8 @@ public class Display {
 
 
   /**
-   * Display constructor. This loads the
+   * Display constructor. This loads the AnchorPane, which manages where everything is placed.
+   * MainScene is the startup screen.
    */
   public Display()
   {
@@ -41,16 +40,9 @@ public class Display {
 
   private void createButtons()
   {
-    Button button = new Button();
-    mainDisplay.getChildren().add(button);
-
-    button.setOnMouseClicked(new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent mouseEvent) {
-        System.out.println("Hello, World! I clicked a button!");
-      }
-    });
-
+    StartButton start = new StartButton("Start");
+    //these display's components are added to the list of Children, so call getChildren and then add to add them to display.
+    mainDisplay.getChildren().add(start);
   }
 
 
