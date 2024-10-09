@@ -1,6 +1,6 @@
 package edu.appstate.cs.BooneBauchery.display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
-import edu.appstate.cs.BooneBauchery.scenes.MenuSubSceneManager;
+import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * The Display class. This is the window that pops up when you start the game as well as a manager class for that window.
- * Lots will get moved around once I figure out what's going on
+ * TODO: Move code around to be more modular once I figure out what's going on
  */
 public class Display {
   //width & height of window (did 720p bc no monitor I know of is less than 1080, should be no scaling issues)
@@ -29,6 +29,13 @@ public class Display {
   private final static int MENU_BUTTONS_START_Y = 240;
 
   private MenuSubSceneManager creditSubScene;
+  private MenuSubSceneManager helpSubScene;
+  private MenuSubSceneManager scoreSubScene;
+  private MenuSubSceneManager characterChooseSubScene;
+
+  //Fixes the issue where multiple screens can stack on top of eachother
+  private MenuSubSceneManager sceneToHide;
+
 
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
@@ -43,19 +50,42 @@ public class Display {
     mainDisplay = new AnchorPane();
     mainScene = new Scene(mainDisplay, WIDTH, HEIGHT);
     mainStage = new Stage();
-    createCreditSubScene();
+    createSubScenes();
     createBackground();
     createButtons();
     createLogo();
-
-
   }
 
-  public void createCreditSubScene()
+  /**
+   * Make all the subscenes for when you press the different main menu buttons.
+   */
+  public void createSubScenes()
   {
     creditSubScene = new MenuSubSceneManager();
     mainDisplay.getChildren().add(creditSubScene);
+    helpSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(helpSubScene);
+    scoreSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(scoreSubScene);
+    characterChooseSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(characterChooseSubScene);
   }
+
+  /**
+   * Fixes the issue where multiple screens can stack on top of eachother
+   * @param subScene the scene to be checked if it needs to be hidden or not
+   */
+  private void showSubScene(MenuSubSceneManager subScene)
+  {
+    // sceneToHide is set to null outside of this method
+    if (sceneToHide != null)
+    {
+      sceneToHide.moveScene();
+    }
+    subScene.moveScene();
+    sceneToHide = subScene;
+  }
+
 
   public Stage getMainStage()
   {
@@ -97,18 +127,36 @@ public class Display {
   {
     MenuButton startButton = new MenuButton("PLAY");
     addMenuButton(startButton);
+    startButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        showSubScene(characterChooseSubScene);
+      }
+    });
   }
 
   private void createScoresButton()
   {
     MenuButton scoresButton = new MenuButton("SCORES");
     addMenuButton(scoresButton);
+    scoresButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+       showSubScene(scoreSubScene);
+      }
+    });
   }
 
   private void createHelpButton()
   {
     MenuButton helpButton = new MenuButton("HELP");
     addMenuButton(helpButton);
+    helpButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        showSubScene(helpSubScene);
+      }
+    });
   }
 
   private void createCreditsButton()
@@ -119,7 +167,7 @@ public class Display {
     creditsButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-        creditSubScene.moveScene();
+        showSubScene(creditSubScene);
       }
     });
   }
@@ -136,7 +184,7 @@ public class Display {
   private void createBackground()
   {
     //
-    Image background = new Image("/assets/Backgrounds/backgroundmtn.png", true);
+    Image background = new Image("/assets/Backgrounds/bkgwappstate.png", true);
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
     mainDisplay.setBackground(new Background(backgroundImage));
   }
