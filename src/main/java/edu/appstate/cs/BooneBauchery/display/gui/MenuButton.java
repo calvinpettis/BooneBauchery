@@ -21,8 +21,8 @@ public class MenuButton extends Button {
     //These are the paths to the font, and the style of buttons
     private final String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
     //background is transparent bc we have our own image, then put path to file
-    private final String BUTTON_UNPRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/startnotpressed.png);";
-    private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/startpressed.png);";
+    private final String BUTTON_UNPRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/button_unpressed.png);";
+    private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/buttonpressed.png);";
 
     /**
      * Sets the button up.
@@ -51,9 +51,9 @@ public class MenuButton extends Button {
     {
         //try to load our spooky scary font, if not load some default one. Play with font size (2nd arg to loadFont()) for different buttons & fonts
         try {
-            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
         } catch (FileNotFoundException e) {
-            setFont(Font.font("Verdana", 23));
+            setFont(Font.font("Verdana", 20));
         }
     }
 

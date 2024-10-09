@@ -1,5 +1,7 @@
 package edu.appstate.cs.BooneBauchery.display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
+import edu.appstate.cs.BooneBauchery.scenes.MenuSubSceneManager;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
@@ -13,9 +15,10 @@ import java.util.List;
 
 /**
  * The Display class. This is the window that pops up when you start the game as well as a manager class for that window.
+ * Lots will get moved around once I figure out what's going on
  */
 public class Display {
-  //width & height of window (did 1080p bc itll fit whole screen
+  //width & height of window (did 720p bc no monitor I know of is less than 1080, should be no scaling issues)
   private static final int HEIGHT = 720;
   private static final int WIDTH = 1280;
   private AnchorPane mainDisplay;
@@ -24,6 +27,8 @@ public class Display {
 
   private final static int MENU_BUTTONS_START_X = 540;
   private final static int MENU_BUTTONS_START_Y = 240;
+
+  private MenuSubSceneManager creditSubScene;
 
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
@@ -38,9 +43,18 @@ public class Display {
     mainDisplay = new AnchorPane();
     mainScene = new Scene(mainDisplay, WIDTH, HEIGHT);
     mainStage = new Stage();
+    createCreditSubScene();
     createBackground();
     createButtons();
     createLogo();
+
+
+  }
+
+  public void createCreditSubScene()
+  {
+    creditSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(creditSubScene);
   }
 
   public Stage getMainStage()
@@ -101,6 +115,13 @@ public class Display {
   {
     MenuButton creditsButton = new MenuButton("CREDITS");
     addMenuButton(creditsButton);
+
+    creditsButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        creditSubScene.moveScene();
+      }
+    });
   }
 
   private void createExitButton()

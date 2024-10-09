@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 /**
  * Applications are the entry point for javaFX. Need to have a start method for stuff to display. I guess we make a loop class that handles scene staging
- * For the moment this loads a static window for testing
+ * For the moment this loads a static main menu window for testing
  *
  */
 public class Main extends Application {
