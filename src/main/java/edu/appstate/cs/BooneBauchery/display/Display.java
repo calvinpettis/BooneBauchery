@@ -1,11 +1,13 @@
 package edu.appstate.cs.BooneBauchery.display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,15 +15,15 @@ import java.util.List;
  * The Display class. This is the window that pops up when you start the game as well as a manager class for that window.
  */
 public class Display {
-  //width & height of window
-  private static final int HEIGHT = 600;
-  private static final int WIDTH = 800;
+  //width & height of window (did 1080p bc itll fit whole screen
+  private static final int HEIGHT = 720;
+  private static final int WIDTH = 1280;
   private AnchorPane mainDisplay;
   private Scene mainScene;
   private Stage mainStage;
 
-  private final static int MENU_BUTTONS_START_X = 300;
-  private final static int MENU_BUTTONS_START_Y = 150;
+  private final static int MENU_BUTTONS_START_X = 540;
+  private final static int MENU_BUTTONS_START_Y = 240;
 
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
@@ -38,6 +40,7 @@ public class Display {
     mainStage = new Stage();
     createBackground();
     createButtons();
+    createLogo();
   }
 
   public Stage getMainStage()
@@ -111,18 +114,34 @@ public class Display {
    */
   private void createBackground()
   {
-    Image background = new Image("/assets/GrassyMtns/Grassy_Mountains_preview.png", 256, 256, false, true);
+    //
+    Image background = new Image("/assets/Backgrounds/backgroundmtn.png", true);
     BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
     mainDisplay.setBackground(new Background(backgroundImage));
   }
 
+  /**
+   * Adds a logo to the display.
+   */
+  private void createLogo()
+  {
+    ImageView logo = new ImageView("/assets/Logo/logo3big.png");
+    logo.setLayoutX(170);
+    logo.setLayoutY(0);
 
+    logo.setOnMouseEntered(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent mouseEvent) {
+        logo.setEffect(new DropShadow());
+      }
+    });
 
-
-
-
-
-
-
-
+    logo.setOnMouseExited(new EventHandler<MouseEvent>() {
+      @Override
+      public void handle(MouseEvent mouseEvent) {
+        logo.setEffect(null);
+      }
+    });
+    mainDisplay.getChildren().add(logo);
+  }
 }

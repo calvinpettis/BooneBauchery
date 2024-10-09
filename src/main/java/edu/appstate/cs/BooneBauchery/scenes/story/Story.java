@@ -1,4 +1,4 @@
-package edu.appstate.cs.BooneBauchery.story;
+package edu.appstate.cs.BooneBauchery.scenes.story;
 
 /**
  * Hello world!
