@@ -2,6 +2,7 @@ package edu.appstate.cs.BooneBauchery.display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
@@ -176,6 +177,13 @@ public class Display {
   {
     MenuButton exitButton = new MenuButton("EXIT");
     addMenuButton(exitButton);
+
+    exitButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        mainStage.close();
+      }
+    });
   }
 
   /**

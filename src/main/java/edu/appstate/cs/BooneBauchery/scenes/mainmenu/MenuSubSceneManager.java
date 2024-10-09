@@ -11,7 +11,7 @@ public class MenuSubSceneManager extends SubScene {
 
     private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
     //want to animate the background at some point w the layers in the assets folder
-    private final static String BACKGROUND_IMAGE = "assets/Buttons/startbttn/MenuScroll.png";
+    private final static String BACKGROUND_IMAGE = "assets/Buttons/startbttn/MenuTile.png";
 
     //we will use this to know wether to close a window on a button press.
     private boolean isHidden;
@@ -24,7 +24,7 @@ public class MenuSubSceneManager extends SubScene {
         prefHeight(720);
 
         BackgroundImage background = new BackgroundImage(
-                new Image(BACKGROUND_IMAGE, 400,600,false, true),
+                new Image(BACKGROUND_IMAGE, 333,500,false, true),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
@@ -32,9 +32,10 @@ public class MenuSubSceneManager extends SubScene {
         AnchorPane root2 = (AnchorPane) this.getRoot();
         root2.setBackground(new Background(background));
 
+
         isHidden = true;
         setLayoutX(1380);
-        setLayoutY(150);
+        setLayoutY(210);
     }
 
 
