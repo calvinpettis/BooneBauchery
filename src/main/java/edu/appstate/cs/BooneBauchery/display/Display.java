@@ -1,8 +1,9 @@
 package edu.appstate.cs.BooneBauchery.display;
+import edu.appstate.cs.BooneBauchery.display.gui.InfoLabel;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
+import edu.appstate.cs.BooneBauchery.scenes.mainmenu.CHARACTERS;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
@@ -34,6 +35,7 @@ public class Display {
   private MenuSubSceneManager scoreSubScene;
   private MenuSubSceneManager characterChooseSubScene;
 
+
   //Fixes the issue where multiple screens can stack on top of eachother
   private MenuSubSceneManager sceneToHide;
 
@@ -41,9 +43,12 @@ public class Display {
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
 
+  List<CharacterPicker> characterList;
+
   /**
-   * Display constructor. This loads the AnchorPane, which manages where everything is placed.
-   * Scenes are loaded onto Stages,
+   * Display constructor.
+   * Scenes are loaded onto Stages.
+   * AnchorPane is just a way to position elements by X and Y. You can also do StackPane to create layers that stack on top of eachother.
    */
   public Display()
   {
@@ -70,6 +75,45 @@ public class Display {
     mainDisplay.getChildren().add(scoreSubScene);
     characterChooseSubScene = new MenuSubSceneManager();
     mainDisplay.getChildren().add(characterChooseSubScene);
+    createCharacterPickerScene();
+  }
+
+  private void createCharacterPickerScene()
+  {
+    characterChooseSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(characterChooseSubScene);
+
+    InfoLabel chooseCharacterLabel = new InfoLabel("CHOOSE YOUR CHARACTER");
+    chooseCharacterLabel.setLayoutX(-130);
+    chooseCharacterLabel.setLayoutY(-45);
+    characterChooseSubScene.getPane().getChildren().add(chooseCharacterLabel);
+  }
+
+  private HBox createCharactersToChoose()
+  {
+    HBox box = new HBox();
+    box.setSpacing(20);
+    characterList = new ArrayList<>();
+    //loop through the character enums to create our players
+    for (CHARACTERS character : CHARACTERS.values())
+    {
+      CharacterPicker char2pick = new CharacterPicker(character);
+      char2pick.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent mouseEvent) {
+            // When a character is clicked, set every other one to false
+            for (CharacterPicker charp : characterList)
+            {
+              charp.setIsSquareChosen(false);
+            }
+            //set
+            char2pick.setIsSquareChosen(true);
+        }
+      });
+    }
+    box.setLayoutX(100);
+    box.setLayoutY(20);
+    return box;
   }
 
   /**
@@ -204,7 +248,7 @@ public class Display {
   {
     ImageView logo = new ImageView("/assets/Logo/logo3big.png");
     logo.setLayoutX(170);
-    logo.setLayoutY(0);
+    logo.setLayoutY(-5);
 
     logo.setOnMouseEntered(new EventHandler<MouseEvent>() {
       @Override
@@ -221,4 +265,10 @@ public class Display {
     });
     mainDisplay.getChildren().add(logo);
   }
+
+  public AnchorPane getPane()
+  {
+    return (AnchorPane) mainDisplay;
+  }
+
 }

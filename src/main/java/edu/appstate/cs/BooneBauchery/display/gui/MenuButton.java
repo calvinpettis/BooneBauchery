@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import java.io.FileInputStream;
@@ -52,6 +53,7 @@ public class MenuButton extends Button {
         //try to load our spooky scary font, if not load some default one. Play with font size (2nd arg to loadFont()) for different buttons & fonts
         try {
             setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
+            setTextFill(Color.BLACK);
         } catch (FileNotFoundException e) {
             setFont(Font.font("Verdana", 20));
         }
