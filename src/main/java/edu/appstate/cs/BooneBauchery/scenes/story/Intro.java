@@ -3,6 +3,10 @@ package edu.appstate.cs.BooneBauchery.scenes.story;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Displays after you click the start button.
+ * TODO: add black background with scrolling text for intro sequence
+ */
 public class Intro {
     private Scene introScene;
     private Stage introStage;
@@ -25,6 +29,28 @@ public class Intro {
 
     public Stage getIntroStage(){
         return introStage;
+    }
+
+    /**
+     * Should print the string in a scrolling fashion.
+     * @param sentence the String to be printed
+     */
+    public void stringScroll(String sentence)
+    {
+        int msdelay = 100;
+        for (int i = 0; i < sentence.length(); i++)
+        {
+            char c = sentence.charAt(i);
+            System.out.print(c);
+            try
+            {
+                Thread.sleep(msdelay);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println("Error!");
+            }
+        }
     }
 
 }
