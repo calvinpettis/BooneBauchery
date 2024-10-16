@@ -9,6 +9,10 @@ public class Intro {
     private static final int HEIGHT = 600;
     private static final int WIDTH = 800;
 
+    private static final String introText = "In the town of Boone, North Carolina..";
+    private static final String introText2 = "It is 3:00PM the Friday before Spring break, and you just left your Software Engineering class to finish up the week.";
+    private static final String introText3 = "It's time to party... you just have to make it out of town alive first!";
+
     public Intro()
     {
        // Scene intro = new Scene(mainDisplay, WIDTH, HEIGHT);
