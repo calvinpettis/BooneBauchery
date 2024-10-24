@@ -5,7 +5,9 @@ import edu.appstate.cs.BooneBauchery.scenes.mainmenu.CHARACTERS;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -213,14 +215,47 @@ public class Display {
       @Override
       public void handle(ActionEvent actionEvent) {
         showSubScene(creditSubScene);
+        
       }
     });
   }
+
+ private void createCreditsSubScene() {
+    // Assuming creditSubScene is a MenuSubSceneManager instance
+    // Create a VBox to hold the credits content
+    VBox creditsLayout = new VBox();
+    creditsLayout.setAlignment(Pos.CENTER);
+    creditsLayout.setSpacing(10);
+
+    // Add some credits text
+    Label creditsTitle = new Label("Game Credits");
+    creditsTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+    
+    Label developerLabel = new Label("Developed by:\n -> Calvin Pettis\n -> Hunter Brickers\n -> (ENTER NAME)\n\n");
+    //(UPDATE WITH RELEVANT INFO)
+    Label designerLabel = new Label("Designed by: Mitt Romney");
+    //For some reason Tested is cut off from the credits panel
+    //So I have extra spaces in order to be 
+    Label testerLabel = new Label("     Tested by: A 24-lb can of Tuna");
+    //Label creditsBody = new Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Praesent mattis vestibulum odio,\n vitae placerat lectus euismod ac.\n Nulla sed pulvinar lorem, eu dictum ligula.\n Integer ac ante erat.\n Nunc eros dolor, malesuada tempus lectus sed,\n ullamcorper eleifend urna.\n ");
+    
+    // Ensure the VBox fills the SubScene and children don't get cut off
+    creditsLayout.setPrefSize(200, 200);  // Set preferred size (adjust as needed)
+    
+    // Add the labels to the layout
+    creditsLayout.getChildren().addAll(creditsTitle, developerLabel, designerLabel, testerLabel);
+
+    // Add the credits layout to the subscene (assuming creditSubScene is a Pane)
+    creditSubScene.getPane().getChildren().add(creditsLayout);
+}
 
   private void createExitButton()
   {
     MenuButton exitButton = new MenuButton("EXIT");
     addMenuButton(exitButton);
+
+     // Set up the subscene with credits text
+     createCreditsSubScene();
 
     exitButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
