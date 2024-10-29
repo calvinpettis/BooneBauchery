@@ -1,5 +1,8 @@
 package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 
+/**
+ * Example of how we can use enums to store our data. Can add a lot of special attributes to them.
+ */
 public enum CHARACTERS {
     //TODO: Add character previews
     RED("assets/Characters/.png"),

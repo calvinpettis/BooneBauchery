@@ -35,7 +35,7 @@ public class Display {
   private MenuSubSceneManager creditSubScene;
   private MenuSubSceneManager helpSubScene;
   private MenuSubSceneManager scoreSubScene;
-  private MenuSubSceneManager characterChooseSubScene;
+
 
 
   //Fixes the issue where multiple screens can stack on top of eachother
@@ -44,8 +44,6 @@ public class Display {
 
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
-
-  List<CharacterPicker> characterList;
 
   /**
    * Display constructor.
@@ -75,47 +73,6 @@ public class Display {
     mainDisplay.getChildren().add(helpSubScene);
     scoreSubScene = new MenuSubSceneManager();
     mainDisplay.getChildren().add(scoreSubScene);
-    characterChooseSubScene = new MenuSubSceneManager();
-    mainDisplay.getChildren().add(characterChooseSubScene);
-    createCharacterPickerScene();
-  }
-
-  private void createCharacterPickerScene()
-  {
-    characterChooseSubScene = new MenuSubSceneManager();
-    mainDisplay.getChildren().add(characterChooseSubScene);
-
-    InfoLabel chooseCharacterLabel = new InfoLabel("CHOOSE YOUR CHARACTER");
-    chooseCharacterLabel.setLayoutX(-130);
-    chooseCharacterLabel.setLayoutY(-45);
-    characterChooseSubScene.getPane().getChildren().add(chooseCharacterLabel);
-  }
-
-  private HBox createCharactersToChoose()
-  {
-    HBox box = new HBox();
-    box.setSpacing(20);
-    characterList = new ArrayList<>();
-    //loop through the character enums to create our players
-    for (CHARACTERS character : CHARACTERS.values())
-    {
-      CharacterPicker char2pick = new CharacterPicker(character);
-      char2pick.setOnMouseClicked(new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            // When a character is clicked, set every other one to false
-            for (CharacterPicker charp : characterList)
-            {
-              charp.setIsSquareChosen(false);
-            }
-            //set
-            char2pick.setIsSquareChosen(true);
-        }
-      });
-    }
-    box.setLayoutX(100);
-    box.setLayoutY(20);
-    return box;
   }
 
   /**
