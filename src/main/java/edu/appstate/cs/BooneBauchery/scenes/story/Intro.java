@@ -1,5 +1,5 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-import edu.appstate.cs.BooneBauchery.state.startGameLoop;
+import edu.appstate.cs.BooneBauchery.main.Game;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -72,7 +72,7 @@ public class Intro {
      */
     public void startStringScroll()
     {
-        //the contents inside the timeline will happen every 0.1 seconds.
+        //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
             //if we are not through the entire array of the script
             if (lineindex < introScript.length)
@@ -97,9 +97,10 @@ public class Intro {
             }
             else {
                 //this is a wonky way to start up our game. But it is what I am doing
-                startGameLoop newgame = new startGameLoop();
-
+                //Game newgame = new Game();
                 introStage.setScene(null);
+                Start start = new Start(introStage);
+                introStage.setScene(start.getStartScene());
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);

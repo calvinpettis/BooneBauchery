@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ public class Display {
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
 
+  public final static String FONT_PATH = "src/main/resources/assets/Fonts/blood-crow/bloodcrow.ttf";
   /**
    * Display constructor.
    * Scenes are loaded onto Stages.
@@ -181,23 +183,32 @@ public class Display {
     // Assuming creditSubScene is a MenuSubSceneManager instance
     // Create a VBox to hold the credits content
     VBox creditsLayout = new VBox();
-    creditsLayout.setAlignment(Pos.CENTER);
+    creditsLayout.setLayoutX(20);
+    creditsLayout.setLayoutY(10);
     creditsLayout.setSpacing(10);
 
     // Add some credits text
     Label creditsTitle = new Label("Game Credits");
-    creditsTitle.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+    creditsTitle.setStyle("-fx-font-weight: bold;");
+    creditsTitle.setFont(new Font(FONT_PATH, 23));
     
-    Label developerLabel = new Label("Developed by:\n -> Calvin Pettis\n -> Hunter Brickers\n -> (ENTER NAME)\n\n");
+    Label developerLabel = new Label("Developed by:\n " +
+            "-> Calvin Pettis\n " +
+            "-> Hunter Brickers\n " +
+            "-> (ENTER NAME)\n\n");
+
     //(UPDATE WITH RELEVANT INFO)
-    Label designerLabel = new Label("Designed by: Mitt Romney");
+    Label designerLabel = new Label("Art by: \n" +
+            "Cal \n" +
+            "AI \n" +
+            "and asset devs\n");
     //For some reason Tested is cut off from the credits panel
     //So I have extra spaces in order to be 
-    Label testerLabel = new Label("     Tested by: A 24-lb can of Tuna");
+    Label testerLabel = new Label("     Tested by: We don't test");
     //Label creditsBody = new Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Praesent mattis vestibulum odio,\n vitae placerat lectus euismod ac.\n Nulla sed pulvinar lorem, eu dictum ligula.\n Integer ac ante erat.\n Nunc eros dolor, malesuada tempus lectus sed,\n ullamcorper eleifend urna.\n ");
     
     // Ensure the VBox fills the SubScene and children don't get cut off
-    creditsLayout.setPrefSize(200, 200);  // Set preferred size (adjust as needed)
+    creditsLayout.setPrefSize(300, 300);  // Set preferred size (adjust as needed)
     
     // Add the labels to the layout
     creditsLayout.getChildren().addAll(creditsTitle, developerLabel, designerLabel, testerLabel);
