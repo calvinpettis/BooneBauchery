@@ -133,8 +133,9 @@ public class Display {
     addMenuButton(startButton);
     startButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
+      //TODO: add gane loop when you press start
       public void handle(ActionEvent actionEvent) {
-        showSubScene(characterChooseSubScene);
+       return;
       }
     });
   }
