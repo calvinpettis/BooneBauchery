@@ -3,6 +3,7 @@ import edu.appstate.cs.BooneBauchery.display.gui.InfoLabel;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.CHARACTERS;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
+import edu.appstate.cs.BooneBauchery.scenes.story.Intro;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -35,8 +36,6 @@ public class Display {
   private MenuSubSceneManager creditSubScene;
   private MenuSubSceneManager helpSubScene;
   private MenuSubSceneManager scoreSubScene;
-
-
 
   //Fixes the issue where multiple screens can stack on top of eachother
   private MenuSubSceneManager sceneToHide;
@@ -135,7 +134,9 @@ public class Display {
       @Override
       //TODO: add gane loop when you press start
       public void handle(ActionEvent actionEvent) {
-       return;
+       Intro intro = new Intro(mainStage);
+       mainStage.setScene(intro.getIntroScene());
+       mainStage.show();
       }
     });
   }

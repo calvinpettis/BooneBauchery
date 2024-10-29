@@ -1,7 +1,17 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.sql.Time;
 
 /**
  * Displays after you click the start button.
@@ -10,16 +20,20 @@ import javafx.stage.Stage;
 public class Intro {
     private Scene introScene;
     private Stage introStage;
-    private static final int HEIGHT = 600;
-    private static final int WIDTH = 800;
+    private Label introLabel;
+    private static final int HEIGHT = 720;
+    private static final int WIDTH = 1280;
 
-    private static final String introText = "In the town of Boone, North Carolina..";
-    private static final String introText2 = "It is 3:00PM the Friday before Spring break, and you just left your Software Engineering class to finish up the week.";
-    private static final String introText3 = "It's time to party... you just have to make it out of town alive first!";
+    private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
 
-    public Intro()
+    private static final String[] introScript = {"In the town of Boone, North Carolina..",
+            "It is 3:00PM the Friday before Spring break, and you just left your Software Engineering class to finish up the week.",
+            "It's time to party... you just have to make it out of town alive first!"};
+
+    public Intro(Stage stage)
     {
-       // Scene intro = new Scene(mainDisplay, WIDTH, HEIGHT);
+       this.introStage = stage;
+       createIntroScene();
     }
 
     public Scene getIntroScene()
@@ -27,30 +41,64 @@ public class Intro {
         return introScene;
     }
 
-    public Stage getIntroStage(){
-        return introStage;
+    public void createIntroScene()
+    {
+        //create new pane to lay out all the new fields in, make it black for intro.
+        //same as anchorpane, just different implementation.
+        StackPane layout = new StackPane();
+        layout.setStyle("-fx-background-color: black");
+
+        introLabel = new Label();
+        introLabel.setTextFill(Color.WHITE);
+        introLabel.setFont(new Font(FONT_PATH, 40));
+
+       layout.getChildren().add(introLabel);
+       introScene = new Scene(layout, WIDTH, HEIGHT);
+
+       startStringScroll();
     }
 
+    private int lineindex = 0;
+    private int charindex = 0;
+    private StringBuilder sb = new StringBuilder();
     /**
      * Should print the string in a scrolling fashion.
-     * @param sentence the String to be printed
+     * Use timeline to make frames.
      */
-    public void stringScroll(String sentence)
+    public void startStringScroll()
     {
-        int msdelay = 100;
-        for (int i = 0; i < sentence.length(); i++)
-        {
-            char c = sentence.charAt(i);
-            System.out.print(c);
-            try
+        //the contents inside the timeline will happen every 0.1 seconds.
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), e -> {
+            //if we are not through the entire array of the script
+            if (lineindex < introScript.length)
             {
-                Thread.sleep(msdelay);
+                //if we are not all the way through the string
+                if (charindex < introScript[lineindex].length())
+                {
+                    sb.append(introScript[lineindex].charAt(charindex));
+                    //set text to what has already been displayed and add the new char
+                    introLabel.setText(sb.toString());
+                    charindex++;
+                }
+                else {
+                    //else we are on a new line, reset char index, increment line coun
+                    lineindex++;
+                    charindex = 0;
+                    sb.delete(0, sb.length());
+                    sb.append("\n");
+                    introLabel.setText(sb.toString());
+                }
+
             }
-            catch(InterruptedException e)
-            {
-                System.out.println("Error!");
+            else {
+                introStage.setScene(null);
             }
-        }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
+
+
+
 
 }
