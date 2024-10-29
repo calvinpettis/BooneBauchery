@@ -1,8 +1,9 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-
+import edu.appstate.cs.BooneBauchery.state.startGameLoop;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
@@ -11,11 +12,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.sql.Time;
 
 /**
  * Displays after you click the start button.
- * TODO: add black background with scrolling text for intro sequence
+ * Features scrolling text on a black background
+ * TODO: add better implementation for starting a new game
  */
 public class Intro {
     private Scene introScene;
@@ -27,8 +28,10 @@ public class Intro {
     private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
 
     private static final String[] introScript = {"In the town of Boone, North Carolina..",
-            "It is 3:00PM the Friday before Spring break, and you just left your Software Engineering class to finish up the week.",
-            "It's time to party... you just have to make it out of town alive first!"};
+            "It is 3:00PM the Friday before Spring break, ",
+            "and you just left your Software Engineering class to finish up the week.",
+            "It's time to party...",
+            "you just have to make it out of town alive first!"};
 
     public Intro(Stage stage)
     {
@@ -51,6 +54,8 @@ public class Intro {
         introLabel = new Label();
         introLabel.setTextFill(Color.WHITE);
         introLabel.setFont(new Font(FONT_PATH, 40));
+        introLabel.setWrapText(true);
+        introLabel.setAlignment(Pos.CENTER);
 
        layout.getChildren().add(introLabel);
        introScene = new Scene(layout, WIDTH, HEIGHT);
@@ -68,7 +73,7 @@ public class Intro {
     public void startStringScroll()
     {
         //the contents inside the timeline will happen every 0.1 seconds.
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), e -> {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
             //if we are not through the entire array of the script
             if (lineindex < introScript.length)
             {
@@ -91,6 +96,9 @@ public class Intro {
 
             }
             else {
+                //this is a wonky way to start up our game. But it is what I am doing
+                startGameLoop newgame = new startGameLoop();
+
                 introStage.setScene(null);
             }
         }));

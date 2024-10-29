@@ -120,7 +120,7 @@ public class Display {
   {
     createStartButton();
     createScoresButton();
-    createHelpButton();
+    createExtrasButton();
     createCreditsButton();
     createExitButton();
   }
@@ -132,11 +132,9 @@ public class Display {
     addMenuButton(startButton);
     startButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
-      //TODO: add gane loop when you press start
       public void handle(ActionEvent actionEvent) {
        Intro intro = new Intro(mainStage);
        mainStage.setScene(intro.getIntroScene());
-       mainStage.show();
       }
     });
   }
@@ -153,11 +151,11 @@ public class Display {
     });
   }
 
-  private void createHelpButton()
+  private void createExtrasButton()
   {
-    MenuButton helpButton = new MenuButton("HELP");
-    addMenuButton(helpButton);
-    helpButton.setOnAction(new EventHandler<ActionEvent>() {
+    MenuButton extraButton = new MenuButton("EXTRAS");
+    addMenuButton(extraButton);
+    extraButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
         showSubScene(helpSubScene);
