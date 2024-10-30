@@ -50,6 +50,11 @@ public class Start {
 
         startPrompt = new Label();
         startPrompt.setTextFill(Color.WHITE);
+        //TODO: Add a new font
+
+        startScene = new Scene(layout, WIDTH, HEIGHT);
+
+
     }
 
 

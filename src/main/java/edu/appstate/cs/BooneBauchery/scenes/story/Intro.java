@@ -17,10 +17,12 @@ import javafx.util.Duration;
  * Displays after you click the start button.
  * Features scrolling text on a black background
  * TODO: add better implementation for starting a new game
+ * TODO: make a constants file holding width, height, fonts, things we use lots
+ *
  */
 public class Intro {
     private Scene introScene;
-    private Stage introStage;
+    private final Stage introStage;
     private Label introLabel;
     private static final int HEIGHT = 720;
     private static final int WIDTH = 1280;
@@ -66,48 +68,50 @@ public class Intro {
     private int lineindex = 0;
     private int charindex = 0;
     private StringBuilder sb = new StringBuilder();
+    private boolean isScrolling = true;
     /**
      * Should print the string in a scrolling fashion.
-     * Use timeline to make frames.
+     * Use timeline to make frames
+     * TODO: move this to a seperate class to be used repeatedly
      */
-    public void startStringScroll()
-    {
-        //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
-            //if we are not through the entire array of the script
-            if (lineindex < introScript.length)
-            {
-                //if we are not all the way through the string
-                if (charindex < introScript[lineindex].length())
-                {
-                    sb.append(introScript[lineindex].charAt(charindex));
-                    //set text to what has already been displayed and add the new char
-                    introLabel.setText(sb.toString());
-                    charindex++;
-                }
-                else {
-                    //else we are on a new line, reset char index, increment line coun
-                    lineindex++;
-                    charindex = 0;
-                    sb.delete(0, sb.length());
-                    sb.append("\n");
-                    introLabel.setText(sb.toString());
-                }
+    public void startStringScroll() {
+        if (isScrolling) {
+            //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
+                //if we are not through the entire array of the script
+                if (lineindex < introScript.length) {
+                    //if we are not all the way through the string
+                    if (charindex < introScript[lineindex].length()) {
+                        sb.append(introScript[lineindex].charAt(charindex));
+                        //set text to what has already been displayed and add the new char
+                        introLabel.setText(sb.toString());
+                        charindex++;
+                    } else {
+                        //else we are on a new line, reset char index, increment line coun
+                        lineindex++;
+                        charindex = 0;
+                        sb.delete(0, sb.length());
+                        sb.append("\n");
+                        introLabel.setText(sb.toString());
+                    }
 
-            }
-            else {
-                //this is a wonky way to start up our game. But it is what I am doing
-                //Game newgame = new Game();
-                introStage.setScene(null);
-                Start start = new Start(introStage);
-                introStage.setScene(start.getStartScene());
-            }
-        }));
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
+                } else {
+                    //this is a wonky way to start up our game. But it is what I am doing
+                    //Game newgame = new Game();
+                   isScrolling = false;
+                   transitionScene();
+                }
+            }));
+            timeline.setCycleCount(Animation.INDEFINITE);
+            timeline.play();
+        }
     }
 
-
-
+    public void transitionScene()
+    {
+        introStage.setScene(null);
+        Start start = new Start(introStage);
+        introStage.setScene(start.getStartScene());
+    }
 
 }
