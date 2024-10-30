@@ -9,6 +9,9 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
+/**
+ * The scene that plays after the intro. This will provide a choice, if chosen
+ */
 public class Start {
 
     private Scene startScene;
@@ -50,7 +53,6 @@ public class Start {
 
         startPrompt = new Label();
         startPrompt.setTextFill(Color.WHITE);
-        //TODO: Add a new font
 
         startScene = new Scene(layout, WIDTH, HEIGHT);
 
