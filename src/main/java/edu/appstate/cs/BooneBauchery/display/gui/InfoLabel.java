@@ -21,7 +21,7 @@ public class InfoLabel extends Label {
 
     public final static String FONT_PATH = "src/main/resources/assets/Fonts/blood-crow/bloodcrow.ttf";
 
-    public final static String BACKGORUND_IMAGE = "assets/Buttons/UIBanners/Banner.png";
+    public final static String BACKGROUND_IMAGE = "assets/Buttons/UIBanners/Banner.png";
 
     public InfoLabel(String text)
     {
@@ -33,7 +33,7 @@ public class InfoLabel extends Label {
         setLabelFont();
         setAlignment(Pos.CENTER);
 
-        BackgroundImage background = new BackgroundImage(new Image(BACKGORUND_IMAGE, 330, 49, false, true),
+        BackgroundImage background = new BackgroundImage(new Image(BACKGROUND_IMAGE, 330, 49, false, true),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,

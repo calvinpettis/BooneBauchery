@@ -4,16 +4,24 @@ import edu.appstate.cs.BooneBauchery.scenes.story.Start;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
 import javafx.util.Duration;
 
-import java.awt.*;
-
+/**
+ * Tool to scroll text for prompts.
+ */
 public class Scroller extends Label {
     private int lineindex = 0;
     private int charindex = 0;
     private StringBuilder sb = new StringBuilder();
     private Label introLabel;
 
+    public Scroller(String[] script, String FONT_PATH)
+    {
+        startStringScroll(script);
+
+    }
     public void startStringScroll(String[] introScript)
     {
         //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
@@ -40,7 +48,7 @@ public class Scroller extends Label {
 
             }
             else {
-                //introStage.setScene(null);
+                return;
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);

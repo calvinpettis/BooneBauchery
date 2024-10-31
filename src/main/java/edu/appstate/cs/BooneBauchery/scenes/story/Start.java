@@ -1,5 +1,6 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
+import edu.appstate.cs.BooneBauchery.display.gui.GameUI;
 import edu.appstate.cs.BooneBauchery.tools.Scroller;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -43,7 +44,8 @@ public class Start {
     public void createStartScene()
     {
         StackPane layout= new StackPane();
-        Scroller textscroll = new Scroller();
+       // Scroller textscroll = new Scroller();
+        GameUI gameUI = new GameUI();
     BackgroundImage bg = new BackgroundImage(new Image(BACKGROUND_IMAGE, 1280, 720, true, true),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -55,8 +57,7 @@ public class Start {
         startPrompt.setTextFill(Color.WHITE);
 
         startScene = new Scene(layout, WIDTH, HEIGHT);
-
-
+        layout.getChildren().add(gameUI.getOverlay());
     }
 
 

@@ -17,8 +17,7 @@ import java.io.FileNotFoundException;
  * We can still keep keyboard-based input for story, just nice to have a start button.
  */
 public class MenuButton extends Button {
-    //create a new button
-    Button StartButton = new Button();
+
     //These are the paths to the font, and the style of buttons
     private final String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
     //background is transparent bc we have our own image, then put path to file

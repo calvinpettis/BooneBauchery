@@ -8,6 +8,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 
+/**
+ * Handles the tile that appears when you hit pause.
+ */
 public class PauseMenuSceneManager extends SubScene {
 
     private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
@@ -35,7 +38,7 @@ public class PauseMenuSceneManager extends SubScene {
 
 
         isHidden = true;
-        setLayoutX(1380);
+        setLayoutX(-1380);
         setLayoutY(210);
     }
 
