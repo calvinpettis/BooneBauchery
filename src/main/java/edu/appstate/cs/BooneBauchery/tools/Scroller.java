@@ -1,11 +1,9 @@
 package edu.appstate.cs.BooneBauchery.tools;
 
-import edu.appstate.cs.BooneBauchery.scenes.story.Start;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
 import javafx.util.Duration;
 
 /**

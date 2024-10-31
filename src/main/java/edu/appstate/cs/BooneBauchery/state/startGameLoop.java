@@ -10,5 +10,9 @@ public class startGameLoop {
     private Scene gameAfterIntro;
     private Scene randomScene;
 
+    private void start()
+    {
+
+    }
 
 }

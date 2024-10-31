@@ -1,5 +1,6 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 import edu.appstate.cs.BooneBauchery.main.Game;
+import edu.appstate.cs.BooneBauchery.state.startGameLoop;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -110,8 +111,10 @@ public class Intro {
     public void transitionScene()
     {
         introStage.setScene(null);
-        Start start = new Start(introStage);
-        introStage.setScene(start.getStartScene());
+        //Start start = new Start(introStage);
+        //introStage.setScene(start.getStartScene())
+        // startGameLoop start = new startGameLoop();
+        //start.start();
     }
 
 }
