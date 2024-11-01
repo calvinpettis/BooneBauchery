@@ -61,6 +61,11 @@ public class MenuSubSceneManager extends SubScene {
         transition.play();
     }
 
+    public boolean getHidden()
+    {
+        return isHidden;
+    }
+
     public AnchorPane getPane()
     {
         return (AnchorPane) this.getRoot();

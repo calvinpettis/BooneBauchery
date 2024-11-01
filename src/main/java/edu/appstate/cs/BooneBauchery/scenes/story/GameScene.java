@@ -1,5 +1,6 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
+import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
@@ -77,8 +78,6 @@ public abstract class GameScene extends Scene{
            }
        });
 
-       Button exitButton = new Button();
-       exitButton.setText("Exit");
 
         String panelImage = "assets/Buttons/UIBanners/gamePanel.png";
 
