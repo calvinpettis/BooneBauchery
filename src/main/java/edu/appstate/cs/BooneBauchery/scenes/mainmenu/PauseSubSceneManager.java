@@ -47,7 +47,7 @@ public class PauseSubSceneManager extends SubScene {
         //TODO: make this go back to main menu rather than just closing out (separate class for button)
         exitButton = new MenuButton("EXIT");
         exitButton.setLayoutX(70);
-        exitButton.setLayoutY(39gitgit 0);
+        exitButton.setLayoutY(390);
         exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
