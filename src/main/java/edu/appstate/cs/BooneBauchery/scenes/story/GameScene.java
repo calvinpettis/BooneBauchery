@@ -1,6 +1,7 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
+import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
 import edu.appstate.cs.BooneBauchery.tools.Scroller;
 import javafx.event.ActionEvent;
@@ -17,7 +18,6 @@ import javafx.stage.Stage;
  */
 public abstract class GameScene extends Scene{
 
-    protected Scene gameScene;
     protected Stage gameStage;
     protected Label promptLabel;
     protected Pane root;
@@ -27,7 +27,7 @@ public abstract class GameScene extends Scene{
     protected boolean answer1;
     protected boolean answer2;
     protected PauseSubSceneManager pauseSubScene;
-    protected Label scrollingPrompt;
+    protected PauseSubSceneManager sceneToHide;
 
 
     public GameScene(Stage stage)
@@ -67,14 +67,31 @@ public abstract class GameScene extends Scene{
        pauseBttn.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent actionEvent) {
-               pauseSubScene.moveScene();
+              showSubScene(pauseSubScene);
            }
        });
        pauseSubScene = new PauseSubSceneManager();
        root.getChildren().add(pauseSubScene);
 
 
+        String panelImage = "assets/Buttons/UIBanners/gamePanel.png";
+
+
 
     }
 
+    /**
+     * Fixes the issue where multiple screens can stack on top of eachother
+     * @param subScene the scene to be checked if it needs to be hidden or not
+     */
+    private void showSubScene(PauseSubSceneManager subScene)
+    {
+        // sceneToHide is set to null outside of this method
+        if (sceneToHide != null)
+        {
+            sceneToHide.moveScene();
+        }
+        subScene.moveScene();
+        sceneToHide = subScene;
+    }
 }

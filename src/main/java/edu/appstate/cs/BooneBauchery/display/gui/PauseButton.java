@@ -3,6 +3,8 @@ package edu.appstate.cs.BooneBauchery.display.gui;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -49,9 +51,9 @@ public class PauseButton extends Button {
         //add image
         setStyle(BUTTON_PRESSED_STYLE);
         //set height location (4 lower to make it look like button went down)
-        setPrefHeight(45);
-        //4 pixels smaller than the unpressed one.
-        setLayoutY(getLayoutY() + 4);
+        setPrefHeight(47);
+        //2 pixels smaller than the unpressed one.
+        setLayoutY(getLayoutY() + 2);
     }
 
     /**
@@ -61,7 +63,7 @@ public class PauseButton extends Button {
     {
         setStyle(BUTTON_UNPRESSED_STYLE);
         setPrefHeight(49);
-        setLayoutY(getLayoutY() - 4);
+        setLayoutY(getLayoutY() - 2);
     }
 
     private void initializeButtonListeners()
@@ -88,6 +90,7 @@ public class PauseButton extends Button {
                 }
             }
         });
+
         //drop shadow effect bc we're fancy
         setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override

@@ -40,10 +40,7 @@ public class PauseSubSceneManager extends SubScene {
     }
 
 
-    public boolean isHidden()
-    {
-        return isHidden;
-    }
+
     /**
      * You move stuff with TranslateTransition.
      */

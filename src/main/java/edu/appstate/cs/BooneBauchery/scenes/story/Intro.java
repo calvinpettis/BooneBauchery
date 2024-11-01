@@ -76,7 +76,7 @@ public class Intro {
     public void startStringScroll() {
         if (isScrolling) {
             //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.04), e -> {
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
                 //if we are not through the entire array of the script
                 if (lineindex < introScript.length) {
                     //if we are not all the way through the string
@@ -108,9 +108,9 @@ public class Intro {
 
     public void transitionScene()
     {
+
         SceneExample example = new SceneExample(introStage);
         introStage.setScene(example);
-        introStage.show();
         // startGameLoop start = new startGameLoop();
         //start.start();
     }
