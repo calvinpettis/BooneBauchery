@@ -7,6 +7,7 @@ import edu.appstate.cs.BooneBauchery.tools.Scroller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
@@ -57,6 +58,9 @@ public abstract class GameScene extends Scene{
 
     }
 
+    /**
+     * Messy, but you only have to call setUI() for it to load everything
+     */
     protected void setUI()
     {
        PauseButton pauseBttn = new PauseButton();
@@ -73,6 +77,9 @@ public abstract class GameScene extends Scene{
            }
        });
 
+       Button exitButton = new Button();
+       exitButton.setText("Exit");
+
         String panelImage = "assets/Buttons/UIBanners/gamePanel.png";
 
     }
@@ -84,11 +91,17 @@ public abstract class GameScene extends Scene{
     private void showSubScene(PauseSubSceneManager subScene)
     {
         // sceneToHide is set to null outside of this method
-        if (sceneToHide != null)
+        if (sceneToHide != null && sceneToHide != subScene)
         {
             sceneToHide.moveScene();
         }
         subScene.moveScene();
-        sceneToHide = subScene;
+        if (!subScene.getHidden()) {
+            sceneToHide = subScene;
+        }
+        else
+        {
+            sceneToHide = null;
+        }
     }
 }

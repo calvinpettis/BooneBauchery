@@ -36,9 +36,13 @@ public class PauseSubSceneManager extends SubScene {
 
         isHidden = true;
         setLayoutX(1380);
-        setLayoutY(210);
+        setLayoutY(110);
     }
 
+    public boolean getHidden()
+    {
+        return isHidden;
+    }
 
 
     /**
@@ -52,13 +56,14 @@ public class PauseSubSceneManager extends SubScene {
 
         //Method that displays or removes sub menu if button is clicked again
         if(isHidden) {
-            transition.setToX(-1340);
+            transition.setToX(-920);
             isHidden = false;
         }
         else
         {
-            transition.setToX(0);
             isHidden = true;
+            transition.setToX(1380);
+
         }
         transition.play();
     }
