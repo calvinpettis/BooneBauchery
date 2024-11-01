@@ -16,28 +16,25 @@ import java.io.FileNotFoundException;
  * Looks complicated, but you can copy & paste this class and just modify to make new ones! Can do this for lots of files.
  * We can still keep keyboard-based input for story, just nice to have a start button.
  */
-public class MenuButton extends Button {
+public class PauseButton extends Button {
+
 
     //These are the paths to the font, and the style of buttons
     private final String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
     //background is transparent bc we have our own image, then put path to file
-    private final String BUTTON_UNPRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/button_unpressed.png);";
-    private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/startbttn/buttonpressed.png);";
+    private final String BUTTON_UNPRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/UIBttn/pauseUnpressed.png);";
+    private final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-background-image: url(/assets/Buttons/UIBttn/pausePressed.png);";
 
     /**
      * Sets the button up.
-     * @param text the String to be put in the button.
+     *
      */
-    public MenuButton(String text)
+    public PauseButton()
     {
-        //put whatever is in the argument above onto the button
-        setText(text);
-        //set font
-        setButtonFont();
         //width of button (play with these to get things looking right, might scale funny idk)
-        setPrefWidth(190);
+        setPrefWidth(100);
         //height of button
-        setPrefHeight(49);
+        setPrefHeight(100);
         //default is not pressed image
         setStyle(BUTTON_UNPRESSED_STYLE);
         //Set up what happens if you interact with the button
@@ -45,22 +42,8 @@ public class MenuButton extends Button {
     }
 
     /**
-     * Set the font
-     */
-    private void setButtonFont()
-    {
-        //try to load our spooky scary font, if not load some default one. Play with font size (2nd arg to loadFont()) for different buttons & fonts
-        try {
-            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
-            setTextFill(Color.BLACK);
-        } catch (FileNotFoundException e) {
-            setFont(Font.font("Verdana", 20));
-        }
-    }
-
-    /**
      * This is what it looks like when the button is pressed.
-      */
+     */
     private void setButtonPressedStyle()
     {
         //add image
@@ -81,7 +64,7 @@ public class MenuButton extends Button {
         setLayoutY(getLayoutY() - 4);
     }
 
-    public void initializeButtonListeners()
+    private void initializeButtonListeners()
     {
         // if you press the button, set correlated style.
         setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -96,20 +79,20 @@ public class MenuButton extends Button {
         });
         // set style for mouse released
         setOnMouseReleased(new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            //first check to see if left click
-            if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
-            {
-                setButtonNotPressedStyle();
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                //first check to see if left click
+                if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
+                {
+                    setButtonNotPressedStyle();
+                }
             }
-        }
-    });
+        });
         //drop shadow effect bc we're fancy
         setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-               setEffect(new DropShadow());
+                setEffect(new DropShadow());
             }
         });
         //remove drop shadow effect bc we're fancy

@@ -8,12 +8,12 @@ import javafx.util.Duration;
 
 /**
  * Tool to scroll text for prompts.
+ * TODO: finish
  */
 public class Scroller extends Label {
     private int lineindex = 0;
     private int charindex = 0;
     private StringBuilder sb = new StringBuilder();
-    private Label introLabel;
 
     public Scroller(String[] script, String FONT_PATH)
     {
@@ -32,7 +32,7 @@ public class Scroller extends Label {
                 {
                     sb.append(introScript[lineindex].charAt(charindex));
                     //set text to what has already been displayed and add the new char
-                    introLabel.setText(sb.toString());
+                    this.setText(sb.toString());
                     charindex++;
                 }
                 else {
@@ -41,7 +41,7 @@ public class Scroller extends Label {
                     charindex = 0;
                     sb.delete(0, sb.length());
                     sb.append("\n");
-                    introLabel.setText(sb.toString());
+                    this.setText(sb.toString());
                 }
 
             }

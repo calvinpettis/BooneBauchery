@@ -1,6 +1,4 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-import edu.appstate.cs.BooneBauchery.main.Game;
-import edu.appstate.cs.BooneBauchery.state.startGameLoop;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -78,7 +76,7 @@ public class Intro {
     public void startStringScroll() {
         if (isScrolling) {
             //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.04), e -> {
                 //if we are not through the entire array of the script
                 if (lineindex < introScript.length) {
                     //if we are not all the way through the string
@@ -110,9 +108,9 @@ public class Intro {
 
     public void transitionScene()
     {
-        introStage.setScene(null);
-        //Start start = new Start(introStage);
-        //introStage.setScene(start.getStartScene())
+        SceneExample example = new SceneExample(introStage);
+        introStage.setScene(example);
+        introStage.show();
         // startGameLoop start = new startGameLoop();
         //start.start();
     }
