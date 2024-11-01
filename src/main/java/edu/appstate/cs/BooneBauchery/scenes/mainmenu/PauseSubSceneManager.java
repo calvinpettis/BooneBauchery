@@ -1,9 +1,13 @@
 package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 
+import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import javafx.animation.TranslateTransition;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.SubScene;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 
@@ -17,8 +21,11 @@ public class PauseSubSceneManager extends SubScene {
     //we will use this to know wether to close a window on a button press.
     private boolean isHidden;
 
+    private MenuButton exitButton;
+
 
     public PauseSubSceneManager() {
+
         //Make a new window display, set to width and height of the other ones.
         super(new AnchorPane(), 1280, 720);
         prefWidth(-1280);
@@ -37,6 +44,21 @@ public class PauseSubSceneManager extends SubScene {
         isHidden = true;
         setLayoutX(1380);
         setLayoutY(110);
+        //TODO: make this go back to main menu rather than just closing out (separate class for button)
+        exitButton = new MenuButton("EXIT");
+        exitButton.setLayoutX(70);
+        exitButton.setLayoutY(390);
+        exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
+                {
+                    System.exit(0);
+                }
+            }
+        });
+
+        root2.getChildren().add(exitButton);
     }
 
     public boolean getHidden()
@@ -62,7 +84,7 @@ public class PauseSubSceneManager extends SubScene {
         else
         {
             isHidden = true;
-            transition.setToX(1380);
+            transition.setToX(0);
 
         }
         transition.play();

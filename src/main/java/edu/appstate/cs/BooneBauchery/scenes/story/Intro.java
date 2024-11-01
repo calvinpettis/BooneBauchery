@@ -6,11 +6,13 @@ import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.input.KeyEvent;
 
 
 /**
@@ -66,11 +68,10 @@ public class Intro {
         introLabel.setFont(new Font(FONT_PATH, 40));
         introLabel.setWrapText(true);
         introLabel.setAlignment(Pos.CENTER);
-
-       layout.getChildren().add(introLabel);
-       introScene = new Scene(layout, WIDTH, HEIGHT);
-
-       startStringScroll();
+        layout.getChildren().add(introLabel);
+        introScene = new Scene(layout, WIDTH, HEIGHT);
+        introScene.setOnKeyPressed(this::handleKeyPress);
+        startStringScroll();
     }
 
     public void startStringScroll() {
@@ -180,6 +181,20 @@ public class Intro {
         introStage.setScene(example);
         // startGameLoop start = new startGameLoop();
         //start.start();
+    }
+
+    public void handleKeyPress(KeyEvent keyEvent)
+    {
+        if (keyEvent.getCode().equals(KeyCode.SPACE) && isScrolling)
+        {
+            isScrolling = false;
+            if (timeline != null)
+            {
+                timeline.stop();
+            }
+            sb.delete(0, sb.length());
+            transitionScene();
+        }
     }
 
 }

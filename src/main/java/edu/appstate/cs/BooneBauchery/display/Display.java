@@ -88,12 +88,18 @@ public class Display {
   private void showSubScene(MenuSubSceneManager subScene)
   {
     // sceneToHide is set to null outside of this method
-    if (sceneToHide != null)
-    {
-      sceneToHide.moveScene();
-    }
-    subScene.moveScene();
-    sceneToHide = subScene;
+        if (sceneToHide != null && sceneToHide != subScene)
+        {
+            sceneToHide.moveScene();
+        }
+        subScene.moveScene();
+        if (!subScene.getHidden()) {
+            sceneToHide = subScene;
+        }
+        else
+        {
+            sceneToHide = null;
+        }
   }
 
 
@@ -227,8 +233,7 @@ public class Display {
     MenuButton exitButton = new MenuButton("EXIT");
     addMenuButton(exitButton);
 
-     // Set up the subscene with credits text
-     createCreditsSubScene();
+    createCreditsSubScene();
 
     exitButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
