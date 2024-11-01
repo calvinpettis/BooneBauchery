@@ -71,7 +71,7 @@ public class Intro {
     /**
      * Should print the string in a scrolling fashion.
      * Use timeline to make frames
-     * TODO: move this to a seperate class to be used repeatedly
+     * TODO: move this to a seperate class to be used repeatedly, also add pause in between sentences
      */
     public void startStringScroll() {
         if (isScrolling) {

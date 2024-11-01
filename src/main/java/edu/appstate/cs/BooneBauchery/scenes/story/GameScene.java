@@ -13,8 +13,8 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 /**
- * To make easy lil clones of our scenes. Can use this repeatedly
- * TODO: finish
+ * This is a template class we can use as a scene generator for making quicker scenes.
+ * TODO: finish UI
  */
 public abstract class GameScene extends Scene{
 
