@@ -73,7 +73,6 @@ public class Intro {
        startStringScroll();
     }
 
-
     public void startStringScroll() {
         if (isScrolling) {
             showNextLine();
@@ -162,6 +161,10 @@ public class Intro {
                     //this is a wonky way to start up our game. But it is what I am doing
                     //Game newgame = new Game();
                    isScrolling = false;
+                   if (timeline != null)
+                   {
+                       timeline.stop();
+                   }
                    transitionScene();
                 }
             }));
