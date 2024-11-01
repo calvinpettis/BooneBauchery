@@ -1,6 +1,7 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -28,11 +29,19 @@ public class Intro {
 
     private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
 
-    private static final String[] introScript = {"In the town of Boone, North Carolina..",
-            "It is 3:00PM the Friday before Spring break, ",
-            "and you just left your Software Engineering class to finish up the week.",
+    //adding timeline object here so we can manipulate
+    //throughout different if else trees
+    private Timeline timeline; //declared at class level instead of in method scope
+    private int lineindex = 0;
+    private int charindex = 0;
+    private boolean isScrolling = true;
+    private StringBuilder sb = new StringBuilder();
+
+    private static final String[] introScript = {"In the town of Boone, North Carolina...",
+            "It is 3:00PM the Friday before Spring break,",
+            "And you just left your\nSoftware Engineering class\nto finish up the week.",
             "It's time to party...",
-            "you just have to make it out of town alive first!"};
+            "You just have to make it out of town...\n\nALIVE!"};
 
     public Intro(Stage stage)
     {
@@ -64,19 +73,65 @@ public class Intro {
        startStringScroll();
     }
 
-    private int lineindex = 0;
-    private int charindex = 0;
-    private StringBuilder sb = new StringBuilder();
-    private boolean isScrolling = true;
-    /**
-     * Should print the string in a scrolling fashion.
-     * Use timeline to make frames
-     * TODO: move this to a seperate class to be used repeatedly, also add pause in between sentences
-     */
+
     public void startStringScroll() {
         if (isScrolling) {
+            showNextLine();
+        }
+    }
+
+     /**
+     * Should print the string in a scrolling fashion.
+     * Use timeline to make frames
+     * 
+     * hunter: this method SHOULD display text in a scrolling fashion 
+     *      as well as, Pause in between displayed text. 
+     *      original method for text scrolling was very fast with no pause
+     * 
+     *      listed under name "startStringScroll2" DELETE OLD METHOD?
+     * 
+     * TODO: move this to a seperate class to be used repeatedly, also add pause in between sentences
+     */
+    private void showNextLine() {
+        //Reset the StringBuilder and char index for the new line 
+        sb.setLength(0);
+        charindex = 0;
+
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.08), event ->{
+            // Append each character to the StringBuilder
+            sb.append(introScript[lineindex].charAt(charindex));
+            introLabel.setText(sb.toString());  //update label with current text
+            charindex++;
+
+            if (charindex >= introScript[lineindex].length()) {
+                timeline.stop();
+                lineindex++;
+
+                //Pause when line is fully displayed
+                PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                pause.setOnFinished(e -> {
+                    introLabel.setText("");     //clear label
+                    if (lineindex < introScript.length) {
+                        showNextLine();
+                    } else {
+                        isScrolling = false;
+                        transitionScene();   //build in scence transion here??
+                    }
+                });
+                pause.play();
+            }
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
+
+
+   
+    public void startStringScroll2() {
+        if (isScrolling) {
             //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
+
+            /*Timeline*/ timeline = new Timeline(new KeyFrame(Duration.seconds(0.7), e -> {
                 //if we are not through the entire array of the script
                 if (lineindex < introScript.length) {
                     //if we are not all the way through the string
@@ -86,12 +141,21 @@ public class Intro {
                         introLabel.setText(sb.toString());
                         charindex++;
                     } else {
+                        timeline.stop(); // Stop the timeline briefly
+
+                        //pause for 1.5 seconds after line of text displayed
+                        PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                        pause.setOnFinished(event -> {
                         //else we are on a new line, reset char index, increment line coun
                         lineindex++;
                         charindex = 0;
                         sb.delete(0, sb.length());
                         sb.append("\n");
                         introLabel.setText(sb.toString());
+
+                        // resume the timeline after pause ENDS
+                        timeline.play();
+                        });
                     }
 
                 } else {
