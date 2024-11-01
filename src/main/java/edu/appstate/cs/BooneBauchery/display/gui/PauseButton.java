@@ -34,9 +34,9 @@ public class PauseButton extends Button {
     public PauseButton()
     {
         //width of button (play with these to get things looking right, might scale funny idk)
-        setPrefWidth(100);
+        setPrefWidth(77);
         //height of button
-        setPrefHeight(100);
+        setPrefHeight(26);
         //default is not pressed image
         setStyle(BUTTON_UNPRESSED_STYLE);
         //Set up what happens if you interact with the button
@@ -51,7 +51,7 @@ public class PauseButton extends Button {
         //add image
         setStyle(BUTTON_PRESSED_STYLE);
         //set height location (4 lower to make it look like button went down)
-        setPrefHeight(47);
+        setPrefHeight(24);
         //2 pixels smaller than the unpressed one.
         setLayoutY(getLayoutY() + 2);
     }
@@ -62,7 +62,7 @@ public class PauseButton extends Button {
     private void setButtonNotPressedStyle()
     {
         setStyle(BUTTON_UNPRESSED_STYLE);
-        setPrefHeight(49);
+        setPrefHeight(26);
         setLayoutY(getLayoutY() - 2);
     }
 

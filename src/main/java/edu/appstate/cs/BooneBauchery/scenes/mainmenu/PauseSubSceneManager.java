@@ -21,8 +21,8 @@ public class PauseSubSceneManager extends SubScene {
     public PauseSubSceneManager() {
         //Make a new window display, set to width and height of the other ones.
         super(new AnchorPane(), 1280, 720);
-        prefWidth(1280);
-        prefHeight(720);
+        prefWidth(-1280);
+        prefHeight(-720);
 
         BackgroundImage background = new BackgroundImage(
                 new Image(BACKGROUND_IMAGE, 333,500,false, true),

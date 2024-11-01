@@ -68,6 +68,7 @@ public class Intro {
     private int charindex = 0;
     private StringBuilder sb = new StringBuilder();
     private boolean isScrolling = true;
+    private Timeline timeline;
     /**
      * Should print the string in a scrolling fashion.
      * Use timeline to make frames
@@ -76,7 +77,7 @@ public class Intro {
     public void startStringScroll() {
         if (isScrolling) {
             //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
+            timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), e -> {
                 //if we are not through the entire array of the script
                 if (lineindex < introScript.length) {
                     //if we are not all the way through the string
@@ -98,6 +99,10 @@ public class Intro {
                     //this is a wonky way to start up our game. But it is what I am doing
                     //Game newgame = new Game();
                    isScrolling = false;
+                   if (timeline != null)
+                   {
+                       timeline.stop();
+                   }
                    transitionScene();
                 }
             }));

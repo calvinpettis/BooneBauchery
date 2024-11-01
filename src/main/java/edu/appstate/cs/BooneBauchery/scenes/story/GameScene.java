@@ -20,7 +20,7 @@ public abstract class GameScene extends Scene{
 
     protected Stage gameStage;
     protected Label promptLabel;
-    protected Pane root;
+    protected AnchorPane root;
     protected static final int HEIGHT = 720;
     protected static final int WIDTH = 1280;
     protected boolean isGameOver = false;
@@ -60,23 +60,20 @@ public abstract class GameScene extends Scene{
     protected void setUI()
     {
        PauseButton pauseBttn = new PauseButton();
-       pauseBttn.setLayoutX(0);
-       pauseBttn.setLayoutY(0);
+       pauseBttn.setLayoutX(5);
+       pauseBttn.setLayoutY(5);
 
        root.getChildren().add(pauseBttn);
+       pauseSubScene = new PauseSubSceneManager();
+       root.getChildren().add(pauseSubScene);
        pauseBttn.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent actionEvent) {
               showSubScene(pauseSubScene);
            }
        });
-       pauseSubScene = new PauseSubSceneManager();
-       root.getChildren().add(pauseSubScene);
-
 
         String panelImage = "assets/Buttons/UIBanners/gamePanel.png";
-
-
 
     }
 
