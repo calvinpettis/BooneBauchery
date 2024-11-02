@@ -25,14 +25,14 @@ public class Prompts {
             "Or attack?\n";
     public static final String belk2choice1 = "Run away";
     public static final String belk2choice2 = "Attack";
-    public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE at you that disorients you and takes you to the floor!"
+    public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you and takes you to the floor!"
             + "You manage to get up in the nick of time and escape him by running by a window with sunlight, the ghoul's only weakness.";
     public static final String belk2response2= "";
 
     public static final String belk2sanford = "You walk outside, it is a sunny day. There are large groups of people standing under EZ-UPs and around a man with a megaphone.";
 
     public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!";
-    public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP.";
+    public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP. They begin casting astrology runes at you.";
     public static final String sanford2peacock = "You walk past the courtyard and towards Peacock Hall.";
     //These will get us in trouble but its alright
     public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes and he starts running towards you with a knife!\n"
@@ -45,6 +45,6 @@ public class Prompts {
             "Or decline his offer?";
     public static final String peacock2choice1 = "Invest";
     public static final String peacock2choice2 = "Decline";
-    public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings.";
+    public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings! Hope you enjoy ramen.";
     public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
 }
