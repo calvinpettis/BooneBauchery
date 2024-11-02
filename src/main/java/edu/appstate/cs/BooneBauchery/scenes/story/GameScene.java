@@ -1,23 +1,21 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
 import edu.appstate.cs.BooneBauchery.display.gui.ChoiceButton;
-import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
-import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PromptSubSceneManager;
-import edu.appstate.cs.BooneBauchery.tools.Scroller;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 /**
  * This is a template class we can use as a scene generator for making quicker scenes.
@@ -43,6 +41,9 @@ public abstract class GameScene extends Scene{
     private ChoiceButton choice1;
     private ChoiceButton choice2;
 
+    protected Stage stage;
+    protected Scene scene;
+
 
     public GameScene(Stage stage)
     {
@@ -52,6 +53,7 @@ public abstract class GameScene extends Scene{
         setupScene();
     }
 
+    
     public abstract void setupScene();
 
     protected void setBackground(String path)
