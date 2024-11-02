@@ -41,5 +41,10 @@ public class Prompts {
             + "Or sidestep the stabber?";
     public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking you to invest in his crypto business.\n"
             + "Do you:\n"
-            + "";
+            + "Listen to him and invest?\n" +
+            "Or decline his offer?";
+    public static final String peacock2choice1 = "Invest";
+    public static final String peacock2choice2 = "Decline";
+    public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings.";
+    public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
 }
