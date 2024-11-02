@@ -10,8 +10,9 @@ public class SceneExample extends GameScene {
 
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
-    private static final String[] exPrompt = {"You head out into the hallway.",
-            "Do you head outside or explore Belk Hall?"};
+    private static final String exPrompt = "You head out into the hallway. \n " +
+            "Do you head outside or explore Belk Hall?";
+    private static final String[] choice = {"Go outside", "Explore"};
     private boolean ans1;
     private boolean ans2;
 

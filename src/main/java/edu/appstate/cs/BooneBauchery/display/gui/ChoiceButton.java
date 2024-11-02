@@ -11,12 +11,7 @@ import javafx.scene.text.Font;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-/**
- * This is an example class of how to make a button.
- * Looks complicated, but you can copy & paste this class and just modify to make new ones! Can do this for lots of files.
- * We can still keep keyboard-based input for story, just nice to have a start button.
- */
-public class MenuButton extends Button {
+public class ChoiceButton extends Button {
 
     //These are the paths to the font, and the style of buttons
     private final String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
@@ -28,7 +23,7 @@ public class MenuButton extends Button {
      * Sets the button up.
      * @param text the String to be put in the button.
      */
-    public MenuButton(String text)
+    public ChoiceButton(String text)
     {
         //put whatever is in the argument above onto the button
         setText(text);
@@ -60,7 +55,7 @@ public class MenuButton extends Button {
 
     /**
      * This is what it looks like when the button is pressed.
-      */
+     */
     private void setButtonPressedStyle()
     {
         //add image
@@ -96,20 +91,20 @@ public class MenuButton extends Button {
         });
         // set style for mouse released
         setOnMouseReleased(new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            //first check to see if left click
-            if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
-            {
-                setButtonNotPressedStyle();
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                //first check to see if left click
+                if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
+                {
+                    setButtonNotPressedStyle();
+                }
             }
-        }
-    });
+        });
         //drop shadow effect bc we're fancy
         setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-               setEffect(new DropShadow());
+                setEffect(new DropShadow());
             }
         });
         //remove drop shadow effect bc we're fancy

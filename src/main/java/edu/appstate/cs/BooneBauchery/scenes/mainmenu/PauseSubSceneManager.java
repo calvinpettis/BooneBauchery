@@ -1,11 +1,14 @@
 package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 
+import edu.appstate.cs.BooneBauchery.display.Display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.SubScene;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -17,22 +20,20 @@ public class PauseSubSceneManager extends SubScene {
     //want to animate the background at some point w the layers in the assets folder
     private final static String BACKGROUND_IMAGE = "assets/Buttons/startbttn/pauseTile.png";
 
-
     //we will use this to know wether to close a window on a button press.
     private boolean isHidden;
-
     private MenuButton exitButton;
-
 
     public PauseSubSceneManager() {
 
         //Make a new window display, set to width and height of the other ones.
         super(new AnchorPane(), 1280, 720);
-        prefWidth(-1280);
-        prefHeight(-720);
+
+        prefWidth(1280);
+        prefHeight(720);
 
         BackgroundImage background = new BackgroundImage(
-                new Image(BACKGROUND_IMAGE, 333,500,false, true),
+                new Image(BACKGROUND_IMAGE, 326,495,false, true),
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
@@ -57,8 +58,8 @@ public class PauseSubSceneManager extends SubScene {
                 }
             }
         });
-
         root2.getChildren().add(exitButton);
+
     }
 
     public boolean getHidden()

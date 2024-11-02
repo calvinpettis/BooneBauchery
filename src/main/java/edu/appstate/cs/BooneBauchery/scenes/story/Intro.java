@@ -88,7 +88,7 @@ public class Intro {
      *      as well as, Pause in between displayed text. 
      *      original method for text scrolling was very fast with no pause
      * 
-     *      listed under name "startStringScroll2" DELETE OLD METHOD?
+     *
      * 
      * TODO: move this to a seperate class to be used repeatedly, also add pause in between sentences
      */
@@ -123,55 +123,6 @@ public class Intro {
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-    }
-
-
-   
-    public void startStringScroll2() {
-        if (isScrolling) {
-            //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower
-
-            /*Timeline*/ timeline = new Timeline(new KeyFrame(Duration.seconds(0.7), e -> {
-                //if we are not through the entire array of the script
-                if (lineindex < introScript.length) {
-                    //if we are not all the way through the string
-                    if (charindex < introScript[lineindex].length()) {
-                        sb.append(introScript[lineindex].charAt(charindex));
-                        //set text to what has already been displayed and add the new char
-                        introLabel.setText(sb.toString());
-                        charindex++;
-                    } else {
-                        timeline.stop(); // Stop the timeline briefly
-
-                        //pause for 1.5 seconds after line of text displayed
-                        PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
-                        pause.setOnFinished(event -> {
-                        //else we are on a new line, reset char index, increment line coun
-                        lineindex++;
-                        charindex = 0;
-                        sb.delete(0, sb.length());
-                        sb.append("\n");
-                        introLabel.setText(sb.toString());
-
-                        // resume the timeline after pause ENDS
-                        timeline.play();
-                        });
-                    }
-
-                } else {
-                    //this is a wonky way to start up our game. But it is what I am doing
-                    //Game newgame = new Game();
-                   isScrolling = false;
-                   if (timeline != null)
-                   {
-                       timeline.stop();
-                   }
-                   transitionScene();
-                }
-            }));
-            timeline.setCycleCount(Animation.INDEFINITE);
-            timeline.play();
-        }
     }
 
     public void transitionScene()

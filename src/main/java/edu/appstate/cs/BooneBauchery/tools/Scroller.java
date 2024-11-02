@@ -4,7 +4,11 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * Tool to scroll text for prompts.
@@ -17,9 +21,16 @@ public class Scroller extends Label {
 
     public Scroller(String[] script, String FONT_PATH)
     {
+        try{
+            this.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
+        }
+        catch (FileNotFoundException fnfe)
+        {
+            setFont(Font.font("Verdana", 20));
+        }
         startStringScroll(script);
-
     }
+
     public void startStringScroll(String[] introScript)
     {
         //the contents inside the timeline will happen every 0.07 seconds. Adjust for faster or slower

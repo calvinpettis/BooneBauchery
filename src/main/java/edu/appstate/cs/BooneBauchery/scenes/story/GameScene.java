@@ -4,6 +4,7 @@ import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
+import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PromptSubSceneManager;
 import edu.appstate.cs.BooneBauchery.tools.Scroller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,6 +31,10 @@ public abstract class GameScene extends Scene{
     protected boolean answer2;
     protected PauseSubSceneManager pauseSubScene;
     protected PauseSubSceneManager sceneToHide;
+    protected PromptSubSceneManager promptSubScene;
+    protected PromptSubSceneManager prompt2hide;
+    protected String prompt;
+    protected String[] choice;
 
 
     public GameScene(Stage stage)
@@ -53,12 +58,6 @@ public abstract class GameScene extends Scene{
         root.setBackground(new Background(backgroundImage));
     }
 
-    protected void loadPrompts(String[] prompt, String FontPath)
-    {
-        Scroller scroller = new Scroller(prompt, FontPath);
-
-    }
-
     /**
      * Messy, but you only have to call setUI() for it to load everything
      */
@@ -78,8 +77,8 @@ public abstract class GameScene extends Scene{
            }
        });
 
-
-        String panelImage = "assets/Buttons/UIBanners/gamePanel.png";
+       promptSubScene = new PromptSubSceneManager(prompt, choice);
+       root.getChildren().add(promptSubScene);
 
     }
 
