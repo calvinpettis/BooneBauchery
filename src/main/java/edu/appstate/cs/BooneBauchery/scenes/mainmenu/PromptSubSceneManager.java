@@ -3,12 +3,15 @@ package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 import edu.appstate.cs.BooneBauchery.display.gui.ChoiceButton;
 import edu.appstate.cs.BooneBauchery.tools.Scroller;
 import javafx.animation.TranslateTransition;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.SubScene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
 import java.io.FileInputStream;
@@ -22,12 +25,13 @@ public class PromptSubSceneManager extends SubScene {
     private static final String panelImage = "assets/Buttons/UIBanners/promptpanel.png";
     private boolean isHidden;
 
-    private static final String FONT_PATH = "assets/Fonts/daemonesque/DAEMONES.TTF";
+    private static final String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
 
     private ChoiceButton choice1;
     private ChoiceButton choice2;
     private String prompt;
     private String[] choice;
+    private Label promptLabel;
 
 
     public PromptSubSceneManager(String prompt, String[] choice) {
@@ -44,34 +48,31 @@ public class PromptSubSceneManager extends SubScene {
         AnchorPane root2 = (AnchorPane) this.getRoot();
         root2.setBackground(new Background(bg));
 
-        isHidden = true;
-        setLayoutX(1500);
-        setLayoutY(-10);
-
-        Label promptLabel = new Label();
-        try {
-            promptLabel.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
-        } catch (FileNotFoundException fnfe)
+        promptLabel = new Label(prompt);
+        promptLabel.setTextFill(Color.BLACK);
+        //TODO: change font to spooky one
+        promptLabel.setWrapText(true);
+        try
         {
-            promptLabel.setFont(Font.font("Verdana", 20));
+            promptLabel.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 42));
+        }catch (FileNotFoundException fnfe)
+        {
+            promptLabel.setFont(Font.font("Verdana", 40));
         }
-        promptLabel.setText(prompt);
-        promptLabel.setLayoutX(0);
-        promptLabel.setLayoutY(0);
+        promptLabel.setTextAlignment(TextAlignment.CENTER);
+        promptLabel.setAlignment(Pos.CENTER);
+        promptLabel.setLayoutX(70);
+        promptLabel.setLayoutY(100);
         root2.getChildren().add(promptLabel);
-
-
+        isHidden = true;
+        setLayoutX(290);
+        setLayoutY(0);
 
     }
-
 
     public boolean getHidden() {
         return isHidden;
     }
-
-
-
-
 
     /**
      * You move stuff with TranslateTransition.

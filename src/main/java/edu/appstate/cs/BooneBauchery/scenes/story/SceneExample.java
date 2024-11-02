@@ -10,14 +10,17 @@ public class SceneExample extends GameScene {
 
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
-    private static final String exPrompt = "You head out into the hallway. \n " +
+    private static final String exPrompt = "You head out into the hallway.\n " +
             "Do you head outside or explore Belk Hall?";
-    private static final String[] choice = {"Go outside", "Explore"};
+    private static final String[] choice1 = {"Go outside", "Explore"};
     private boolean ans1;
     private boolean ans2;
 
     public SceneExample(Stage stage) {
         super(stage);
+        //Will have to add these two lines until I find a better way
+        this.prompt = exPrompt;
+        this.choice = choice1;
         setupScene();
     }
 

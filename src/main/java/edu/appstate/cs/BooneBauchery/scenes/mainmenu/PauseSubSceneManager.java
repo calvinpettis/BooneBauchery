@@ -80,6 +80,7 @@ public class PauseSubSceneManager extends SubScene {
         //Method that displays or removes sub menu if button is clicked again
         if(isHidden) {
             transition.setToX(-920);
+            toFront();
             isHidden = false;
         }
         else

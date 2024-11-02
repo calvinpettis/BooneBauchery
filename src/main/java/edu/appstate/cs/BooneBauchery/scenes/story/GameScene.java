@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -55,6 +56,7 @@ public abstract class GameScene extends Scene{
                 BackgroundRepeat.REPEAT,
                 BackgroundPosition.DEFAULT,
                 null);
+        this.setFill(Color.BLACK);
         root.setBackground(new Background(backgroundImage));
     }
 
@@ -100,6 +102,14 @@ public abstract class GameScene extends Scene{
         else
         {
             sceneToHide = null;
+        }
+    }
+
+    private void showPrompt(PromptSubSceneManager subScene)
+    {
+        if (prompt2hide != null)
+        {
+
         }
     }
 }

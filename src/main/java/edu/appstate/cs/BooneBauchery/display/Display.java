@@ -41,7 +41,7 @@ public class Display {
 
   private MenuSubSceneManager creditSubScene;
   private MenuSubSceneManager helpSubScene;
-  private MenuSubSceneManager scoreSubScene;
+  private MenuSubSceneManager settingSubScene;
 
   //Fixes the issue where multiple screens can stack on top of eachother
   private MenuSubSceneManager sceneToHide;
@@ -77,8 +77,8 @@ public class Display {
     mainDisplay.getChildren().add(creditSubScene);
     helpSubScene = new MenuSubSceneManager();
     mainDisplay.getChildren().add(helpSubScene);
-    scoreSubScene = new MenuSubSceneManager();
-    mainDisplay.getChildren().add(scoreSubScene);
+    settingSubScene = new MenuSubSceneManager();
+    mainDisplay.getChildren().add(settingSubScene);
   }
 
   /**
@@ -132,7 +132,7 @@ public class Display {
   private void createButtons()
   {
     createStartButton();
-    createScoresButton();
+    createSettingsButton();
     createExtrasButton();
     createCreditsButton();
     createExitButton();
@@ -152,14 +152,14 @@ public class Display {
     });
   }
 
-  private void createScoresButton()
+  private void createSettingsButton()
   {
-    MenuButton scoresButton = new MenuButton("SCORES");
-    addMenuButton(scoresButton);
-    scoresButton.setOnAction(new EventHandler<ActionEvent>() {
+    MenuButton settingsButton = new MenuButton("SETTINGS");
+    addMenuButton(settingsButton);
+    settingsButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-       showSubScene(scoreSubScene);
+       showSubScene(settingSubScene);
       }
     });
   }
