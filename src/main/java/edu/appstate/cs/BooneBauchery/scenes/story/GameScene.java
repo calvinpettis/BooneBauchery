@@ -1,11 +1,13 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
+import edu.appstate.cs.BooneBauchery.display.gui.ChoiceButton;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PromptSubSceneManager;
 import edu.appstate.cs.BooneBauchery.tools.Scroller;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -15,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * This is a template class we can use as a scene generator for making quicker scenes.
@@ -36,6 +39,9 @@ public abstract class GameScene extends Scene{
     protected PromptSubSceneManager prompt2hide;
     protected String prompt;
     protected String[] choice;
+    private boolean answerChosen;
+    private ChoiceButton choice1;
+    private ChoiceButton choice2;
 
 
     public GameScene(Stage stage)
@@ -105,11 +111,4 @@ public abstract class GameScene extends Scene{
         }
     }
 
-    private void showPrompt(PromptSubSceneManager subScene)
-    {
-        if (prompt2hide != null)
-        {
-
-        }
-    }
 }

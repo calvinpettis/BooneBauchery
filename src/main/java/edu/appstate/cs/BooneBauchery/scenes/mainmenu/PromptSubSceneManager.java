@@ -29,7 +29,7 @@ public class PromptSubSceneManager extends SubScene {
 
     private ChoiceButton choice1;
     private ChoiceButton choice2;
-    private String prompt;
+    private String prompt1;
     private String[] choice;
     private Label promptLabel;
 
@@ -38,6 +38,7 @@ public class PromptSubSceneManager extends SubScene {
         super(new AnchorPane(), 1280, 720);
         prefWidth(1280);
         prefHeight(720);
+
 
         BackgroundImage bg = new BackgroundImage(
                 new Image(panelImage, 700, 560, false, true),
@@ -66,7 +67,7 @@ public class PromptSubSceneManager extends SubScene {
         root2.getChildren().add(promptLabel);
         isHidden = true;
         setLayoutX(290);
-        setLayoutY(0);
+        setLayoutY(1500);
 
     }
 
@@ -80,20 +81,16 @@ public class PromptSubSceneManager extends SubScene {
     public void moveScene()
     {
         TranslateTransition transition = new TranslateTransition();
-        transition.setDuration(Duration.seconds(0.3));
+        transition.setDuration(Duration.seconds(0.7));
         transition.setNode(this);
 
         //Method that displays or removes sub menu if button is clicked again
-        if(isHidden) {
-            transition.setToX(-920);
+            transition.setToY(-1500);
             isHidden = false;
-        }
-        else
-        {
-            isHidden = true;
-            transition.setToX(0);
 
-        }
+            isHidden = true;
+            transition.setToY(0);
+
         transition.play();
     }
 

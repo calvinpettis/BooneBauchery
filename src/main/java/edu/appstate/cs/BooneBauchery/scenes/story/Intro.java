@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.input.KeyEvent;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 
 /**
  * Displays after you click the start button.
@@ -29,7 +32,7 @@ public class Intro {
     private static final int HEIGHT = 720;
     private static final int WIDTH = 1280;
 
-    private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
+    private final static String FONT_PATH = "src/main/resources/assets/Fonts/blood-crow/bloodcrow.ttf";
 
     //adding timeline object here so we can manipulate
     //throughout different if else trees
@@ -65,7 +68,13 @@ public class Intro {
 
         introLabel = new Label();
         introLabel.setTextFill(Color.WHITE);
-        introLabel.setFont(new Font(FONT_PATH, 40));
+        try
+        {
+            introLabel.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 47));
+        }catch (FileNotFoundException fnfe)
+        {
+            introLabel.setFont(Font.font("Verdana", 50));
+        }
         introLabel.setWrapText(true);
         introLabel.setAlignment(Pos.CENTER);
         layout.getChildren().add(introLabel);
