@@ -46,10 +46,10 @@ public class ChoiceButton extends Button {
     {
         //try to load our spooky scary font, if not load some default one. Play with font size (2nd arg to loadFont()) for different buttons & fonts
         try {
-            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 20));
+            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
             setTextFill(Color.BLACK);
         } catch (FileNotFoundException e) {
-            setFont(Font.font("Verdana", 20));
+            setFont(Font.font("Verdana", 23));
         }
     }
 

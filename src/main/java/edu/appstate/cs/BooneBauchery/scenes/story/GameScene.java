@@ -35,8 +35,6 @@ public abstract class GameScene extends Scene{
     protected String prompt;
     protected String[] choice;
     private boolean answerChosen;
-    private ChoiceButton choice1;
-    private ChoiceButton choice2;
     protected Label textBox;
     protected Stage stage;
     protected Scene scene;
@@ -132,5 +130,17 @@ public abstract class GameScene extends Scene{
 
         // Set the initial text
         textBox.setText(prompt);
+        }
+
+        protected void createChoiceButtons(String choiceOne, String choiceTwo)
+        {
+            ChoiceButton choice1 = new ChoiceButton(choiceOne);
+            ChoiceButton choice2 = new ChoiceButton(choiceTwo);
+            choice1.setLayoutX(635);
+            choice1.setLayoutY(300);
+            choice2.setLayoutX(435);
+            choice2.setLayoutY(300);
+            root.getChildren().add(choice1);
+            root.getChildren().add(choice2);
         }
     }
