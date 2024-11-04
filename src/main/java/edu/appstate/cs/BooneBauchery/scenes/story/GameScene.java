@@ -6,15 +6,13 @@ import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PromptSubSceneManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -28,7 +26,6 @@ public abstract class GameScene extends Scene{
     protected AnchorPane root;
     protected static final int HEIGHT = 720;
     protected static final int WIDTH = 1280;
-    protected boolean isGameOver = false;
     protected boolean answer1;
     protected boolean answer2;
     protected PauseSubSceneManager pauseSubScene;
@@ -40,7 +37,7 @@ public abstract class GameScene extends Scene{
     private boolean answerChosen;
     private ChoiceButton choice1;
     private ChoiceButton choice2;
-
+    protected Label textBox;
     protected Stage stage;
     protected Scene scene;
 
@@ -112,5 +109,28 @@ public abstract class GameScene extends Scene{
             sceneToHide = null;
         }
     }
+    protected void createTextBox() {
+        textBox = new Label();
+        textBox.setTextFill(Color.WHITE);
+        textBox.setFont(new Font("Verdana", 20));
+        textBox.setAlignment(Pos.TOP_LEFT);
+        textBox.setWrapText(true);
 
-}
+        // Style the black text box
+        Pane textBoxContainer = new Pane();
+        textBoxContainer.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
+        double boxWidth = 700;
+        double boxHeight = 150;
+
+        textBoxContainer.setPrefSize(boxWidth, boxHeight);
+        textBoxContainer.getChildren().add(textBox);
+
+        // Positioning the text box at the top of the screen
+        AnchorPane.setTopAnchor(textBoxContainer, 20.0);
+        AnchorPane.setLeftAnchor(textBoxContainer, (WIDTH - boxWidth) / 2); // Center it horizontally
+        root.getChildren().add(textBoxContainer);
+
+        // Set the initial text
+        textBox.setText(prompt);
+        }
+    }
