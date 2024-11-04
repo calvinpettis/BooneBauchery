@@ -1,5 +1,8 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import edu.appstate.cs.BooneBauchery.display.gui.ChoiceButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
@@ -141,9 +144,18 @@ public abstract class GameScene extends Scene {
             choice2.setLayoutX(435);
             choice2.setLayoutY(300);
 
-            choice1.setFont(Font.font(FONT_PATH,20));
-            choice2.setFont(Font.font(FONT_PATH,20));
-
+            try {
+            choice1.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            
+        } catch (FileNotFoundException e) {
+            choice1.setFont(Font.font("Verdana", 23));
+        }
+        try {
+            choice2.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            
+        } catch (FileNotFoundException e) {
+            choice2.setFont(Font.font("Verdana", 23));
+        }
             root.getChildren().add(choice1);
             root.getChildren().add(choice2);
         }

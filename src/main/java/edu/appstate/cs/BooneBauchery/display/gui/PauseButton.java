@@ -42,7 +42,12 @@ public class PauseButton extends Button {
         //Set up what happens if you interact with the button
         initializeButtonListeners();
 
-        setFont(Font.font(FONT_PATH));
+        try {
+            setFont(Font.loadFont(new FileInputStream(FONT_PATH), 10));
+            setTextFill(Color.BLACK);
+        } catch (FileNotFoundException e) {
+            setFont(Font.font("Verdana", 10));
+        }
     }
 
     /**

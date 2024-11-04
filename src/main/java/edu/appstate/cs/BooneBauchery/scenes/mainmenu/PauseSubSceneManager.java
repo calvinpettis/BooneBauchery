@@ -1,5 +1,8 @@
 package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import edu.appstate.cs.BooneBauchery.display.Display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import javafx.animation.TranslateTransition;
@@ -12,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
@@ -50,7 +54,12 @@ public class PauseSubSceneManager extends SubScene {
         exitButton = new MenuButton("EXIT");
         exitButton.setLayoutX(70);
         exitButton.setLayoutY(390);
-        exitButton.setFont(new Font(FONT_PATH,19));
+        try {
+            exitButton.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            
+        } catch (FileNotFoundException e) {
+            exitButton.setFont(Font.font("Verdana", 23));
+        }
         exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
