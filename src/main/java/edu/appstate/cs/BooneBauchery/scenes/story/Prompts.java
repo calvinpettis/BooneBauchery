@@ -27,7 +27,7 @@ public class Prompts {
     public static final String[] belk2choice = {"Run away", "Attack"};
     public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you and takes you to the floor!"
             + "You manage to get up in the nick of time and escape him by running by a window with sunlight, the ghoul's only weakness.";
-    public static final String belk2response2= "";
+    public static final String belk2response2= "You manage to escape the ghoul by running by a window emitting sunlight, the ghoul's only weakness.";
 
     public static final String belk2sanford = "You walk outside, it is a sunny day. There are large groups of people standing under EZ-UPs and around a man with a megaphone.";
 
