@@ -35,7 +35,8 @@ public abstract class GameScene extends Scene {
     protected String[] choice;
     protected Label textBox;
     protected Scene scene;
-
+    ChoiceButton choice1;
+    ChoiceButton choice2;
 
     public GameScene(Stage stage)
     {
@@ -131,13 +132,20 @@ public abstract class GameScene extends Scene {
 
         protected void createChoiceButtons(String choiceOne, String choiceTwo)
         {
-            ChoiceButton choice1 = new ChoiceButton(choiceOne);
-            ChoiceButton choice2 = new ChoiceButton(choiceTwo);
+            choice1 = new ChoiceButton(choiceOne);
+            choice2 = new ChoiceButton(choiceTwo);
             choice1.setLayoutX(635);
             choice1.setLayoutY(300);
             choice2.setLayoutX(435);
             choice2.setLayoutY(300);
+
             root.getChildren().add(choice1);
             root.getChildren().add(choice2);
         }
+
+        protected int RNG()
+        {
+            return (int) (Math.random() * 100);
+        }
+
     }

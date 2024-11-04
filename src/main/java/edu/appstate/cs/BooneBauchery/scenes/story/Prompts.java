@@ -11,9 +11,8 @@ public class Prompts {
             "Do you:\n " +
             "Approach the creature?\n" +
             "Or attack it?";
-    public static final String belk1choice1 = "Approach";
-    public static final String belk1choice2 = "Attack";
-    public static final String belk1respone1 = "As you walk closer, the creature awakes. " +
+    public static final String[] belk1choice = {"Approach", "Attack"};
+    public static final String belk1response1 = "As you walk closer, the creature awakes. " +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading. You travel onwards.";
     public static final String belk1response2 = "Your first strike was ineffective, and the beast awakes and lunges at you.\n"
@@ -25,8 +24,7 @@ public class Prompts {
             "Do you:\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
-    public static final String belk2choice1 = "Run away";
-    public static final String belk2choice2 = "Attack";
+    public static final String[] belk2choice = {"Run away", "Attack"};
     public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you and takes you to the floor!"
             + "You manage to get up in the nick of time and escape him by running by a window with sunlight, the ghoul's only weakness.";
     public static final String belk2response2= "";
