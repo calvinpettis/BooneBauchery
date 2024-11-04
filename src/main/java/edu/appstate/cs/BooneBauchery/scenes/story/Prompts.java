@@ -7,12 +7,13 @@ public class Prompts {
 
     public static final String belkintro = "You head out into the hallway.\n" +
             "Do you head outside or explore Belk Hall's\nComputer Science Department?";
-    public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure\n"+
+    
+        public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure\n"+
             "hanging upside down from the ceiling. It appears to be asleep." +
             "\nDo you:\n\n" +
             "Approach the creature?\n" +
             "Or attack it?";
-    public static final String[] belk1choice = {"Approach", "Attack"};
+    public static final String[] belk1choice = {"APPROACH", "ATTACK"};
     public static final String belk1response1 = "As you walk closer, the creature awakes. " +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading. You travel onwards.";
@@ -20,12 +21,12 @@ public class Prompts {
             + "He manages to get a chunk of your left shoulder."+
             "Luckily, a strong jab to the achille's did the trick and brings the monster to a whimpering pile on the floor.";
 
-    public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger and stronger.\n" +
-            "When you turn the corner, you realize it is a feral CS student! He spots you and begins to growl.\n" +
-            "Do you:\n" +
+    public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
+            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n" +
+            "Do you:\n\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
-    public static final String[] belk2choice = {"Run away", "Attack"};
+    public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
     public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you and takes you to the floor!"
             + "You manage to get up in the nick of time and escape him by running by a window with sunlight, the ghoul's only weakness.";
     public static final String belk2response2= "You manage to escape the ghoul by running by a window emitting sunlight, the ghoul's only weakness.";
@@ -35,6 +36,7 @@ public class Prompts {
     public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!";
     public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP. They begin casting astrology runes at you.";
     public static final String sanford2peacock = "You walk past the courtyard and towards Peacock Hall.";
+    
     //These will get us in trouble but its alright
     public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes and he starts running towards you with a knife!\n"
             + "Do you:\n"

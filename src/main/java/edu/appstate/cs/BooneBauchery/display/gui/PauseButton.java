@@ -41,6 +41,8 @@ public class PauseButton extends Button {
         setStyle(BUTTON_UNPRESSED_STYLE);
         //Set up what happens if you interact with the button
         initializeButtonListeners();
+
+        setFont(Font.font(FONT_PATH));
     }
 
     /**

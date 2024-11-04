@@ -21,6 +21,8 @@ import javafx.stage.Stage;
  */
 public abstract class GameScene extends Scene {
 
+    private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
+
     protected Stage gameStage;
     protected AnchorPane root;
     protected static final int HEIGHT = 720;
@@ -109,7 +111,8 @@ public abstract class GameScene extends Scene {
         textBox = new Label();
         textBox.setTextFill(Color.WHITE);
         textBox.setWrapText(true);
-        textBox.setFont(new Font("Verdana", 20));
+        textBox.setFont(Font.font(FONT_PATH, 20));
+        
         textBox.setAlignment(Pos.TOP_LEFT);
         textBox.setWrapText(true);
 
@@ -137,6 +140,9 @@ public abstract class GameScene extends Scene {
             choice1.setLayoutY(300);
             choice2.setLayoutX(435);
             choice2.setLayoutY(300);
+
+            choice1.setFont(Font.font(FONT_PATH,20));
+            choice2.setFont(Font.font(FONT_PATH,20));
 
             root.getChildren().add(choice1);
             root.getChildren().add(choice2);

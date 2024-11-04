@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 
 public class PauseSubSceneManager extends SubScene {
@@ -49,6 +50,7 @@ public class PauseSubSceneManager extends SubScene {
         exitButton = new MenuButton("EXIT");
         exitButton.setLayoutX(70);
         exitButton.setLayoutY(390);
+        exitButton.setFont(new Font(FONT_PATH,19));
         exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
