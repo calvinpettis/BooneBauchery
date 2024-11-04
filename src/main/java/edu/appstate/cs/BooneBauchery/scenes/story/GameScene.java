@@ -19,10 +19,9 @@ import javafx.stage.Stage;
  * This is a template class we can use as a scene generator for making quicker scenes.
  * TODO: finish UI
  */
-public abstract class GameScene extends Scene{
+public abstract class GameScene extends Scene {
 
     protected Stage gameStage;
-    protected Label promptLabel;
     protected AnchorPane root;
     protected static final int HEIGHT = 720;
     protected static final int WIDTH = 1280;
@@ -34,9 +33,7 @@ public abstract class GameScene extends Scene{
     protected PromptSubSceneManager prompt2hide;
     protected String prompt;
     protected String[] choice;
-    private boolean answerChosen;
     protected Label textBox;
-    protected Stage stage;
     protected Scene scene;
 
 
@@ -107,7 +104,7 @@ public abstract class GameScene extends Scene{
             sceneToHide = null;
         }
     }
-    protected void createTextBox() {
+    protected void createTextBox(String text) {
         textBox = new Label();
         textBox.setTextFill(Color.WHITE);
         textBox.setFont(new Font("Verdana", 20));
@@ -129,7 +126,7 @@ public abstract class GameScene extends Scene{
         root.getChildren().add(textBoxContainer);
 
         // Set the initial text
-        textBox.setText(prompt);
+        textBox.setText(text);
         }
 
         protected void createChoiceButtons(String choiceOne, String choiceTwo)

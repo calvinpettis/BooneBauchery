@@ -28,11 +28,13 @@ public class SceneExample extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox();
+        createTextBox(exPrompt);
         createChoiceButtons(choice1[0], choice1[1]);
     }
 
     public void displayText(String newText) {
         textBox.setText(newText);
     }
+
+
 }

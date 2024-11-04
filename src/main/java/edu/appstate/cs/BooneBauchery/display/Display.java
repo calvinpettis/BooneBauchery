@@ -1,12 +1,9 @@
 package edu.appstate.cs.BooneBauchery.display;
-//import edu.appstate.cs.BooneBauchery.display.gui.InfoLabel;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
-//import edu.appstate.cs.BooneBauchery.scenes.mainmenu.CHARACTERS;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.story.Intro;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-//import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
