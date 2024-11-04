@@ -9,7 +9,7 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class SanfordMall extends GameScene{
     private final static String prompt1 = sanford1;
-    private final static String prompt1response1 = sanford1response1;
+    //private final static String prompt1response1 = sanford1response1;
     private final static String prompt1response2 = belk1response2;
     private final static String prompt2 = Prompts.belk2;
 
