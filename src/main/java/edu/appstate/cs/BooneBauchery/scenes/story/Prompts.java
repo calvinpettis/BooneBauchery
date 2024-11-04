@@ -7,8 +7,9 @@ public class Prompts {
 
     public static final String belkintro = "You head out into the hallway.\n" +
             "Do you head outside or explore Belk Hall's\nComputer Science Department?";
-    public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure hanging upside down from the ceiling. It appears to be asleep." +
-            "Do you:\n " +
+    public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure\n"+
+            "hanging upside down from the ceiling. It appears to be asleep." +
+            "\nDo you:\n\n" +
             "Approach the creature?\n" +
             "Or attack it?";
     public static final String[] belk1choice = {"Approach", "Attack"};
