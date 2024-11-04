@@ -105,9 +105,10 @@ public abstract class GameScene extends Scene {
             sceneToHide = null;
         }
     }
-    protected void createTextBox(String text) {
+    protected void createTextBox(String text, double boxWidth, double boxHeight) {
         textBox = new Label();
         textBox.setTextFill(Color.WHITE);
+        textBox.setWrapText(true);
         textBox.setFont(new Font("Verdana", 20));
         textBox.setAlignment(Pos.TOP_LEFT);
         textBox.setWrapText(true);
@@ -115,8 +116,6 @@ public abstract class GameScene extends Scene {
         // Style the black text box
         Pane textBoxContainer = new Pane();
         textBoxContainer.setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
-        double boxWidth = 700;
-        double boxHeight = 150;
 
         textBoxContainer.setPrefSize(boxWidth, boxHeight);
         textBoxContainer.getChildren().add(textBox);

@@ -14,8 +14,6 @@ public class SceneExample extends GameScene {
 
     private static final String exPrompt = Prompts.belkintro;
     private static final String[] choiceAnswers = {"GO OUTSIDE", "EXPLORE"};
-    private boolean ans1;
-    private boolean ans2;
 
     public SceneExample(Stage stage) {
         super(stage);
@@ -29,12 +27,13 @@ public class SceneExample extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(exPrompt);
+        createTextBox(exPrompt, 700, 150);
         createChoiceButtons(choiceAnswers[0], choiceAnswers[1]);
         choice1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-
+                SanfordMall sanford = new SanfordMall(gameStage);
+                gameStage.setScene(sanford);
             }
         });
         choice2.setOnAction(new EventHandler<ActionEvent>() {

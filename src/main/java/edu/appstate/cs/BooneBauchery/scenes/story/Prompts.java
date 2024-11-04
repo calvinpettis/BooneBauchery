@@ -19,7 +19,7 @@ public class Prompts {
             + "He manages to get a chunk of your left shoulder."+
             "Luckily, a strong jab to the achille's did the trick and brings the monster to a whimpering pile on the floor.";
 
-    public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger and stronger." +
+    public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger and stronger.\n" +
             "When you turn the corner, you realize it is a feral CS student! He spots you and begins to growl.\n" +
             "Do you:\n" +
             "Run around and avoid him?\n" +
