@@ -63,11 +63,8 @@ public class Prompts {
                 " sunlight, the ghoul's only weakness.";
 
         // belkWindow           --> sandford
-        public static final String belk2sanford = "You wake up outside, it is a sunny day, and your head is bleeding.\n"+
-                "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone.\n\n"
-                +"Do you:\nListen\nIgnore the Speaker";
-        public static final String[] windowWakeChoice = {"LISTEN","IGNORE SPEAKER"};
-
+        public static final String[] belk2sanford = {"You wake up outside, it is a sunny day, and your head is bleeding.\n"+
+                "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone."};
 
         // feralATK
         public static final String feralAtk = "Being utterly disturbed by the shreiking CS ghoul,\n" +
@@ -78,9 +75,7 @@ public class Prompts {
         public static final String[] feralAtkChoice = {"SNEAK","LEAVE"};
         // -----------------------------------------------------------------
         //
-        public static final String[] belk2sanford = {"You wake up outside, it is a sunny day, and your head is bleeding.",
-                "There are large groups of people standing under EZ-UPs and around a man with a megaphone."};
-// ========================================================================
+        // ========================================================================
         //sandford1             --> DODGE              REASON
         public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!\n" +
         "Do you:\n" +
