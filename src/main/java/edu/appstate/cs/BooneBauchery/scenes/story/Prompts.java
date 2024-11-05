@@ -102,6 +102,8 @@ public class Prompts {
             + "Run towards the nearby App State Cadet?"
             + "Or sidestep the stabber?";
 
+        public static final String[] peacock1choice = {"APP CADET", "DODGE"};
+
 // ========================================================================
         //Peacock2              --> INVEST      DECLINE
         public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking you to invest in his crypto business.\n\n"
