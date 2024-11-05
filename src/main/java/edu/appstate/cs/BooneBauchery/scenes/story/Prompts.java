@@ -108,7 +108,7 @@ public class Prompts {
             + "Do you:\n"
             + "Listen to him and invest?\n" +
             "Or decline his offer?";
-        public static final String[] peacock2choices = {"INVEST", "DECLINE"};
+        public static final String[] peacock2choice = {"INVEST", "DECLINE"};
 
 // ========================================================================
         //peacockInvest         --> 
