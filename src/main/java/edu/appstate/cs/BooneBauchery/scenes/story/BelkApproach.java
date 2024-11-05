@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.belk2sanford;
 
+import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
+
 
 public class BelkApproach extends GameScene {
     

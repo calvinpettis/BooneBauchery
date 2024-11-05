@@ -46,14 +46,14 @@ public class Prompts {
 // ========================================================================
         //belk2                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
-            "When you turn the corner, you realize it is a feral CS student!\n He spots you and begins to growl.\n\n" +
+            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
             "Do you:\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
         //belk2 choices
         public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
         // -----------------------------------------------------------------
-        //belkRun               -->   (go outside) Sandford
+        //FeralRun               -->   (go outside) belkWindow
         public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE\n" +
         "that disorients you and takes you to the floor!" +
             "\nYou manage to get up in the nick of time and escape him by running and\n"+
@@ -61,6 +61,21 @@ public class Prompts {
             // ?? where tf to use this ??
         public static final String belk2response2 = "You manage to escape the ghoul by running by a window emitting"+ 
                 " sunlight, the ghoul's only weakness.";
+
+        // belkWindow           --> sandford
+        public static final String belk2sanford = "You wake up outside, it is a sunny day, and your head is bleeding.\n"+
+                "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone.\n\n"
+                +"Do you:\nListen\nIgnore the Speaker";
+        public static final String[] windowWakeChoice = {"LISTEN","IGNORE SPEAKER"};
+
+
+        // feralATK
+        public static final String feralAtk = "Being utterly disturbed by the shreiking CS ghoul,\n" +
+                "You swiftly spear hand the deranged ghoul in the throat\n"
+                + "This causes the ghoul to flail violently, until it stops,\n its face stuck in an evil smile.\n\n" +
+                "Do you:\nSneak out of the building?\nLeave out of the front door?";
+        //feralATK choices
+        public static final String[] feralAtkChoice = {"SNEAK","LEAVE"};
         // -----------------------------------------------------------------
         //
         public static final String[] belk2sanford = {"You wake up outside, it is a sunny day, and your head is bleeding.",
