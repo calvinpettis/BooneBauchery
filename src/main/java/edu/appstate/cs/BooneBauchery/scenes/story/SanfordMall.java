@@ -8,14 +8,9 @@ import javafx.stage.Stage;
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class SanfordMall extends GameScene{
-    private final static String prompt1 = sanford1;
-    //private final static String prompt1response1 = sanford1response1;
-    private final static String prompt1response2 = belk1response2;
-    private final static String prompt2 = Prompts.belk2;
+
 
     private final static String BKG = "/assets/Backgrounds/campus.png";
-    private final static String prompt2response1 = belk2response1;
-    private final static String prompt2response2 = belk2response2;
 
     public SanfordMall(Stage stage)
     {
@@ -28,8 +23,8 @@ public class SanfordMall extends GameScene{
         setBackground(BKG);
         //TODO: somehow move this so we don't have to do it over and over again
         if (RNG() % 2 == 0) {
-            createTextBox(prompt1, 800, 250);
-            createChoiceButtons(belk1choice[0], belk1choice[1]);
+            createTextBox(sanford1, 800, 250);
+            createChoiceButtons(sanford1choice[0], sanford1choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -44,8 +39,8 @@ public class SanfordMall extends GameScene{
             });
         } else
         {
-            createTextBox(prompt2, 800, 250);
-            createChoiceButtons(belk2choice[0], belk2choice[1]);
+            createTextBox(sanford2, 800, 250);
+            createChoiceButtons(sanford2choice[0], sanford2choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {

@@ -67,17 +67,33 @@ public class Prompts {
                 "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone.\n\n"
                 +"Do you:\nListen\nIgnore the Speaker";
 // ========================================================================
-        //sandford1             --> ??  ??
-        public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!";
-        
-        
+        //sandford1             --> DODGE              REASON
+        public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!\n" +
+        "Do you:\n" +
+        "Sidestep the man\n" +
+        "Or try to reason with him?";
+        public static final String[] sanford1choice = {"DODGE", "REASON"};
+
+        public static final String sanford1response1 = "As you lunge away from the attack, the man stumbles and falls to the ground.\n" +
+                "The students shrieking at him previously jump on top of him and he disappears under the pile of bodies.";
+
+        public static final String sanford1response2 = "As you ask for the old man to sit and talk, he calms down.\n" +
+                "The more you talk to him, the more schizo you realize he is.\n" +
+                "You back away and walk off in order to preserve your brain cells.";
 // ========================================================================
         //sandford2             --> ??  ??
-        public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP. They begin casting astrology runes at you.";
-        
+        public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP.\n N" +
+        "Noticing that you are not one of the Greek Brothers,They begin casting astrology runes at you.\n" +
+        "Do you:\n" +
+        "Run away?\n" +
+        "Or defend yourself?";
+        public static final String[] sanford2choice = {"RUN AWAY", "DEFEND"};
+        public static final String sanford2response1 = "As you run, the group is distracted by a rival sorority and a battle begins between the two tribes.";
+        public static final String sanford2response2 = "You cast your Common Sense shield against the Astrology runes, blocking all attacks.\n" +
+                "You do not feel like fighting women today, so when they take a moment to recharge you take a chance and escape.";
 
 // ========================================================================
-        public static final String sanford2peacock = "You walk past the courtyard and towards Peacock Hall.";
+        public static final String sanford2peacock = "You limp past the courtyard and towards Peacock Hall.";
 // ========================================================================
         //Peacock1      --> APPROACH CADET        DODGE       
         //These will get us in trouble but its alright
