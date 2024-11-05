@@ -1,4 +1,5 @@
 package edu.appstate.cs.BooneBauchery.tools;
+import edu.appstate.cs.BooneBauchery.scenes.story.GameScene;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
@@ -40,14 +41,13 @@ public class Transition {
     private boolean isScrolling = true;
     private StringBuilder sb = new StringBuilder();
 
-    private static final String[] transitionScript = {"In the town of Boone, North Carolina...",
-            "It is 3:00PM the Friday before Spring break,",
-            "And you just left your\nSoftware Engineering class\nto finish up the week.",
-            "It's time to party...",
-            "You just have to make it out of town...\n\nALIVE!"};
+    private final String[] transitionScript;
+    private GameScene sceneAfter;
 
-    public Transition(Stage stage)
+    public Transition(Stage stage, String[] prompt, GameScene nextScene)
     {
+        this.sceneAfter = nextScene;
+        this.transitionScript = prompt;
         this.transitionStage = stage;
         createIntroScene();
     }
@@ -81,6 +81,12 @@ public class Transition {
             showNextLine();
         }
     }
+
+    public Scene getTransitionScene()
+    {
+        return transitionScene;
+    }
+
 
     /**
      * Should print the string in a scrolling fashion.
@@ -117,7 +123,7 @@ public class Transition {
                         showNextLine();
                     } else {
                         isScrolling = false;
-                        transitionScene();   //build in scence transion here??
+                        transition2next(sceneAfter);
                     }
                 });
                 pause.play();
@@ -127,11 +133,12 @@ public class Transition {
         timeline.play();
     }
 
-    public void transitionScene()
+
+    public void transition2next(GameScene gameScene)
     {
-        // startGameLoop start = new startGameLoop();
-        //start.start();
+        transitionStage.setScene(gameScene);
     }
+
 
     public void handleKeyPress(KeyEvent keyEvent)
     {
@@ -143,7 +150,7 @@ public class Transition {
                 timeline.stop();
             }
             sb.delete(0, sb.length());
-            transitionScene();
+
         }
     }
 

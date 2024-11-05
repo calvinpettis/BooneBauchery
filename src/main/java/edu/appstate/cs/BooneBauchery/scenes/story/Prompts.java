@@ -46,7 +46,7 @@ public class Prompts {
 // ========================================================================
         //belk2                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
-            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
+            "When you turn the corner, you realize it is a feral CS student!\n He spots you and begins to growl.\n\n" +
             "Do you:\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
@@ -63,9 +63,8 @@ public class Prompts {
                 " sunlight, the ghoul's only weakness.";
         // -----------------------------------------------------------------
         //
-        public static final String belk2sanford = "You wake up outside, it is a sunny day, and your head is bleeding.\n"+
-                "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone.\n\n"
-                +"Do you:\nListen\nIgnore the Speaker";
+        public static final String[] belk2sanford = {"You wake up outside, it is a sunny day, and your head is bleeding.",
+                "There are large groups of people standing under EZ-UPs and around a man with a megaphone."};
 // ========================================================================
         //sandford1             --> DODGE              REASON
         public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!\n" +
