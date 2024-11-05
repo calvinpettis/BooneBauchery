@@ -32,7 +32,7 @@ public class Intro {
     private static final int HEIGHT = 720;
     private static final int WIDTH = 1280;
 
-    private final static String FONT_PATH = "src/main/resources/assets/Fonts/blood-crow/bloodcrow.ttf";
+    private final static String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
 
     //adding timeline object here so we can manipulate
     //throughout different if else trees

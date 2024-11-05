@@ -21,7 +21,7 @@ import javafx.util.Duration;
 
 public class PauseSubSceneManager extends SubScene {
 
-    private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
+    private final static String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
     //want to animate the background at some point w the layers in the assets folder
     private final static String BACKGROUND_IMAGE = "assets/Buttons/startbttn/pauseTile.png";
 

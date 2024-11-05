@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  */
 public abstract class GameScene extends Scene {
 
-    private final static String FONT_PATH = "/assets/Fonts/blood-crow/bloodcrow.ttf";
+    private final static String FONT_PATH = "src/main/resources/assets/Fonts/a-dripping-marker/adrip1.ttf";
 
     protected Stage gameStage;
     protected AnchorPane root;
