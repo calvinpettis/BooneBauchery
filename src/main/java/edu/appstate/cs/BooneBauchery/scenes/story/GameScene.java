@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import edu.appstate.cs.BooneBauchery.display.gui.ChoiceButton;
 import edu.appstate.cs.BooneBauchery.display.gui.PauseButton;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PauseSubSceneManager;
-import edu.appstate.cs.BooneBauchery.scenes.mainmenu.PromptSubSceneManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -34,8 +33,6 @@ public abstract class GameScene extends Scene {
     protected boolean answer2;
     protected PauseSubSceneManager pauseSubScene;
     protected PauseSubSceneManager sceneToHide;
-    protected PromptSubSceneManager promptSubScene;
-    protected PromptSubSceneManager prompt2hide;
     protected String prompt;
     protected String[] choice;
     protected Label textBox;
@@ -86,8 +83,7 @@ public abstract class GameScene extends Scene {
            }
        });
 
-       promptSubScene = new PromptSubSceneManager(prompt, choice);
-       root.getChildren().add(promptSubScene);
+
 
     }
 
