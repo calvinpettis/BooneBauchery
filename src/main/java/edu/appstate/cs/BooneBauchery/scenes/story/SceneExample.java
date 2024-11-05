@@ -13,7 +13,7 @@ public class SceneExample extends GameScene {
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
     private static final String exPrompt = Prompts.belkintro;
-    private static final String[] choiceAnswers = {"GO OUTSIDE", "EXPLORE"};
+    private static final String[] choiceAnswers = Prompts.introchoices;
 
     public SceneExample(Stage stage) {
         super(stage);
@@ -32,15 +32,15 @@ public class SceneExample extends GameScene {
         choice1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                SanfordMall sanford = new SanfordMall(gameStage);
-                gameStage.setScene(sanford);
+                BelkHall belk = new BelkHall(gameStage);
+                gameStage.setScene(belk);
             }
         });
         choice2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                BelkHall belk = new BelkHall(gameStage);
-                gameStage.setScene(belk);
+                SanfordMall sandford = new SanfordMall(gameStage);
+                gameStage.setScene(sandford);
             }
         });
     }

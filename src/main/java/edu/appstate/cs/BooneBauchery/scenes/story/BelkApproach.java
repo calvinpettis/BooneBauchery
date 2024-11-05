@@ -10,7 +10,7 @@ public class BelkApproach extends GameScene {
 
     private static final String approachPrompt = Prompts.belk1response1;
 
-    private static final String[] choiceAnswers = {"TRAVEL ONWARDS"};
+    private static final String[] choiceAnswers = Prompts.travelOnward;
 
     public BelkApproach(Stage stage)
     {

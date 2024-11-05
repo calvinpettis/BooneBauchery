@@ -5,49 +5,97 @@ package edu.appstate.cs.BooneBauchery.scenes.story;
  */
 public class Prompts {
 
-    public static final String belkintro = "You head out into the hallway.\n" +
-            "Do you head outside or explore Belk Hall's\nComputer Science Department?";
-    
+        //start intro --> belk1,        belk2,          sandford 
+        public static final String belkintro = "You head out into the hallway.\n\n" +
+            "Do you:\nHead outside?\nExplore Belk Hall's Computer Science Department?";
+        //intro choices
+            public static final String[] introchoices = {"EXPLORE", "GO OUTSIDE"};
+
+// //////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+        // belk1 (encounter) --> approach       attack
         public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure\n"+
             "hanging upside down from the ceiling. It appears to be asleep." +
-            "\nDo you:\n\n" +
+            "\n\nDo you:\n" +
             "Approach the creature?\n" +
             "Or attack it?";
-    public static final String[] belk1choice = {"APPROACH", "ATTACK"};
-    public static final String belk1response1 = "As you walk closer, the creature awakes. " +
+        //belk1 choices 
+        public static final String[] belk1choice = {"APPROACH", "ATTACK"};    
+        // -----------------------------------------------------------------
+        //belk1 appraoch      -->   dptChair Dialouge 
+        public static final String belk1response1 = "As you walk closer, the creature awakes. " +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
-    public static final String belk1response2 = "Your first strike was ineffective, and the beast awakes and lunges at you.\n"
-            + "He manages to get a chunk of your left shoulder."+
-            "Luckily, a strong jab to the achille's did the trick and brings the monster to a whimpering pile on the floor.";
-
-    public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
-            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n" +
-            "Do you:\n\n" +
+        public static final String[] travelOnward = {"TRAVEL ONWARD"};
+        
+        
+        //belk1 attack          --> canceled
+        public static final String belk1response2 = "Your first strike was ineffective, and the beast awakes and lunges at you.\n"
+            + "He manages to get a chunk of your left shoulder.\n"+
+            "Luckily, a strong jab to the achille's did the trick and\nbrings the monster to a whimpering pile on the floor.\n" +
+            "You further examine the body";
+        public static final String[] examine = {"EXAMINE"};
+        
+        //belk canceled         --> GAME OVER
+        public static final String belkCanceled = "When you look down at the mangled creature you recoil in horror!\n" +
+                "You mistook your Software Engineering teacher as a monster...\n"+
+                "You are canceled by all of your class mates and no one will ever like you again.\n\n" +
+                "Slowly, you walk outside never to return.\n for the pain of being canceled is to great.";
+        public static final String[] choiceCancled = {"WALK AWAY"};
+        
+// ========================================================================
+        //belk2                 --> Run         ATTACK
+        public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
+            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
+            "Do you:\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
-    public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
-    public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you and takes you to the floor!"
-            + "You manage to get up in the nick of time and escape him by running by a window with sunlight, the ghoul's only weakness.";
-    public static final String belk2response2= "You manage to escape the ghoul by running by a window emitting sunlight, the ghoul's only weakness.";
+        //belk2 choices
+        public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
+        // -----------------------------------------------------------------
+        //belkRun               -->   (go outside) Sandford
+        public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE\n" +
+        "that disorients you and takes you to the floor!" +
+            "\nYou manage to get up in the nick of time and escape him by running and\n"+
+            "jumping through a window, the ghoul's only weakness.\nThe sunlight causes the feral student to recoil in pain!";
+            // ?? where tf to use this ??
+        public static final String belk2response2 = "You manage to escape the ghoul by running by a window emitting"+ 
+                " sunlight, the ghoul's only weakness.";
+        // -----------------------------------------------------------------
+        //
+        public static final String belk2sanford = "You wake up outside, it is a sunny day, and your head is bleeding.\n"+
+                "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone.\n\n"
+                +"Do you:\nListen\nIgnore the Speaker";
+// ========================================================================
+        //sandford1             --> ??  ??
+        public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!";
+        
+        
+// ========================================================================
+        //sandford2             --> ??  ??
+        public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP. They begin casting astrology runes at you.";
+        
 
-    public static final String belk2sanford = "You walk outside, it is a sunny day. There are large groups of people standing under EZ-UPs and around a man with a megaphone.";
-
-    public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!";
-    public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP. They begin casting astrology runes at you.";
-    public static final String sanford2peacock = "You walk past the courtyard and towards Peacock Hall.";
-    
-    //These will get us in trouble but its alright
-    public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes and he starts running towards you with a knife!\n"
+// ========================================================================
+        public static final String sanford2peacock = "You walk past the courtyard and towards Peacock Hall.";
+// ========================================================================
+        //Peacock1      --> APPROACH CADET        DODGE       
+        //These will get us in trouble but its alright
+        public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes and he starts running towards you with a knife!\n\n"
             + "Do you:\n"
             + "Run towards the nearby App State Cadet?"
             + "Or sidestep the stabber?";
-    public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking you to invest in his crypto business.\n"
+
+// ========================================================================
+        //Peacock2              --> INVEST      DECLINE
+        public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking you to invest in his crypto business.\n\n"
             + "Do you:\n"
             + "Listen to him and invest?\n" +
             "Or decline his offer?";
-    public static final String peacock2choice1 = "Invest";
-    public static final String peacock2choice2 = "Decline";
-    public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings! Hope you enjoy ramen.";
+        public static final String[] peacock2choices = {"INVEST", "DECLINE"};
+
+// ========================================================================
+        //peacockInvest         --> 
+        public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings! Hope you enjoy ramen.";
     public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
 }
