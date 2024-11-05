@@ -6,19 +6,17 @@ import javafx.stage.Stage;
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 
-public class BelkApproach extends GameScene {
-    
+public class FeralRun extends GameScene {
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
-    private static final String approachPrompt = Prompts.belk1response1;
+    private static final String feralRun = Prompts.belk2response1;
+    private static final String[] runChoice = Prompts.introchoices;
 
-    private static final String[] choiceAnswers = Prompts.travelOnward;
-
-    public BelkApproach(Stage stage)
-    {
+    public FeralRun(Stage stage) {
         super(stage);
-        this.prompt = approachPrompt;
-        this.choice = choiceAnswers;
+        
+        this.prompt = feralRun;
+        this.choice = runChoice;
         setupScene();
     }
 
@@ -26,15 +24,17 @@ public class BelkApproach extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(approachPrompt, 700, 150);
-        createContinueButton(choiceAnswers[0]);
+        createTextBox(feralRun, 700, 150);
+        createContinueButton(runChoice[1]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
+                // add belk window here
             }
         });
-    }
+
+        
+}
 
 
     //aux text display method

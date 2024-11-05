@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
+import edu.appstate.cs.BooneBauchery.scenes.story.FeralRun;
 
 public class BelkHall extends GameScene{
     private final static String prompt1 = Prompts.belk1;
@@ -41,7 +42,8 @@ public class BelkHall extends GameScene{
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     //attack
-
+                    BelkAttack attackFigure = new BelkAttack(gameStage);
+                    gameStage.setScene(attackFigure);
                 }
             });
         } else
@@ -51,13 +53,15 @@ public class BelkHall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    FeralRun run = new FeralRun(gameStage);
+                    gameStage.setScene(run);
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    FeralAttack atk = new FeralAttack(gameStage);
+                    gameStage.setScene(atk);
                 }
             });
         }

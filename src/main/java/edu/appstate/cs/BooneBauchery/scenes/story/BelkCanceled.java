@@ -3,41 +3,36 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
-
-public class BelkApproach extends GameScene {
+public class BelkCanceled extends GameScene{
     
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
-    private static final String approachPrompt = Prompts.belk1response1;
+    private static final String cancelPrompt = Prompts.belkCanceled;
+    private static final String[] examine = Prompts.examine;
 
-    private static final String[] choiceAnswers = Prompts.travelOnward;
-
-    public BelkApproach(Stage stage)
+    public BelkCanceled(Stage stage)
     {
         super(stage);
-        this.prompt = approachPrompt;
-        this.choice = choiceAnswers;
-        setupScene();
+        this.prompt = cancelPrompt;
+        this.choice = examine;
     }
 
     @Override
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(approachPrompt, 700, 150);
-        createContinueButton(choiceAnswers[0]);
+        createTextBox(cancelPrompt, 700, 150);
+        createContinueButton(examine[0]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
+                //canceled ending text scroll here
             }
         });
+        
     }
 
-
-    //aux text display method
     public void displayText(String newText) {
         textBox.setText(newText);
     }
