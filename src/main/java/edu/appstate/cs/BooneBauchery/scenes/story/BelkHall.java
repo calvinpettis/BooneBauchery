@@ -32,12 +32,15 @@ public class BelkHall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    //approach
+                    BelkApproach approachFigure = new BelkApproach(gameStage);
+                    gameStage.setScene(approachFigure);
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
+                    //attack
 
                 }
             });

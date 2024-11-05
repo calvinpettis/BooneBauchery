@@ -16,7 +16,7 @@ public class Prompts {
     public static final String[] belk1choice = {"APPROACH", "ATTACK"};
     public static final String belk1response1 = "As you walk closer, the creature awakes. " +
             "Oh, hi professor!\n" +
-            "It was just a teacher taking a break from a long day of grading. You travel onwards.";
+            "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
     public static final String belk1response2 = "Your first strike was ineffective, and the beast awakes and lunges at you.\n"
             + "He manages to get a chunk of your left shoulder."+
             "Luckily, a strong jab to the achille's did the trick and brings the monster to a whimpering pile on the floor.";

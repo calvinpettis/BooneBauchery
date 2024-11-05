@@ -42,6 +42,7 @@ public abstract class GameScene extends Scene {
     protected Scene scene;
     ChoiceButton choice1;
     ChoiceButton choice2;
+    ChoiceButton continueBtn;
 
     public GameScene(Stage stage)
     {
@@ -158,6 +159,23 @@ public abstract class GameScene extends Scene {
         }
             root.getChildren().add(choice1);
             root.getChildren().add(choice2);
+        }
+
+        protected void createContinueButton(String continueButton)
+        {
+            continueBtn = new ChoiceButton(continueButton);
+            
+            continueBtn.setLayoutX(500);
+            continueBtn.setLayoutY(300);
+            
+            try {
+            continueBtn.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            
+        } catch (FileNotFoundException e) {
+            continueBtn.setFont(Font.font("Verdana", 23));
+        }
+        
+            root.getChildren().add(continueBtn);
         }
 
         protected int RNG()
