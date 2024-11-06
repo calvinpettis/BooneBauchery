@@ -34,8 +34,6 @@ public class FeralRun extends GameScene {
                 gameStage.setScene(transition.getTransitionScene());
             }
         });
-
-        
 }
 
 

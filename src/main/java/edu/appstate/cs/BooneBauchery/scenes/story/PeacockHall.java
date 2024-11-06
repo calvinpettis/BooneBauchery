@@ -44,13 +44,15 @@ public class PeacockHall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    PeacockInvest invest = new PeacockInvest(gameStage);
+                    gameStage.setScene(invest);
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    PeacockDecline decline = new PeacockDecline(gameStage);
+                    gameStage.setScene(decline);
                 }
             });
         }
