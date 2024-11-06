@@ -23,7 +23,7 @@ public class Prompts {
         public static final String[] belk1choice = {"APPROACH", "ATTACK"};    
         // -----------------------------------------------------------------
         //belk1 appraoch      -->   dptChair Dialouge 
-        public static final String belk1response1 = "As you walk closer, the creature awakes. " +
+        public static final String belk1response1 = "As you walk closer, the creature awakes.\n" +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
         public static final String[] travelOnward = {"TRAVEL ONWARD"};
@@ -46,7 +46,7 @@ public class Prompts {
 // ========================================================================
         //belk2                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
-            "When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
+            " When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
             "Do you:\n" +
             "Run around and avoid him?\n" +
             "Or attack?\n";
@@ -100,8 +100,10 @@ public class Prompts {
         "Or defend yourself?";
         public static final String[] sanford2choice = {"RUN AWAY", "DEFEND"};
         public static final String sanford2response1 = "As you run, the group is distracted by a rival sorority and a battle begins between the two tribes.";
-        public static final String sanford2response2 = "You cast your Common Sense shield against the Astrology runes, blocking all attacks.\n" +
-                "You do not feel like fighting women today, so when they take a moment to recharge you take a chance and escape.";
+        public static final String sanford2response2 = "You cast your Common Sense shield against the Astrology runes,\n" +
+                "blocking all attacks.\n" +
+                "You do not feel like fighting women today,\n" +
+                "so when they take a moment to recharge you take a chance and escape.";
 
 // ========================================================================
         public static final String[] sanford2peacock = {"You limp past the courtyard and towards Peacock Hall."};

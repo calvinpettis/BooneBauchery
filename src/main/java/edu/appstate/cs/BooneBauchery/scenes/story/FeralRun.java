@@ -24,7 +24,7 @@ public class FeralRun extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(feralRun, 700, 150);
+        createTextBox(feralRun, 720, 150);
         createContinueButton(runChoice[1]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override

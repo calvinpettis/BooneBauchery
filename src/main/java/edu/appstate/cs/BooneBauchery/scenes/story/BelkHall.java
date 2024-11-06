@@ -24,6 +24,7 @@ public class BelkHall extends GameScene{
         setBackground(BKG);
         //TODO: somehow move this so we don't have to do it over and over again
         if (RNG() % 2 == 0) {
+            
             createTextBox(prompt1, 800, 250);
             createChoiceButtons(belk1choice[0], belk1choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
