@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class BelkCanceled extends GameScene{
     
-    private static final String BKG = "/assets/Backgrounds/demohallway.png";
+    private static final String BKG = "/assets/Backgrounds/professor.png";
 
     private static final String cancelPrompt = Prompts.belkCanceled;
     private static final String[] examine = Prompts.examine;

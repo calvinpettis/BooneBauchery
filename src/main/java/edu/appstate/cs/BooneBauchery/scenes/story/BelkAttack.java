@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 public class BelkAttack extends GameScene {
     
-    private static final String BKG = "/assets/Backgrounds/demohallway.png";
+    private static final String BKG = "/assets/Backgrounds/professor.png";
 
     private static final String blkAttck = Prompts.belk1response2;
     private static final String[] examine = Prompts.examine;

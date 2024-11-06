@@ -6,12 +6,9 @@ import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.belk2sanford;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
-
-
 public class BelkApproach extends GameScene {
     
-    private static final String BKG = "/assets/Backgrounds/demohallway.png";
+    private static final String BKG2 = "/assets/Backgrounds/professor.png";
 
     private static final String approachPrompt = Prompts.belk1response1;
 
@@ -28,13 +25,12 @@ public class BelkApproach extends GameScene {
     @Override
     public void setupScene() {
         setUI();
-        setBackground(BKG);
+        setBackground(BKG2);
         createTextBox(approachPrompt, 700, 150);
         createContinueButton(choiceAnswers[0]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
                 Transition transition = new Transition(gameStage, belk2sanford, new SanfordMall(gameStage));
                 gameStage.setScene(transition.getTransitionScene());
             }

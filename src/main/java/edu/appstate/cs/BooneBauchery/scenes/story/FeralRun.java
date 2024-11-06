@@ -1,4 +1,5 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
+import edu.appstate.cs.BooneBauchery.tools.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -11,7 +12,6 @@ public class FeralRun extends GameScene {
 
     private static final String feralRun = Prompts.belk2response1;
     private static final String[] runChoice = Prompts.introchoices;
-
     public FeralRun(Stage stage) {
         super(stage);
         
@@ -30,6 +30,8 @@ public class FeralRun extends GameScene {
             @Override
             public void handle(ActionEvent actionEvent) {
                 // add belk window here
+                Transition transition = new Transition(gameStage, belk2sanford, new SanfordMall(gameStage));
+                gameStage.setScene(transition.getTransitionScene());
             }
         });
 
