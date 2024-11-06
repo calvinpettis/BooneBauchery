@@ -28,13 +28,15 @@ public class SanfordMall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    JesusDodge jesusDodge = new JesusDodge(gameStage);
+                    gameStage.setScene(jesusDodge);
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    JesusReason jesusReason = new JesusReason(gameStage);
+                    gameStage.setScene(jesusReason);
                 }
             });
         } else
@@ -44,13 +46,15 @@ public class SanfordMall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    SororityFlee sororityFlee = new SororityFlee(gameStage);
+                    gameStage.setScene(sororityFlee);
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    SororityDefend defend = new SororityDefend(gameStage);
+                    gameStage.setScene(defend);
                 }
             });
         }

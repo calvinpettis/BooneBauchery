@@ -23,7 +23,7 @@ public class FeralAttack extends GameScene {
     {
         setUI();
         setBackground(BKG);
-        createTextBox(atkPrompt, 700, 150);
+        createTextBox(atkPrompt, 700, 250);
         createChoiceButtons(atkChoice[0], atkChoice[1]);
 
         choice1.setOnAction(new EventHandler<ActionEvent>() {

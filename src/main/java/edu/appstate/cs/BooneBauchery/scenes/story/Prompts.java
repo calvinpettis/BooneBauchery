@@ -84,15 +84,17 @@ public class Prompts {
         public static final String[] sanford1choice = {"DODGE", "REASON"};
 
         public static final String sanford1response1 = "As you lunge away from the attack, the man stumbles and falls to the ground.\n" +
-                "The students shrieking at him previously jump on top of him and he disappears under the pile of bodies.";
+                "The students shrieking at him previously jump on top of him\n" +
+                "and he disappears under the pile of bodies.";
 
         public static final String sanford1response2 = "As you ask for the old man to sit and talk, he calms down.\n" +
                 "The more you talk to him, the more schizo you realize he is.\n" +
                 "You back away and walk off in order to preserve your brain cells.";
 // ========================================================================
         //sandford2             --> ??  ??
-        public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP.\n N" +
-        "Noticing that you are not one of the Greek Brothers,They begin casting astrology runes at you.\n" +
+        public static final String sanford2 = "As you were walking by, a rabid pack of sorority girls emerge from under an EZ-UP.\n" +
+        "Noticing that you are not one of the Greek Brothers,\n" +
+        "they begin casting astrology runes at you.\n" +
         "Do you:\n" +
         "Run away?\n" +
         "Or defend yourself?";
@@ -102,20 +104,22 @@ public class Prompts {
                 "You do not feel like fighting women today, so when they take a moment to recharge you take a chance and escape.";
 
 // ========================================================================
-        public static final String sanford2peacock = "You limp past the courtyard and towards Peacock Hall.";
+        public static final String[] sanford2peacock = {"You limp past the courtyard and towards Peacock Hall."};
 // ========================================================================
         //Peacock1      --> APPROACH CADET        DODGE       
         //These will get us in trouble but its alright
-        public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes and he starts running towards you with a knife!\n\n"
+        public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes\n" +
+        "and he starts running towards you with a knife!\n\n"
             + "Do you:\n"
-            + "Run towards the nearby App State Cadet?"
+            + "Run towards the nearby App State Cadet?\n"
             + "Or sidestep the stabber?";
 
         public static final String[] peacock1choice = {"APP CADET", "DODGE"};
 
 // ========================================================================
         //Peacock2              --> INVEST      DECLINE
-        public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking you to invest in his crypto business.\n\n"
+        public static final String peacock2 = "As you walk by the business school, a small finance bro in a blazer & tie begins asking\n" +
+        "you to invest in his crypto business.\n\n"
             + "Do you:\n"
             + "Listen to him and invest?\n" +
             "Or decline his offer?";
