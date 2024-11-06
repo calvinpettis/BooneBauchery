@@ -23,7 +23,7 @@ public class SanfordMall extends GameScene{
         setBackground(BKG);
         //TODO: somehow move this so we don't have to do it over and over again
         if (RNG() % 2 == 0) {
-            createTextBox(sanford1, 800, 250);
+            createTextBox(sanford1, 700, 150);
             createChoiceButtons(sanford1choice[0], sanford1choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override

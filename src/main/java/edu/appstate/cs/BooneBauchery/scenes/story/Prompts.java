@@ -54,10 +54,10 @@ public class Prompts {
         public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
         // -----------------------------------------------------------------
         //FeralRun               -->   (go outside) belkWindow
-        public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE\n" +
-        "that disorients you and takes you to the floor!" +
+        public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you\n" +
+                "and takes you to the floor!" +
             "\nYou manage to get up in the nick of time and escape him by running and\n"+
-            "jumping through a window, the ghoul's only weakness.\nThe sunlight causes the feral student to recoil in pain!";
+            "jumping through a window towards the outdoors, the ghoul's only weakness.\nThe sunlight causes the feral student to recoil in pain!";
             // ?? where tf to use this ??
         public static final String belk2response2 = "You manage to escape the ghoul by running by a window emitting"+ 
                 " sunlight, the ghoul's only weakness.";
@@ -124,9 +124,9 @@ public class Prompts {
             + "Listen to him and invest?\n" +
             "Or decline his offer?";
         public static final String[] peacock2choice = {"INVEST", "DECLINE"};
-
-// ========================================================================
-        //peacockInvest         --> 
         public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings! Hope you enjoy ramen.";
-    public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
+        public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
+
+// =======================================================================
+        public static final String peacock2kingst[] = {"You muster every ounce of strength you have and walk towards the bustling King Street."};
 }

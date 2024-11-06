@@ -23,7 +23,7 @@ public class PeacockHall extends GameScene{
         setBackground(BKG);
         //TODO: somehow move this so we don't have to do it over and over again
         if (RNG() % 2 == 0) {
-            createTextBox(peacock1, 800, 250);
+            createTextBox(peacock1, 750, 200);
             createChoiceButtons(peacock1choice[0], peacock1choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override

@@ -49,10 +49,10 @@ public class Transition {
         this.sceneAfter = nextScene;
         this.transitionScript = prompt;
         this.transitionStage = stage;
-        createIntroScene();
+        createTransitionScene();
     }
 
-    public void createIntroScene()
+    public void createTransitionScene()
     {
         //create new pane to lay out all the new fields in, make it black for transition.
         //same as anchorpane, just different implementation.
