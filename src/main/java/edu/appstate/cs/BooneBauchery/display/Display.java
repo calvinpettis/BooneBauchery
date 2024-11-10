@@ -198,7 +198,7 @@ public class Display {
     // Add some credits text
     Label creditsTitle = new Label("Game Credits");
     creditsTitle.setStyle("-fx-font-weight: bold;");
-    creditsTitle.setFont(new Font(FONT_PATH, 23));
+    creditsTitle.setFont(new Font(FONT_PATH, 22));
     
     Label developerLabel = new Label("Developed by:\n " +
             "-> Calvin Pettis\n " +

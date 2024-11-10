@@ -142,16 +142,16 @@ public abstract class GameScene extends Scene {
             choice2.setLayoutY(300);
 
             try {
-            choice1.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            choice1.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
             
         } catch (FileNotFoundException e) {
-            choice1.setFont(Font.font("Verdana", 23));
+            choice1.setFont(Font.font("Verdana", 22));
         }
         try {
-            choice2.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            choice2.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
             
         } catch (FileNotFoundException e) {
-            choice2.setFont(Font.font("Verdana", 23));
+            choice2.setFont(Font.font("Verdana", 22));
         }
             root.getChildren().add(choice1);
             root.getChildren().add(choice2);
@@ -165,10 +165,10 @@ public abstract class GameScene extends Scene {
             continueBtn.setLayoutY(300);
             
             try {
-            continueBtn.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            continueBtn.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
             
         } catch (FileNotFoundException e) {
-            continueBtn.setFont(Font.font("Verdana", 23));
+            continueBtn.setFont(Font.font("Verdana", 22));
         }
         
             root.getChildren().add(continueBtn);

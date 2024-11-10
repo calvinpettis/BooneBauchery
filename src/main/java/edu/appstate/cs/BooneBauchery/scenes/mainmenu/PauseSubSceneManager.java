@@ -55,10 +55,10 @@ public class PauseSubSceneManager extends SubScene {
         exitButton.setLayoutX(70);
         exitButton.setLayoutY(390);
         try {
-            exitButton.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 23));
+            exitButton.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
             
         } catch (FileNotFoundException e) {
-            exitButton.setFont(Font.font("Verdana", 23));
+            exitButton.setFont(Font.font("Verdana", 22));
         }
         exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
