@@ -31,6 +31,8 @@ public class Prompts {
         public static final String belk1response1 = "As you walk closer, the creature awakes.\n" +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
+        public static final String [] chilProf = {"You walk outside of the building.\nPondering glorious lectures about data structures.", 
+                "When you get outside you see quite a commotion unfolding..."};
         public static final String[] travelOnward = {"TRAVEL ONWARD"};
         
         
@@ -80,6 +82,22 @@ public class Prompts {
                 "Do you:\nSneak out of the building?\nLeave out of the front door?";
         //feralATK choices
         public static final String[] feralAtkChoice = {"SNEAK","LEAVE"};
+        
+        public static final String[] leaveFront = {"Not thinking even once about your violent actions,\nyou walk outside with swagger and pride.", 
+                "This macho facade quickly crumbles upon seeing a swarm of people\nsurrounding a man holding a sign.\nThe man's sign says 'SINNERS WILL BURN'",
+                "The exessivly large crowd is blocking the way you normally walk to get home.\nYou are forced to cut through a tunnel to get back towards your home."};
+
+        public static final String phoneORWalk = "When you are walking down the road to get home your\nphone starts to ring." +
+                " You look and see its one of your class calling you.\n\nDo you:\nPick up the phone\nDecline the call and keep walking";
+        public static final String[] walkingChoices = {"PICK UP","KEEP WALKING"};
+        
+        public static final String[] pickup = {"When you pick the phone up your class mate sounds estatic.",
+                "'HEY MAN! I didn't thikk you were going to pick up.', he says with cheer.",
+                "'Now hear me out bud.. I just bought one million beers and I help drinking them!'",
+                "As you hear his words you think you are misunderstanding.",
+                "You rush over to your friends house and drink one million beers with him XD !!!"};
+        
+        public static final String onemil = "You and your friend drink one million beers together.\nIt is quit epic to drink so much beer and you feel complete\nGOOD ENDING 'One Million Beers' "; 
         // -----------------------------------------------------------------
         //
         // ========================================================================

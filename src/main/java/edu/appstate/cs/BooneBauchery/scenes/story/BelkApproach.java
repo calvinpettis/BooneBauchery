@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.belk2sanford;
+import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class BelkApproach extends GameScene {
     
@@ -31,7 +31,7 @@ public class BelkApproach extends GameScene {
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Transition transition = new Transition(gameStage, belk2sanford, new SanfordMall(gameStage));
+                Transition transition = new Transition(gameStage, chilProf, new SanfordMall(gameStage));
                 gameStage.setScene(transition.getTransitionScene());
             }
         });
