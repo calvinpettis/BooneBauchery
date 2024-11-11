@@ -49,7 +49,7 @@ public class Prompts {
         public static final String[] choiceCancled = {"WALK AWAY"};
         
         public static final String belkGameOver = "You walk off into the sunset. Pondering life, \n and all the connotations of being an outcast." + 
-                        "You never return to class and in turn fail the semester\n GAME OVER...";
+                        "\nYou never return to class and in turn fail the semester...";
 // ========================================================================
         //belk2                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +

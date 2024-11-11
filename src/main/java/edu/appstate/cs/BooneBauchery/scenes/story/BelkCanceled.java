@@ -11,7 +11,7 @@ import edu.appstate.cs.BooneBauchery.main.Main;
 public class BelkCanceled extends GameScene{
     
     // change this path to sunset sadness walk off pixelated image
-    private static final String BKG = "/assets/Backgrounds/gameoverBKG.png";
+    private static final String BKG = "/assets/Backgrounds/walkSunset.png";
 
     private static final String cancelPrompt = Prompts.belkGameOver;
     private static final String[] examine = Prompts.examine;
@@ -32,8 +32,14 @@ public class BelkCanceled extends GameScene{
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                gameStage.close();
-                Main.startloop(gameStage);
+                //new : go to game over screen for game over art and then get back to main menu
+                GameOver gameover = new GameOver(gameStage);
+                gameStage.setScene(gameover);
+
+                
+                // below approach OLD: to ending the game loop and getting back to main menu.
+                //gameStage.close();
+                //Main.startloop(gameStage);
         }});
         
     }
