@@ -150,7 +150,7 @@ public class Transition {
                 timeline.stop();
             }
             sb.delete(0, sb.length());
-            //add actual transition here
+            transition2next(sceneAfter);
         }
     }
 
