@@ -13,7 +13,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.input.KeyEvent;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -96,9 +95,6 @@ public class Intro {
      * hunter: this method SHOULD display text in a scrolling fashion 
      *      as well as, Pause in between displayed text. 
      *      original method for text scrolling was very fast with no pause
-     * 
-     *
-     * 
      * TODO: move this to a seperate class to be used repeatedly, also add pause in between sentences
      */
     private void showNextLine() {

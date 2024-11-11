@@ -45,7 +45,7 @@ public class Prompts {
         
         //belk canceled         --> GAME OVER
         public static final String[] belkCanceled = {"When you look down at the mangled creature you recoil in horror!\n" ,
-                "You mistook your Software Engineering teacher as a monster...\n",
+                "You mistook your Software Engineering teacher taking a nap from grading as a monster...\n",
                 "You are canceled by all of your class mates \nand no one will ever like you again.",
                 "Slowly, you walk outside never to return.\n for the pain of being canceled is too great."};
         public static final String[] choiceCancled = {"WALK AWAY"};
@@ -88,7 +88,7 @@ public class Prompts {
                 "The exessivly large crowd is blocking the way you normally walk to get home.\nYou are forced to cut through a tunnel to get back towards your home."};
 
         public static final String phoneORWalk = "When you are walking down the road to get home your\nphone starts to ring." +
-                " You look and see its one of your class calling you.\n\nDo you:\nPick up the phone\nDecline the call and keep walking";
+                " You look and see its one of your classmates calling you.\n\nDo you:\nPick up the phone\nDecline the call and keep walking";
         public static final String[] walkingChoices = {"PICK UP","KEEP WALKING"};
         
         public static final String[] pickup = {"When you pick the phone up your class mate sounds estatic.",
@@ -124,11 +124,11 @@ public class Prompts {
         "Run away?\n" +
         "Or defend yourself?";
         public static final String[] sanford2choice = {"RUN AWAY", "DEFEND"};
-        public static final String sanford2response1 = "As you run, the group is distracted by a rival sorority and a battle begins between the two tribes.";
+        public static final String sanford2response1 = "As you run, the group is distracted by a rival sorority and a battle begins\n" +
+                "between the two tribes.";
         public static final String sanford2response2 = "You cast your Common Sense shield against the Astrology runes,\n" +
                 "blocking all attacks.\n" +
-                "You do not feel like fighting women today,\n" +
-                "so when they take a moment to recharge you take a chance and escape.";
+                "when they take a moment to recharge, you take a chance and escape.";
 
 // ========================================================================
         public static final String[] sanford2peacock = {"You limp past the courtyard and towards Peacock Hall."};
