@@ -45,7 +45,7 @@ public class Prompts {
         public static final String[] belkCanceled = {"When you look down at the mangled creature you recoil in horror!\n" ,
                 "You mistook your Software Engineering teacher as a monster...\n",
                 "You are canceled by all of your class mates \nand no one will ever like you again.",
-                "Slowly, you walk outside never to return.\n for the pain of being canceled is to great."};
+                "Slowly, you walk outside never to return.\n for the pain of being canceled is too great."};
         public static final String[] choiceCancled = {"WALK AWAY"};
         
         public static final String belkGameOver = "You walk off into the sunset. Pondering life, \n and all the connotations of being an outcast." + 

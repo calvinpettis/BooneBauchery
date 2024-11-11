@@ -32,8 +32,8 @@ public class BelkCanceled extends GameScene{
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-              Main main = new Main();
-              main.start(gameStage);
+                gameStage.close();
+                Main.startloop(gameStage);
         }});
         
     }
