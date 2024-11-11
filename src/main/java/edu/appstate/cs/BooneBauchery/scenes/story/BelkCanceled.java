@@ -11,7 +11,7 @@ import edu.appstate.cs.BooneBauchery.main.Main;
 public class BelkCanceled extends GameScene{
     
     // change this path to sunset sadness walk off pixelated image
-    private static final String BKG = "/assets/Backgrounds/professor.png";
+    private static final String BKG = "/assets/Backgrounds/gameoverBKG.png";
 
     private static final String cancelPrompt = Prompts.belkGameOver;
     private static final String[] examine = Prompts.examine;
