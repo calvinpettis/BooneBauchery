@@ -1,4 +1,5 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
+import edu.appstate.cs.BooneBauchery.tools.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -27,8 +28,12 @@ public class BelkAttack extends GameScene {
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                BelkCanceled canceled = new BelkCanceled(gameStage);
-                gameStage.setScene(canceled);
+                // transition by using the text scroll to canceled
+                Transition transition = new Transition(gameStage, Prompts.belkCanceled, new BelkCanceled(gameStage));
+                gameStage.setScene(transition.getTransitionScene());
+                // OLD way to transition
+                //BelkCanceled canceled = new BelkCanceled(gameStage);
+                //gameStage.setScene(canceled);
             }
         });
     }

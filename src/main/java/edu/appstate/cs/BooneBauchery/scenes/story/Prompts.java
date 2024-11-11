@@ -4,6 +4,11 @@ package edu.appstate.cs.BooneBauchery.scenes.story;
  * Using this class to hold all of our scripts.
  */
 public class Prompts {
+// //////////////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+        public static final String[] gameOver = {"GAME OVER"};
+        public static final String[] gameOver2 = {"GAME OVER........"};
+
 
         //start intro --> belk1,        belk2,          sandford 
         public static final String belkintro = "You head out into the hallway.\n\n" +
@@ -37,12 +42,14 @@ public class Prompts {
         public static final String[] examine = {"EXAMINE"};
         
         //belk canceled         --> GAME OVER
-        public static final String belkCanceled = "When you look down at the mangled creature you recoil in horror!\n" +
-                "You mistook your Software Engineering teacher as a monster...\n"+
-                "You are canceled by all of your class mates and no one will ever like you again.\n\n" +
-                "Slowly, you walk outside never to return.\n for the pain of being canceled is to great.";
+        public static final String[] belkCanceled = {"When you look down at the mangled creature you recoil in horror!\n" ,
+                "You mistook your Software Engineering teacher as a monster...\n",
+                "You are canceled by all of your class mates \nand no one will ever like you again.",
+                "Slowly, you walk outside never to return.\n for the pain of being canceled is to great."};
         public static final String[] choiceCancled = {"WALK AWAY"};
         
+        public static final String belkGameOver = "You walk off into the sunset. Pondering life, \n and all the connotations of being an outcast." + 
+                        "You never return to class and in turn fail the semester\n GAME OVER...";
 // ========================================================================
         //belk2                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
@@ -132,3 +139,4 @@ public class Prompts {
 // =======================================================================
         public static final String peacock2kingst[] = {"You muster every ounce of strength you have and walk towards the bustling King Street."};
 }
+// =======================================================================
