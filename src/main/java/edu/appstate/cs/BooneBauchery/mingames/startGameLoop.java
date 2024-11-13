@@ -1,4 +1,4 @@
-package edu.appstate.cs.BooneBauchery.state;
+package edu.appstate.cs.BooneBauchery.mingames;
 
 import javafx.scene.Scene;
 
