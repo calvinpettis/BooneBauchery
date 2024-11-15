@@ -158,13 +158,13 @@ public class Prompts {
         public static final String peacock2kingst[] = {"You muster every ounce of strength you have and walk towards the bustling King Street."};
 
 // ======================MINIGAMES==========================================
-        public static final String hurricanePrompt = "As you are walking, a dark cloud appears overhead.\n" +
-        "A torrential downpour starts, it is a hurricane!!!\m" +
-        "The water starts pooling around your feet.";
+        public static final String hurricanePrompt[] = {"As you are walking, a dark cloud appears overhead.\n" +
+        "A torrential downpour starts, it is a hurricane!!!\n" +
+        "The water starts pooling around your feet."};
 
         public static final String hurricaneDirections = "You must stay out of the water! Press space to jump\n" +
                 "to stay on top of the cars and logs.";
 
-        
+
 }
 
