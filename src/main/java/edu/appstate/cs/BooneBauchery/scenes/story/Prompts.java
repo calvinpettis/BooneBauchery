@@ -131,17 +131,18 @@ public class Prompts {
                 "when they take a moment to recharge, you take a chance and escape.";
 
 // ========================================================================
-        public static final String[] sanford2peacock = {"You limp past the courtyard and towards Peacock Hall."};
+        public static final String[] sanford2peacock = {"You shuffle past Sanford Mall.\nMaking your way to the college of business, Peacock.",
+                "As you walk up to the building you see\nvarious business admisitration majors eating crayons\nand smoking electronic cigarettes."};
 // ========================================================================
         //Peacock1      --> APPROACH CADET        DODGE       
         //These will get us in trouble but its alright
         public static final String peacock1 = "Walking by the business school, you notice a man hop out of the bushes\n" +
-        "and he starts running towards you with a knife!\n\n"
+        "and he starts running towards you with a VERY sharp pencil!\n\n"
             + "Do you:\n"
-            + "Run towards the nearby App State Cadet?\n"
+            + "Run towards the nearest App State campus Police Officer?\n"
             + "Or sidestep the stabber?";
 
-        public static final String[] peacock1choice = {"APP CADET", "DODGE"};
+        public static final String[] peacock1choice = {"RUN TO COP", "SIDESTEP"};
 
 // ========================================================================
         //Peacock2              --> INVEST      DECLINE
@@ -153,6 +154,11 @@ public class Prompts {
         public static final String[] peacock2choice = {"INVEST", "DECLINE"};
         public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin and you lost all of your savings! Hope you enjoy ramen.";
         public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
+        
+        public static final String [] rugpuledPeacock = {"The founder of App coin realized someone was dumb\nenough to invest money into his crypto scam.",
+                "You have no money now. All of it disapearing into a cryptic void.", "Uncontrollably you begin to cry.\nYou now have NO MONEY FOR BOOZE!"};
+        public static final String nomoney = "You lost everything you owned and now you can't pay tuition for college.\n"+
+                        "You cry every day while remembering how much you just wanted to be able to drink and party.\nGAME OVER (No money for booze BAD ENDING)";
 
 // =======================================================================
         public static final String peacock2kingst[] = {"You muster every ounce of strength you have and walk towards the bustling King Street."};

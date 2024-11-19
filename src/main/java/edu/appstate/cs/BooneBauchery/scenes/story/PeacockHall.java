@@ -9,6 +9,13 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class PeacockHall extends GameScene{
 
+    // now in business building (random)
+    //      --> peacock pencil stabber
+    //          >> run to a cop
+    //          >> sidestepp attacker
+    //      --> invest in app crypto coin??
+    //          >> do invest
+    //          >> decline offer
 
     private final static String BKG = "/assets/Backgrounds/peacock.png";
 

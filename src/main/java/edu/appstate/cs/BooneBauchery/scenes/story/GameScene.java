@@ -74,7 +74,7 @@ public abstract class GameScene extends Scene {
        pauseBttn.setLayoutY(5);
 
        root.getChildren().add(pauseBttn);
-       pauseSubScene = new PauseSubSceneManager();
+       pauseSubScene = new PauseSubSceneManager(gameStage);
        root.getChildren().add(pauseSubScene);
        pauseBttn.setOnAction(new EventHandler<ActionEvent>() {
            @Override

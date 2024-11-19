@@ -6,19 +6,18 @@ import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
+public class Nomoney extends GameScene {
+    // you invested in appcoin (get scammed)
+    private static final String BKG = "/assets/Backgrounds/nomoney.png";
 
-public class PeacockInvest extends GameScene {
+    private static final String losemoneyPrompt = Prompts.nomoney;
 
-    private static final String BKG = "/assets/Backgrounds/investcrypto.png";
+    private static final String[] choiceAnswers = Prompts.gameOver;
 
-    private static final String approachPrompt = peacock2response1;
-
-    private static final String[] choiceAnswers = Prompts.travelOnward;
-
-    public PeacockInvest(Stage stage)
+    public Nomoney(Stage stage)
     {
         super(stage);
-        this.prompt = approachPrompt;
+        this.prompt = losemoneyPrompt;
         this.choice = choiceAnswers;
         setupScene();
     }
@@ -27,14 +26,15 @@ public class PeacockInvest extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(approachPrompt, 700, 150);
+        createTextBox(losemoneyPrompt, 700, 150);
         createContinueButton(choiceAnswers[0]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
-                Transition transition = new Transition(gameStage, rugpuledPeacock, new PeacockHall(gameStage));
-                gameStage.setScene(transition.getTransitionScene());
+                //unique game over art displayed in current scene
+                //this button takes you to game over art to restart loop
+                GameOver gameover = new GameOver(gameStage);
+                gameStage.setScene(gameover);
             }
         });
     }
@@ -44,4 +44,6 @@ public class PeacockInvest extends GameScene {
     public void displayText(String newText) {
         textBox.setText(newText);
     }
+
+
 }

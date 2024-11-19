@@ -3,6 +3,10 @@ package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import javafx.stage.Stage;
+import edu.appstate.cs.BooneBauchery.main.Main;
+
+
 import edu.appstate.cs.BooneBauchery.display.Display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import javafx.animation.TranslateTransition;
@@ -29,7 +33,7 @@ public class PauseSubSceneManager extends SubScene {
     private boolean isHidden;
     private MenuButton exitButton;
 
-    public PauseSubSceneManager() {
+    public PauseSubSceneManager(Stage gameStage) {
 
         //Make a new window display, set to width and height of the other ones.
         super(new AnchorPane(), 1280, 720);
@@ -65,7 +69,13 @@ public class PauseSubSceneManager extends SubScene {
             public void handle(MouseEvent mouseEvent) {
                 if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
                 {
-                    System.exit(0);
+                    // old way : close system whenever pressing pause button then exit
+                    //System.exit(9);
+
+                    //new way: presing pause then pressing exit takes you to main menu
+                    //quicker for replaying the story instead of full exit and relaunch
+                    gameStage.close();
+                    Main.startloop(gameStage);
                 }
             }
         });
