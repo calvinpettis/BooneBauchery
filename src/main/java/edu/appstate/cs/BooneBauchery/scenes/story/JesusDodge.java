@@ -11,7 +11,7 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class JesusDodge extends GameScene {
 
-    private static final String BKG = "/assets/Backgrounds/campus.png";
+    private static final String BKG = "/assets/Backgrounds/repentsin.png";
 
     private static final String approachPrompt = sanford1response1;
 

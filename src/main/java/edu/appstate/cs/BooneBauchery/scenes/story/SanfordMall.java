@@ -9,7 +9,7 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class SanfordMall extends GameScene{
 
-    //sanford mall area leads to ... 
+    //sanford mall area leads to (random) ... 
     //      --> jesus man
     //          >> dodge 
     //          >> reason
