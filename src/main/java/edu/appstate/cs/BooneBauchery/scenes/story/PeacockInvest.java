@@ -33,7 +33,7 @@ public class PeacockInvest extends GameScene {
             @Override
             public void handle(ActionEvent actionEvent) {
                 // travel onwards transition HERE
-                Transition transition = new Transition(gameStage, rugpuledPeacock, new PeacockHall(gameStage));
+                Transition transition = new Transition(gameStage, rugpuledPeacock, new Nomoney(gameStage));
                 gameStage.setScene(transition.getTransitionScene());
             }
         });
