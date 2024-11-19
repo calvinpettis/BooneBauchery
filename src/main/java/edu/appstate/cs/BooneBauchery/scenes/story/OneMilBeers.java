@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class OneMilBeers extends GameScene {
     //ONE MILL BEERS ENDING         drink with friend
     // change this path to sunset sadness walk off pixelated image
-    private static final String BKG = "/assets/Backgrounds/onemillBeers.png";
+    private static final String BKG = "/assets/Backgrounds/onemillbeers.png";
 
     private static final String cancelPrompt = Prompts.onemil;
     private static final String[] onward = Prompts.travelOnward;
