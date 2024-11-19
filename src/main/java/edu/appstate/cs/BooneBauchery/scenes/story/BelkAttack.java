@@ -6,6 +6,9 @@ import javafx.stage.Stage;
 
 public class BelkAttack extends GameScene {
     
+    // attack proffessor scene
+    //      --> examine body (leads to ending)
+
     private static final String BKG = "/assets/Backgrounds/professor.png";
 
     private static final String blkAttck = Prompts.belk1response2;

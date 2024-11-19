@@ -8,6 +8,10 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 
 public class FeralRun extends GameScene {
+
+    // you run away from feral cs student he is cringe 
+    //      --> transition text to sanfordmall
+
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 
     private static final String feralRun = Prompts.belk2response1;

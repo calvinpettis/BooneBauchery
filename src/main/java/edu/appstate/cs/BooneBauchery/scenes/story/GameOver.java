@@ -9,6 +9,8 @@ import edu.appstate.cs.BooneBauchery.main.Main;
 
 public class GameOver extends GameScene{
     
+    //blanket class for displaying game over scene // to be used after bad endings
+
     // Gameover art 
     private static final String BKG = "/assets/Backgrounds/gameoverNBKG.png";
 

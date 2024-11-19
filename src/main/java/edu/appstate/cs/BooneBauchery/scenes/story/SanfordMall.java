@@ -9,6 +9,13 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class SanfordMall extends GameScene{
 
+    //sanford mall area leads to ... 
+    //      --> jesus man
+    //          >> dodge 
+    //          >> reason
+    //      --> sorority girls
+    //          >> flee 
+    //          >> defend
 
     private final static String BKG = "/assets/Backgrounds/campus.png";
 

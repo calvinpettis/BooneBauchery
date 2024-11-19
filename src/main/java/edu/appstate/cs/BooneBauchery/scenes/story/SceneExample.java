@@ -9,6 +9,7 @@ import javafx.stage.Stage;
  */
 public class SceneExample extends GameScene {
 
+    // TRUE BEGINNING scene first thing user sees when intro finishes
 
     private static final String BKG = "/assets/Backgrounds/demohallway.png";
 

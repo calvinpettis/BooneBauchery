@@ -8,6 +8,10 @@ import edu.appstate.cs.BooneBauchery.tools.Transition;
 
 public class FeralAttack extends GameScene {
 
+    // you attack feral cs student
+    //      --> sneak out back 
+    //      --> leave out front door
+
     private static final String BKG = "/assets/Backgrounds/feralcs.png";
 
     private static final String atkPrompt = Prompts.feralAtk;
@@ -32,6 +36,7 @@ public class FeralAttack extends GameScene {
         choice1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                // TODO sneak out of back of building away from feral cs student
                 //sneak out of back of building
             }
         });

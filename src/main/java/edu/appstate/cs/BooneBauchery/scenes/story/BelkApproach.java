@@ -8,6 +8,9 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 public class BelkApproach extends GameScene {
     
+    // you walk up to scary professor scene
+    //      --> travel onwars (to sanfordmall) 
+
     private static final String BKG2 = "/assets/Backgrounds/professor.png";
 
     private static final String approachPrompt = Prompts.belk1response1;

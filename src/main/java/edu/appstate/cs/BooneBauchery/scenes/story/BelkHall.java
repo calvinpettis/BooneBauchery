@@ -8,6 +8,16 @@ import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 import edu.appstate.cs.BooneBauchery.scenes.story.FeralRun;
 
 public class BelkHall extends GameScene{
+
+    // starting stage after intro text scroll
+    // explore belk hall 
+    //      --> scary professor
+    //          >> approach (to sanford) 
+    //          >> attack (to canceled ending)
+    //      --> feral cs student
+    //          >> attack (to ending) 
+    //          >> flee (to sanford)
+
     private final static String prompt1 = Prompts.belk1;
     private final static String prompt2 = Prompts.belk2;
 

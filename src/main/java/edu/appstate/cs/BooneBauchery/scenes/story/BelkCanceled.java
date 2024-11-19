@@ -9,7 +9,10 @@ import javafx.stage.Stage;
 
 
 public class BelkCanceled extends GameScene{
-    
+
+    //walking into sunset because u are canceled scene and artwork
+    //      --> leads to game over artwork 
+
     // change this path to sunset sadness walk off pixelated image
     private static final String BKG = "/assets/Backgrounds/walkSunset.png";
 
