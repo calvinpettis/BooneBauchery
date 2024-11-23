@@ -1,5 +1,4 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
 import edu.appstate.cs.BooneBauchery.tools.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
