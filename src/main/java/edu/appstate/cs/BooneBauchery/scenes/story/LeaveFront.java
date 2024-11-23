@@ -1,8 +1,12 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
+import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
 import edu.appstate.cs.BooneBauchery.tools.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.hurricanePrompt;
 
 public class LeaveFront extends GameScene{
     //in this class AFTER prompt is played 
@@ -42,9 +46,11 @@ public class LeaveFront extends GameScene{
             }
         });
         choice2.setOnAction(new EventHandler<ActionEvent>() {
+            //This starts the hurricane minigame!
             @Override
             public void handle(ActionEvent actionEvent) {
                 //transition to bad ending we go home sober
+
             }
         });
     }

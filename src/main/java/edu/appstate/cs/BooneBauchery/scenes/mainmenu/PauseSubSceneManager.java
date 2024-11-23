@@ -3,6 +3,7 @@ package edu.appstate.cs.BooneBauchery.scenes.mainmenu;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import edu.appstate.cs.BooneBauchery.main.Main;
 
@@ -32,6 +33,7 @@ public class PauseSubSceneManager extends SubScene {
     //we will use this to know wether to close a window on a button press.
     private boolean isHidden;
     private MenuButton exitButton;
+    private MenuButton mainMenuBttn;
 
     public PauseSubSceneManager(Stage gameStage) {
 
@@ -58,11 +60,16 @@ public class PauseSubSceneManager extends SubScene {
         exitButton = new MenuButton("EXIT");
         exitButton.setLayoutX(70);
         exitButton.setLayoutY(390);
+        mainMenuBttn = new MenuButton("MAIN MENU");
+        mainMenuBttn.setLayoutX(70);
+        mainMenuBttn.setLayoutY(310);
         try {
             exitButton.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
+            mainMenuBttn.setFont(Font.loadFont(new FileInputStream(FONT_PATH), 22));
             
         } catch (FileNotFoundException e) {
             exitButton.setFont(Font.font("Verdana", 22));
+            mainMenuBttn.setFont(Font.font("Verdana", 22));
         }
         exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -70,8 +77,16 @@ public class PauseSubSceneManager extends SubScene {
                 if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
                 {
                     // old way : close system whenever pressing pause button then exit
-                    //System.exit(9);
+                    System.exit(0);
 
+                }
+            }
+        });
+        mainMenuBttn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if (mouseEvent.getButton().equals(MouseButton.PRIMARY))
+                {
                     //new way: presing pause then pressing exit takes you to main menu
                     //quicker for replaying the story instead of full exit and relaunch
                     gameStage.close();
@@ -80,7 +95,7 @@ public class PauseSubSceneManager extends SubScene {
             }
         });
         root2.getChildren().add(exitButton);
-
+        root2.getChildren().add(mainMenuBttn);
     }
 
     public boolean getHidden()

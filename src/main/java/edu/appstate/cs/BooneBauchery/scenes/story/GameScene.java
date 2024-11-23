@@ -29,8 +29,6 @@ public abstract class GameScene extends Scene {
     protected AnchorPane root;
     protected static final int HEIGHT = 720;
     protected static final int WIDTH = 1280;
-    protected boolean answer1;
-    protected boolean answer2;
     protected PauseSubSceneManager pauseSubScene;
     protected PauseSubSceneManager sceneToHide;
     protected String prompt;

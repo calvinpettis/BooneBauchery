@@ -1,8 +1,11 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
 
 
+import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
+import edu.appstate.cs.BooneBauchery.tools.Transition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
@@ -46,7 +49,9 @@ public class SanfordMall extends GameScene{
                     gameStage.setScene(jesusReason);
                 }
             });
-        } else
+            //random chance to have a minigame
+        }
+        else
         {
             createTextBox(sanford2, 800, 250);
             createChoiceButtons(sanford2choice[0], sanford2choice[1]);
