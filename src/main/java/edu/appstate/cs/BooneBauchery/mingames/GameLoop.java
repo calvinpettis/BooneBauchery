@@ -36,12 +36,12 @@ public class GameLoop {
 
     public Scene createScene() {
         Pane root = new Pane();
-        layer1 = createBackgroundLayer("/assets/Backgrounds/Parallax/8.png", 0.5);
-        layer2 = createBackgroundLayer("/assets/Backgrounds/Parallax/7.png", 1.0);
-        layer3 = createBackgroundLayer("/assets/Backgrounds/Parallax/6.png", 1.5);
-        layer4 = createBackgroundLayer("/assets/Backgrounds/Parallax/5.png", 2.0);
-        layer5 = createBackgroundLayer("/assets/Backgrounds/Parallax/4.png", 2.5);
-        layer6 = createBackgroundLayer("/assets/Backgrounds/Parallax/3.png", 3.0);
+        layer1 = createBackgroundLayer("/assets/Backgrounds/Parallax/8.png");
+        layer2 = createBackgroundLayer("/assets/Backgrounds/Parallax/7.png");
+        layer3 = createBackgroundLayer("/assets/Backgrounds/Parallax/6.png");
+        layer4 = createBackgroundLayer("/assets/Backgrounds/Parallax/5.png");
+        layer5 = createBackgroundLayer("/assets/Backgrounds/Parallax/4.png");
+        layer6 = createBackgroundLayer("/assets/Backgrounds/Parallax/3.png");
         player = new Player(300, 300);
         scene = new Scene(root, WIDTH, HEIGHT);
         createListeners(scene);
@@ -62,10 +62,11 @@ public class GameLoop {
             }
         };
         gameLoop.start();
+        root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
         return scene;
     }
 
-    private ImageView createBackgroundLayer(String imagePath, double speed) {
+    private ImageView createBackgroundLayer(String imagePath) {
         Image image = new Image(imagePath);
         ImageView layer = new ImageView(image);
         layer.setFitHeight(720);
@@ -114,20 +115,20 @@ public class GameLoop {
 
     private void updateParallax() {
         if (moveLeft) {
-            layer1.setTranslateX(layer1.getTranslateX() + 2);
-            layer2.setTranslateX(layer2.getTranslateX() + 4);
-            layer3.setTranslateX(layer3.getTranslateX() + 8);
-            layer4.setTranslateX(layer4.getTranslateX() + 10);
-            layer5.setTranslateX(layer5.getTranslateX() + 12);
-            layer6.setTranslateX(layer6.getTranslateX() + 14);
+            layer1.setTranslateX(layer1.getTranslateX() + 0.05);
+            layer2.setTranslateX(layer2.getTranslateX() + 0.1);
+            layer3.setTranslateX(layer3.getTranslateX() + 0.15);
+            layer4.setTranslateX(layer4.getTranslateX() + 0.2);
+            layer5.setTranslateX(layer5.getTranslateX() + 0.25);
+            layer6.setTranslateX(layer6.getTranslateX() + 0.3);
         }
         if (moveRight) {
-            layer1.setTranslateX(layer1.getTranslateX() - 2);
-            layer2.setTranslateX(layer2.getTranslateX() - 4);
-            layer3.setTranslateX(layer3.getTranslateX() - 8);
-            layer4.setTranslateX(layer4.getTranslateX() - 10);
-            layer5.setTranslateX(layer5.getTranslateX() - 12);
-            layer6.setTranslateX(layer6.getTranslateX() - 14);
+            layer1.setTranslateX(layer1.getTranslateX() - 0.05);
+            layer2.setTranslateX(layer2.getTranslateX() - 0.1);
+            layer3.setTranslateX(layer3.getTranslateX() - 0.15);
+            layer4.setTranslateX(layer4.getTranslateX() - 0.2);
+            layer5.setTranslateX(layer5.getTranslateX() - 0.25);
+            layer6.setTranslateX(layer6.getTranslateX() - 0.30);
         }
 //        if (moveUp) {
 //            layer1.setTranslateY(layer1.getTranslateY() + 2);

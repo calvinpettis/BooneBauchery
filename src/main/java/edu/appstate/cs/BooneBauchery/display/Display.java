@@ -1,5 +1,6 @@
 package edu.appstate.cs.BooneBauchery.display;
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
+import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.story.Intro;
 import javafx.event.ActionEvent;
@@ -171,6 +172,24 @@ public class Display {
         showSubScene(helpSubScene);
       }
     });
+    VBox extrasPanel = new VBox();
+    extrasPanel.setLayoutX(60);
+    extrasPanel.setLayoutY(30);
+    extrasPanel.setSpacing(10);
+    extrasPanel.setPrefSize(300, 300);
+    MenuButton platformerButton = new MenuButton("PLATFORMER");
+    platformerButton.setLayoutY(20);
+    platformerButton.setLayoutX(20);
+    platformerButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        GameLoop gameLoop = new GameLoop(mainStage);
+        mainStage.setScene(gameLoop.createScene());
+      }
+    });
+    extrasPanel.getChildren().add(platformerButton);
+    helpSubScene.getPane().getChildren().add(extrasPanel);
+
   }
 
   private void createCreditsButton()
@@ -191,8 +210,8 @@ public class Display {
     // Assuming creditSubScene is a MenuSubSceneManager instance
     // Create a VBox to hold the credits content
     VBox creditsLayout = new VBox();
-    creditsLayout.setLayoutX(20);
-    creditsLayout.setLayoutY(10);
+    creditsLayout.setLayoutX(40);
+    creditsLayout.setLayoutY(20);
     creditsLayout.setSpacing(10);
 
     // Add some credits text
