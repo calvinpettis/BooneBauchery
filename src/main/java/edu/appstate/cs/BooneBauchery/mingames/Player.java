@@ -1,10 +1,7 @@
 package edu.appstate.cs.BooneBauchery.mingames;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 /**
  * This class handles the player model's image and animations.
@@ -21,7 +18,7 @@ public class Player extends ImageView {
 
     //constants
     private static final int floorHeight = 300;
-    private static final int rightLimit = 800;
+    private static final int rightLimit = 650;
     private static final int leftLimit = 0;
 
     //images for character
@@ -43,7 +40,7 @@ public class Player extends ImageView {
     public void jump()
     {
         if (this.getTranslateY() >= floorHeight) {
-            this.velocity = -25;
+            this.velocity = -35;
         }
     }
     /**
