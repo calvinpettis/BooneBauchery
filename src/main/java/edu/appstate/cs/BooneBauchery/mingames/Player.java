@@ -17,14 +17,15 @@ public class Player extends ImageView {
     double x;
     double y;
     private static final String defaultChar = "/assets/Characters/Adventurer2/AdventurerPreview.png";
+    private boolean jump;
     public Player(int xPos, int yPos)
     {
         super(new Image(defaultChar));
         this.speed = 5.0;
         this.setFitWidth(100);
         this.setFitHeight(100);
-        x = xPos;
-        y = yPos;
+        this.x = xPos;
+        this.y = yPos;
         this.setLayoutX(x);
         this.setLayoutY(y);
     }
@@ -39,17 +40,26 @@ public class Player extends ImageView {
      */
     public void update()
     {
-        this.setY(this.getY() + velocity);
+        //loop for jumping to make it appear like a continuous action
+        for (int i = 0; i < 8; i++) {
+            this.setY(this.getY() + velocity);
+        }
         if (this.getY() >= y + 75)
         {
             this.setY(y);
-            this.velocity = 0;
+            this.velocity -= 4;
         }
         else
         {
            this.velocity += 4;
         }
     }
+
+    public void fall()
+    {
+
+    }
+
 
     public void moveLeft()
     {
