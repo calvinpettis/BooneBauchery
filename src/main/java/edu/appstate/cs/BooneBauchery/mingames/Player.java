@@ -21,7 +21,7 @@ public class Player extends ImageView {
     {
         super(new Image(defaultChar));
         this.speed = 5.0;
-        this.setFitWidth(50);
+        this.setFitWidth(100);
         this.setFitHeight(100);
         x = xPos;
         y = yPos;
@@ -47,7 +47,7 @@ public class Player extends ImageView {
         }
         else
         {
-           this.velocity += 1;
+           this.velocity += 4;
         }
     }
 
