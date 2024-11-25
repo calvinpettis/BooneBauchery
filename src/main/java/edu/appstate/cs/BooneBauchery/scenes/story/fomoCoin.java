@@ -4,23 +4,21 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.belk2sanford;
-
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 
-public class PeacockDecline extends GameScene {
+public class fomoCoin extends GameScene {
 
-    private static final String BKG = "/assets/Backgrounds/declinecoin.png";
+    private static final String BKG = "/assets/Backgrounds/appcoin.png";
 
-    private static final String approachPrompt = peacock2response2;
+    private static final String stillBroke = fomoCoin;
 
     private static final String[] choiceAnswers = Prompts.travelOnward;
 
-    public PeacockDecline(Stage stage)
+    public fomoCoin(Stage stage)
     {
         super(stage);
-        this.prompt = approachPrompt;
+        this.prompt = stillBroke;
         this.choice = choiceAnswers;
         setupScene();
     }
@@ -29,14 +27,15 @@ public class PeacockDecline extends GameScene {
     public void setupScene() {
         setUI();
         setBackground(BKG);
-        createTextBox(approachPrompt, 700, 150);
+        createTextBox(stillBroke, 700, 300);
         createContinueButton(choiceAnswers[0]);
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
-                Transition transition = new Transition(gameStage, peacockDecline, new fomoCoin(gameStage));
-                gameStage.setScene(transition.getTransitionScene());
+                // Setup game over for after no money art
+                GameOver gameover = new GameOver(gameStage);
+                gameStage.setScene(gameover);
+
             }
         });
     }

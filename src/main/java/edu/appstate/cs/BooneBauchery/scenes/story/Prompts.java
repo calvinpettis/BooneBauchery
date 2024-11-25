@@ -161,7 +161,12 @@ public class Prompts {
                         "You cry every day while remembering how much you\njust wanted to be able to drink and party.\nGAME OVER (No money for booze BAD ENDING)";
 
 // =======================================================================
-        public static final String peacock2kingst[] = {"You muster every ounce of strength you have and walk towards the bustling King Street."};
+        public static final String peacockDecline[] = {"You decline the offer thinking this is the right choice.\n However, you develope a deep 'Fear Of Missing out.\nF.O.M.O.", 
+                                "Eventual you check in on AppCoin in order to see how it is doing\nYou see the value of AppCoin skyrocket to the MOON!", };
+
+        public static final String fomoCoin = "Upon Checking in on AppCoin's value. You realize you mad a mistake!\nYou invest all of your money.\n"
+                                                + "The second your money is transfered out of your bank you\nsee the live value of App coin CRASH!"
+                                                + "Unfortunatly you still lose all of your money. Crypto is dumb.\nBAD ENDING (YOU ARE BROKE AND HAVE NO MONEY TO PARTY)";                                
 
 // ======================MINIGAMES==========================================
         public static final String hurricanePrompt[] = {"As you are walking, a dark cloud appears overhead.\n" +
