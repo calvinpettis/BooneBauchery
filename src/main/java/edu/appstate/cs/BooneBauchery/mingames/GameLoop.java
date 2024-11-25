@@ -35,6 +35,7 @@ public class GameLoop {
 
     public Scene createScene() {
         Pane root = new Pane();
+        //layer7 = createBackgroundLayer("/assets/Backgrounds/Parallax/cloud.png", 0);
         layer1 = createBackgroundLayer("/assets/Backgrounds/Parallax/11.png", 0);
         layer2 = createBackgroundLayer("/assets/Backgrounds/Parallax/22.png", 0);
         layer3 = createBackgroundLayer("/assets/Backgrounds/Parallax/33.png", 0);
@@ -76,6 +77,7 @@ public class GameLoop {
         };
         gameLoop.start();
         root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
+
         return scene;
     }
 
@@ -125,7 +127,8 @@ public class GameLoop {
     }
 
     private void updateParallax() {
-        if (moveLeft) {
+        if (moveLeft && player.x > 0) {
+           // layer7.setTranslateX(layer7.getTranslateX() + 2);
             layer1.setTranslateX(layer1.getTranslateX() + 2);
             layer2.setTranslateX(layer2.getTranslateX() + 4);
             layer3.setTranslateX(layer3.getTranslateX() + 6);
@@ -134,6 +137,7 @@ public class GameLoop {
             layer6.setTranslateX(layer6.getTranslateX() + 12);
         }
         if (moveRight) {
+            //layer7.setTranslateX(layer7.getTranslateX() - 2);
             layer1.setTranslateX(layer1.getTranslateX() - 2);
             layer2.setTranslateX(layer2.getTranslateX() - 4);
             layer3.setTranslateX(layer3.getTranslateX() - 6);

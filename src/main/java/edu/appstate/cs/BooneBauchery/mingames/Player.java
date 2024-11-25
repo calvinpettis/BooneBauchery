@@ -52,7 +52,7 @@ public class Player extends ImageView {
     public void update()
     {
         //loop for jumping to make it appear like a continuous action
-        if (this.getTranslateY() < floorHeight)
+        if (this.getTranslateY() <= floorHeight)
         {
                 this.velocity += gravity;
         }
