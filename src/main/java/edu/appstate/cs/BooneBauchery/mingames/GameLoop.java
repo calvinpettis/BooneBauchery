@@ -1,15 +1,10 @@
 package edu.appstate.cs.BooneBauchery.mingames;
 
-import edu.appstate.cs.BooneBauchery.scenes.story.PeacockDecline;
 import javafx.animation.AnimationTimer;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -54,11 +49,14 @@ public class GameLoop {
             private long lastUpdate = 0;
             @Override
             public void handle(long now) {
+                //handle start of game
                 if (lastUpdate == 0) {
                     lastUpdate = now;
                     return;
                 }
+                //this is our time delta
                 long tick = now - lastUpdate;
+                //check if tick is equal to our desired mS delay
                 if (tick >= nanoSecPerUpdate) {
                     if (moveLeft) {
                         player.moveLeft();
@@ -68,8 +66,10 @@ public class GameLoop {
                     }
                     if (moveUp) {
                         player.jump();
+                        moveUp = false;
                     }
                     updateParallax();
+                    player.update();
                     lastUpdate = now;
                 }
             }
@@ -101,9 +101,8 @@ public class GameLoop {
                     moveRight = true;
                     break;
                 case SPACE:
+                case UP:
                     moveUp = true;
-                    player.jump();
-                    player.update();
                     break;
                 default:
                     break;
@@ -118,9 +117,6 @@ public class GameLoop {
                 case RIGHT:
                 case D:
                     moveRight = false;
-                    break;
-                case SPACE:
-                    moveUp = false;
                     break;
                 default:
                     break;

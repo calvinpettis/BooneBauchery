@@ -12,12 +12,20 @@ import javafx.util.Duration;
  *
  */
 public class Player extends ImageView {
+    //stupid physics
     private double speed;
     private double velocity;
+    private final static int gravity = 4;
     double x;
     double y;
+
+    //constants
+    private static final int floorHeight = 300;
+    private static final int rightLimit = 800;
+    private static final int leftLimit = 0;
+
+    //images for character
     private static final String defaultChar = "/assets/Characters/Adventurer2/AdventurerPreview.png";
-    private boolean jump;
     public Player(int xPos, int yPos)
     {
         super(new Image(defaultChar));
@@ -26,14 +34,17 @@ public class Player extends ImageView {
         this.setFitHeight(100);
         this.x = xPos;
         this.y = yPos;
-        this.setLayoutX(x);
-        this.setLayoutY(y);
+        this.setLayoutX(xPos);
+        this.setLayoutY(yPos);
+        this.velocity = 0;
     }
 
 
     public void jump()
     {
-        this.velocity = -15;
+        if (this.getTranslateY() >= floorHeight) {
+            this.velocity = -25;
+        }
     }
     /**
      * Handles jump coordinate changes and timelines.
@@ -41,34 +52,30 @@ public class Player extends ImageView {
     public void update()
     {
         //loop for jumping to make it appear like a continuous action
-        for (int i = 0; i < 8; i++) {
-            this.setY(this.getY() + velocity);
-        }
-        if (this.getY() >= y + 75)
+        if (this.getTranslateY() < floorHeight)
         {
-            this.setY(y);
-            this.velocity -= 4;
+                this.velocity += gravity;
         }
         else
         {
-           this.velocity += 4;
+           this.velocity = 0;
+           this.setTranslateY(floorHeight);
         }
+        this.setTranslateY(this.getTranslateY() + velocity);
     }
-
-    public void fall()
-    {
-
-    }
-
 
     public void moveLeft()
     {
-       this.setX(this.getX() + speed);
+        if(this.getX() >= leftLimit) {
+            this.setX(this.getX() - speed);
+        }
     }
 
     public void moveRight()
     {
-        this.setY(this.getY() + speed);
+        if (this.getX() <= rightLimit) {
+            this.setX(this.getX() + speed);
+        }
     }
 
 }
