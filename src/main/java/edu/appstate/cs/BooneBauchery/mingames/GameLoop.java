@@ -22,7 +22,7 @@ public class GameLoop {
     private Player player;
     private Scene scene;
     private static final double FPS = 60;
-    private static final double nanoSecPerUpdate = 1000000000 / FPS;
+    private static final double frameDelay= 1000000000 / FPS;
 
 
     private ImageView layer1, layer2, layer3, layer4, layer5, layer6,
@@ -58,7 +58,7 @@ public class GameLoop {
                 //this is our time delta
                 long tick = now - lastUpdate;
                 //check if tick is equal to our desired mS delay
-                if (tick >= nanoSecPerUpdate) {
+                if (tick >= frameDelay) {
                     if (moveLeft) {
                         player.moveLeft();
                     }

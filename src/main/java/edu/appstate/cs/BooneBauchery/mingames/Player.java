@@ -12,13 +12,14 @@ public class Player extends ImageView {
     //stupid physics
     private double speed;
     private double velocity;
-    private final static int gravity = 4;
+    private final static double gravity = 3.5;
     double x;
     double y;
 
     //constants
     private static final int floorHeight = 300;
-    private static final int rightLimit = 650;
+    private static final int waterHeight = 400;
+    private static final int rightLimit = 150;
     private static final int leftLimit = 0;
 
     //images for character
@@ -51,7 +52,9 @@ public class Player extends ImageView {
         //loop for jumping to make it appear like a continuous action
         if (this.getTranslateY() <= floorHeight)
         {
+            if(this.getTranslateY() != floorHeight) {
                 this.velocity += gravity;
+            }
         }
         else
         {
@@ -74,5 +77,4 @@ public class Player extends ImageView {
             this.setX(this.getX() + speed);
         }
     }
-
 }

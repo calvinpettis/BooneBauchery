@@ -173,7 +173,7 @@ public class Display {
       }
     });
     VBox extrasPanel = new VBox();
-    extrasPanel.setLayoutX(60);
+    extrasPanel.setLayoutX(70);
     extrasPanel.setLayoutY(30);
     extrasPanel.setSpacing(10);
     extrasPanel.setPrefSize(300, 300);
