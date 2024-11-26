@@ -23,7 +23,7 @@ public class GameLoop {
     private static final int WIDTH = 1280;
     private static final double FPS = 60;
     private static final double nsPerFrameDelay= 1000000000 / FPS;
-    private static final int NUM_DROPS = 200;
+    private static final int NUM_DROPS = 150;
     private static final double DROP_WIDTH = 10;
     private static final double DROP_HEIGHT = 20;
 
@@ -55,12 +55,13 @@ public class GameLoop {
         layer4 = createBackgroundLayer("/assets/Backgrounds/Parallax/44.png", 0);
         layer5 = createBackgroundLayer("/assets/Backgrounds/Parallax/55.png", 0);
         layer6 = createBackgroundLayer("/assets/Backgrounds/Parallax/66.png", 0);
+
         player = new Player(300, 300);
         scene = new Scene(root, WIDTH, HEIGHT);
         root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
+
         createListeners(scene);
         createRain(root);
-
         AnimationTimer gameLoop = new AnimationTimer() {
             private long lastUpdate = 0;
             @Override
@@ -190,16 +191,17 @@ public class GameLoop {
         double moveRain = 0;
         if (moveLeft)
         {
-            moveRain = -2;
+            moveRain = 2;
         }
         else if (moveRight)
         {
-            moveRain = 2;
+            moveRain = -2;
         }
         for (Rectangle drop: raindrops)
         {
             drop.setY(drop.getY() + random.nextInt(3) + 5);
             drop.setX(drop.getX() + moveRain);
+            drop.setRotate(-moveRain * 8);
 
             if(drop.getY() > HEIGHT)
             {
