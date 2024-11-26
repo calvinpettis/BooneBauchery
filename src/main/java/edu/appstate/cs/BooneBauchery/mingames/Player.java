@@ -29,8 +29,7 @@ public class Player extends ImageView {
     private boolean isJumping;
     private boolean isFalling;
     public boolean isIdle;
-    public boolean isRunningR;
-    private boolean isRunningL;
+    public boolean isRunning;
 
     private static final String defaultChar = "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png";
     String[] jumpAnims = {
@@ -86,7 +85,7 @@ public class Player extends ImageView {
        if (this.getTranslateY() >= floorHeight) {
            this.velocity = -35;
            isIdle = false;
-           isRunningR = false;
+           isRunning = false;
        }
    }
     /**
@@ -99,7 +98,7 @@ public class Player extends ImageView {
         {
             if(this.getTranslateY() != floorHeight) {
                 this.velocity += gravity;
-                isRunningR = false;
+                isRunning = false;
                 isIdle = false;
                 isJumping = true;
             }
@@ -118,7 +117,7 @@ public class Player extends ImageView {
         }
         else
         {
-            if (isRunningR)
+            if (isRunning)
             {
                 animateRightRun();
             }
@@ -133,7 +132,13 @@ public class Player extends ImageView {
         if(this.getX() >= leftLimit) {
             this.setX(this.getX() - speed);
         }
+        if (!isJumping)
+        {
+            isRunning = true;
+        }
+        this.setScaleX(-1);
         isIdle = false;
+        animateRightRun();
     }
 
     public void moveRight()
@@ -143,8 +148,9 @@ public class Player extends ImageView {
 
         }
         if (!isJumping) {
-            isRunningR = true;
+            isRunning = true;
         }
+        this.setScaleX(1);
         isIdle = false;
         animateRightRun();
 
@@ -217,7 +223,7 @@ public class Player extends ImageView {
 
     public void animateRightRun()
     {
-        if (isRunningR)
+        if (isRunning)
         {
             tick++;
             if (tick > 24)

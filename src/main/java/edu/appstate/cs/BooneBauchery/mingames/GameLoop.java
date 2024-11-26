@@ -5,7 +5,12 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * This handles our 2d platformer loop, refreshing graphics and listening to keys
@@ -13,17 +18,25 @@ import javafx.stage.Stage;
  */
 public class GameLoop {
 
+    //constants
     private static final int HEIGHT = 720;
     private static final int WIDTH = 1280;
+    private static final double FPS = 60;
+    private static final double nsPerFrameDelay= 1000000000 / FPS;
+    private static final int NUM_DROPS = 200;
+    private static final double DROP_WIDTH = 10;
+    private static final double DROP_HEIGHT = 20;
+
     private Stage primaryStage;
+    //booleans
     private boolean moveLeft;
     private boolean moveRight;
     private boolean moveUp;
+
     private Player player;
     private Scene scene;
-    private static final double FPS = 60;
-    private static final double nsPerFrameDelay= 1000000000 / FPS;
-
+    private Random random;
+    private ArrayList<Rectangle> raindrops;
 
     private ImageView layer1, layer2, layer3, layer4, layer5, layer6,
         layer11, layer22, layer33, layer44, layer55, layer66;
@@ -35,6 +48,7 @@ public class GameLoop {
 
     public Scene createScene() {
         Pane root = new Pane();
+        random = new Random();
         layer1 = createBackgroundLayer("/assets/Backgrounds/Parallax/11.png", 0);
         layer2 = createBackgroundLayer("/assets/Backgrounds/Parallax/22.png", 0);
         layer3 = createBackgroundLayer("/assets/Backgrounds/Parallax/33.png", 0);
@@ -43,7 +57,9 @@ public class GameLoop {
         layer6 = createBackgroundLayer("/assets/Backgrounds/Parallax/66.png", 0);
         player = new Player(300, 300);
         scene = new Scene(root, WIDTH, HEIGHT);
+        root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
         createListeners(scene);
+        createRain(root);
 
         AnimationTimer gameLoop = new AnimationTimer() {
             private long lastUpdate = 0;
@@ -69,13 +85,14 @@ public class GameLoop {
                         moveUp = false;
                     }
                     updateParallax();
+                    updateRain();
                     player.update();
                     lastUpdate = now;
                 }
             }
         };
         gameLoop.start();
-        root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
+
         return scene;
     }
 
@@ -114,17 +131,37 @@ public class GameLoop {
                 case LEFT:
                 case A:
                     moveLeft = false;
+                    player.isRunning = false;
+                    player.isIdle = true;
                     break;
                 case RIGHT:
                 case D:
                     moveRight = false;
-                    player.isRunningR = false;
+                    player.isRunning = false;
                     player.isIdle = true;
                     break;
                 default:
                     break;
             }
         });
+    }
+
+    private void createRain(Pane root)
+    {
+        if (raindrops == null)
+        {
+            raindrops = new ArrayList<>();
+        }
+        for (int i = 0; i < NUM_DROPS; i++)
+        {
+            Rectangle rainDrop = new Rectangle(DROP_WIDTH, DROP_HEIGHT);
+            rainDrop.setFill(Color.BLUE.deriveColor(0,1,1,0.3));
+            rainDrop.setX(player.x + random.nextInt(WIDTH));
+            rainDrop.setY(player.y + random.nextInt(HEIGHT));
+            raindrops.add(rainDrop);
+            rainDrop.setTranslateZ(1);
+            root.getChildren().add(rainDrop);
+        }
     }
 
     private void updateParallax() {
@@ -146,5 +183,29 @@ public class GameLoop {
             layer6.setTranslateX(layer6.getTranslateX() - 12);
         }
 
+    }
+
+    private void updateRain()
+    {
+        double moveRain = 0;
+        if (moveLeft)
+        {
+            moveRain = -2;
+        }
+        else if (moveRight)
+        {
+            moveRain = 2;
+        }
+        for (Rectangle drop: raindrops)
+        {
+            drop.setY(drop.getY() + random.nextInt(3) + 5);
+            drop.setX(drop.getX() + moveRain);
+
+            if(drop.getY() > HEIGHT)
+            {
+                drop.setY(0);
+                drop.setX(random.nextInt(WIDTH));
+            }
+        }
     }
 }
