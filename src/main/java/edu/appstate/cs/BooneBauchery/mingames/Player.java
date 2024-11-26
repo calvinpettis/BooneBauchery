@@ -34,10 +34,14 @@ public class Player extends ImageView {
 
     private static final String defaultChar = "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png";
     String[] jumpAnims = {
-        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-00.png",
-        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-01.png",
-        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-02.png",
-        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-03.png"};
+            "/assets/Characters/Adventurer2/Sprites/adventurer-jump-00.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-jump-01.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-jump-02.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-smrslt-00.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-smrslt-01.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-smrslt-02.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-smrslt-03.png",
+            "/assets/Characters/Adventurer2/Sprites/adventurer-jump-03.png"};
 
     String[] idleAnims = {
         "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png",
@@ -157,17 +161,29 @@ public class Player extends ImageView {
             }
             switch((int) tick)
             {
-                case 6:
+                case 2:
                     this.setImage(new Image(jumpAnims[0]));
                     break;
-                case 12:
+                case 4:
                     this.setImage(new Image(jumpAnims[1]));
                     break;
-                case 18:
+                case 6:
                     this.setImage(new Image(jumpAnims[2]));
                     break;
-                case 24:
+                case 8:
                     this.setImage(new Image(jumpAnims[3]));
+                    break;
+                case 10:
+                    this.setImage(new Image(jumpAnims[4]));
+                    break;
+                case 12:
+                    this.setImage(new Image(jumpAnims[5]));
+                    break;
+                case 14:
+                    this.setImage(new Image(jumpAnims[6]));
+                    break;
+                case 16:
+                    this.setImage(new Image(jumpAnims[7]));
                     break;
             }
         }
