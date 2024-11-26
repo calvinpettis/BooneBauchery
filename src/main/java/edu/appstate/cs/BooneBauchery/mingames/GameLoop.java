@@ -69,7 +69,7 @@ public class GameLoop {
                         moveUp = false;
                     }
                     updateParallax();
-                    player.update();
+                    player.updateJump();
                     lastUpdate = now;
                 }
             }

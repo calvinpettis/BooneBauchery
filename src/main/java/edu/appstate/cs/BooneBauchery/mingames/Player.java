@@ -82,7 +82,7 @@ public class Player extends ImageView {
     /**
      * Handles jump coordinate changes and timelines.
      */
-    public void update()
+    public void updateJump()
     {
         //loop for jumping to make it appear like a continuous action
         if (this.getTranslateY() <= floorHeight)
@@ -115,9 +115,11 @@ public class Player extends ImageView {
     {
         if (this.getX() <= rightLimit) {
             this.setX(this.getX() + speed);
-            isRunningR = true;
-            animateRightRun();
+
         }
+        isRunningR = true;
+        isIdle = false;
+        animateRightRun();
     }
 
     public void animateJump()
@@ -131,16 +133,16 @@ public class Player extends ImageView {
             }
             switch((int) tick)
             {
-                case 2:
+                case 1:
                     this.setImage(new Image(jumpAnims[0]));
                     break;
-                case 4:
+                case 2:
                     this.setImage(new Image(jumpAnims[1]));
                     break;
-                case 8:
+                case 4:
                     this.setImage(new Image(jumpAnims[2]));
                     break;
-                case 12:
+                case 8:
                     this.setImage(new Image(jumpAnims[3]));
                     break;
             }
@@ -152,16 +154,18 @@ public class Player extends ImageView {
         if (isIdle)
         {
             tick++;
-            if (tick > 10)
+            if (tick > 20)
             {
                 tick = 0;
             }
             switch((int) tick)
             {
-                case 5:
-                    this.setImage(new Image(idleAnims[0]));
                 case 10:
+                    this.setImage(new Image(idleAnims[0]));
+                    break;
+                case 20:
                     this.setImage(new Image(idleAnims[1]));
+                    break;
             }
         }
     }
@@ -176,24 +180,30 @@ public class Player extends ImageView {
         if (isRunningR)
         {
             tick++;
-            if (tick < 18)
+            if (tick > 36)
             {
                 tick = 0;
             }
             switch((int) tick)
             {
-                case 3:
-                    this.setImage(new Image(runAnim[0]));
                 case 6:
-                    this.setImage(new Image(runAnim[1]));
-                case 9:
-                    this.setImage(new Image(runAnim[2]));
+                    this.setImage(new Image(runAnim[0]));
+                    break;
                 case 12:
-                    this.setImage(new Image(runAnim[3]));
-                case 15:
-                    this.setImage(new Image(runAnim[4]));
+                    this.setImage(new Image(runAnim[1]));
+                    break;
                 case 18:
+                    this.setImage(new Image(runAnim[2]));
+                    break;
+                case 24:
+                    this.setImage(new Image(runAnim[3]));
+                    break;
+                case 30:
+                    this.setImage(new Image(runAnim[4]));
+                    break;
+                case 36:
                     this.setImage(new Image(runAnim[5]));
+                    break;
             }
         }
     }
