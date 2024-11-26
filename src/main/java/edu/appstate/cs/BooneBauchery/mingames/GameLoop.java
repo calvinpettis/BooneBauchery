@@ -22,7 +22,7 @@ public class GameLoop {
     private Player player;
     private Scene scene;
     private static final double FPS = 60;
-    private static final double frameDelay= 1000000000 / FPS;
+    private static final double nsPerFrameDelay= 1000000000 / FPS;
 
 
     private ImageView layer1, layer2, layer3, layer4, layer5, layer6,
@@ -35,7 +35,6 @@ public class GameLoop {
 
     public Scene createScene() {
         Pane root = new Pane();
-        //layer7 = createBackgroundLayer("/assets/Backgrounds/Parallax/cloud.png", 0);
         layer1 = createBackgroundLayer("/assets/Backgrounds/Parallax/11.png", 0);
         layer2 = createBackgroundLayer("/assets/Backgrounds/Parallax/22.png", 0);
         layer3 = createBackgroundLayer("/assets/Backgrounds/Parallax/33.png", 0);
@@ -58,7 +57,7 @@ public class GameLoop {
                 //this is our time delta
                 long tick = now - lastUpdate;
                 //check if tick is equal to our desired mS delay
-                if (tick >= frameDelay) {
+                if (tick >= nsPerFrameDelay) {
                     if (moveLeft) {
                         player.moveLeft();
                     }
@@ -66,7 +65,7 @@ public class GameLoop {
                         player.moveRight();
                     }
                     if (moveUp) {
-                        player.jump();
+                        player.jump(tick);
                         moveUp = false;
                     }
                     updateParallax();
@@ -77,7 +76,6 @@ public class GameLoop {
         };
         gameLoop.start();
         root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
-
         return scene;
     }
 
@@ -104,6 +102,7 @@ public class GameLoop {
                     break;
                 case SPACE:
                 case UP:
+                case W:
                     moveUp = true;
                     break;
                 default:
@@ -127,17 +126,16 @@ public class GameLoop {
     }
 
     private void updateParallax() {
-        if (moveLeft && player.x > 0) {
-           // layer7.setTranslateX(layer7.getTranslateX() + 2);
+        if (moveLeft) {
             layer1.setTranslateX(layer1.getTranslateX() + 2);
             layer2.setTranslateX(layer2.getTranslateX() + 4);
             layer3.setTranslateX(layer3.getTranslateX() + 6);
             layer4.setTranslateX(layer4.getTranslateX() + 8);
             layer5.setTranslateX(layer5.getTranslateX() + 10);
             layer6.setTranslateX(layer6.getTranslateX() + 12);
+
         }
         if (moveRight) {
-            //layer7.setTranslateX(layer7.getTranslateX() - 2);
             layer1.setTranslateX(layer1.getTranslateX() - 2);
             layer2.setTranslateX(layer2.getTranslateX() - 4);
             layer3.setTranslateX(layer3.getTranslateX() - 6);
@@ -145,13 +143,6 @@ public class GameLoop {
             layer5.setTranslateX(layer5.getTranslateX() - 10);
             layer6.setTranslateX(layer6.getTranslateX() - 12);
         }
-//        if (moveUp) {
-//            layer1.setTranslateY(layer1.getTranslateY() + 2);
-//            layer2.setTranslateY(layer2.getTranslateY() + 4);
-//            layer3.setTranslateY(layer3.getTranslateY() + 8);
-//            layer4.setTranslateY(layer4.getTranslateY() + 10);
-//            layer5.setTranslateY(layer5.getTranslateY() + 12);
-//            layer6.setTranslateY(layer6.getTranslateY() + 14);
-//        }
+
     }
 }
