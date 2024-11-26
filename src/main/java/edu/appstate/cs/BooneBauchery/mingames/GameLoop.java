@@ -65,11 +65,11 @@ public class GameLoop {
                         player.moveRight();
                     }
                     if (moveUp) {
-                        player.jump(tick);
+                        player.jump();
                         moveUp = false;
                     }
                     updateParallax();
-                    player.updateJump();
+                    player.update();
                     lastUpdate = now;
                 }
             }
@@ -118,6 +118,8 @@ public class GameLoop {
                 case RIGHT:
                 case D:
                     moveRight = false;
+                    player.isRunningR = false;
+                    player.isIdle = true;
                     break;
                 default:
                     break;

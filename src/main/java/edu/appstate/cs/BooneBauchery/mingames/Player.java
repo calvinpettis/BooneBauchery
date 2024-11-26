@@ -24,28 +24,29 @@ public class Player extends ImageView {
     private static final int leftLimit = 0;
 
     //images for character
-    private static final String defaultChar = "/assets/Characters/Adventurer2/AdventurerPreview.png";
 
     //booleans 4 anims
     private boolean isJumping;
     private boolean isFalling;
-    private boolean isIdle;
-    private boolean isRunningR;
+    public boolean isIdle;
+    public boolean isRunningR;
     private boolean isRunningL;
 
-
+    private static final String defaultChar = "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png";
     String[] jumpAnims = {
-    "/assets/Characters/Adventurer2/Sprites/adventurer-jump-00.png",
-    "/assets/Characters/Adventurer2/Sprites/adventurer-jump-01.png",
-    "/assets/Characters/Adventurer2/Sprites/adventurer-jump-02.png",
-    "/assets/Characters/Adventurer2/Sprites/adventurer-jump-03.png"};
+        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-00.png",
+        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-01.png",
+        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-02.png",
+        "/assets/Characters/Adventurer2/Sprites/adventurer-jump-03.png"};
 
     String[] idleAnims = {
-    "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png",
-    "/assets/Characters/Adventurer2/Sprites/adventurer-idle-01.png"
+        "/assets/Characters/Adventurer2/Sprites/adventurer-idle-00.png",
+        "/assets/Characters/Adventurer2/Sprites/adventurer-idle-01.png"
 };
 
-   String[] fallAnim= {"/assets/Characters/Adventurer2/adventurer-fall-00.png", "/assets/Characters/Adventurer2/adventurer-fall-01.png"};
+   String[] fallAnim= {
+       "/assets/Characters/Adventurer2/adventurer-fall-00.png",
+       "/assets/Characters/Adventurer2/adventurer-fall-01.png"};
 
    String[] runAnim = {
         "/assets/Characters/Adventurer2/Sprites/adventurer-run-00.png",
@@ -53,9 +54,15 @@ public class Player extends ImageView {
         "/assets/Characters/Adventurer2/Sprites/adventurer-run-02.png",
         "/assets/Characters/Adventurer2/Sprites/adventurer-run-03.png",
         "/assets/Characters/Adventurer2/Sprites/adventurer-run-04.png",
-        "/assets/Characters/Adventurer2/Sprites/adventurer-run-05.png"
-   };
+        "/assets/Characters/Adventurer2/Sprites/adventurer-run-05.png"};
 
+   String[] attackAnim = {
+           "/assets/Characters/Adventurer2/Sprites/adventurer-attack1-00.png",
+           "/assets/Characters/Adventurer2/Sprites/adventurer-attack1-01.png",
+           "/assets/Characters/Adventurer2/Sprites/adventurer-attack1-02.png",
+           "/assets/Characters/Adventurer2/Sprites/adventurer-attack1-03.png",
+           "/assets/Characters/Adventurer2/Sprites/adventurer-attack1-04.png"
+   };
    public Player(int xPos, int yPos)
    {
         super(new Image(defaultChar));
@@ -70,26 +77,27 @@ public class Player extends ImageView {
    }
 
 
-   public void jump(long t)
+   public void jump()
    {
-       this.tick = t;
        if (this.getTranslateY() >= floorHeight) {
            this.velocity = -35;
-           isJumping = true;
            isIdle = false;
+           isRunningR = false;
        }
    }
     /**
      * Handles jump coordinate changes and timelines.
      */
-    public void updateJump()
+    public void update()
     {
         //loop for jumping to make it appear like a continuous action
         if (this.getTranslateY() <= floorHeight)
         {
             if(this.getTranslateY() != floorHeight) {
                 this.velocity += gravity;
-
+                isRunningR = false;
+                isIdle = false;
+                isJumping = true;
             }
         }
         else
@@ -98,10 +106,22 @@ public class Player extends ImageView {
             isIdle = true;
             this.velocity = 0;
             this.setTranslateY(floorHeight);
+
         }
         this.setTranslateY(this.getTranslateY() + velocity);
-        animateJump();
-        animateIdle();
+        if (isJumping) {
+            animateJump();
+        }
+        else
+        {
+            if (isRunningR)
+            {
+                animateRightRun();
+            }
+            else {
+                animateIdle();
+            }
+        }
     }
 
     public void moveLeft()
@@ -109,6 +129,7 @@ public class Player extends ImageView {
         if(this.getX() >= leftLimit) {
             this.setX(this.getX() - speed);
         }
+        isIdle = false;
     }
 
     public void moveRight()
@@ -117,9 +138,12 @@ public class Player extends ImageView {
             this.setX(this.getX() + speed);
 
         }
-        isRunningR = true;
+        if (!isJumping) {
+            isRunningR = true;
+        }
         isIdle = false;
         animateRightRun();
+
     }
 
     public void animateJump()
@@ -127,22 +151,22 @@ public class Player extends ImageView {
         if (isJumping)
         {
             tick++;
-            if (tick > 12)
+            if (tick > 24)
             {
                 tick = 0;
             }
             switch((int) tick)
             {
-                case 1:
+                case 6:
                     this.setImage(new Image(jumpAnims[0]));
                     break;
-                case 2:
+                case 12:
                     this.setImage(new Image(jumpAnims[1]));
                     break;
-                case 4:
+                case 18:
                     this.setImage(new Image(jumpAnims[2]));
                     break;
-                case 8:
+                case 24:
                     this.setImage(new Image(jumpAnims[3]));
                     break;
             }
@@ -154,16 +178,16 @@ public class Player extends ImageView {
         if (isIdle)
         {
             tick++;
-            if (tick > 20)
+            if (tick > 30)
             {
                 tick = 0;
             }
             switch((int) tick)
             {
-                case 10:
+                case 15:
                     this.setImage(new Image(idleAnims[0]));
                     break;
-                case 20:
+                case 30:
                     this.setImage(new Image(idleAnims[1]));
                     break;
             }
@@ -180,28 +204,28 @@ public class Player extends ImageView {
         if (isRunningR)
         {
             tick++;
-            if (tick > 36)
+            if (tick > 24)
             {
                 tick = 0;
             }
             switch((int) tick)
             {
-                case 6:
+                case 4:
                     this.setImage(new Image(runAnim[0]));
                     break;
-                case 12:
+                case 8:
                     this.setImage(new Image(runAnim[1]));
                     break;
-                case 18:
+                case 12:
                     this.setImage(new Image(runAnim[2]));
                     break;
-                case 24:
+                case 16:
                     this.setImage(new Image(runAnim[3]));
                     break;
-                case 30:
+                case 20:
                     this.setImage(new Image(runAnim[4]));
                     break;
-                case 36:
+                case 24:
                     this.setImage(new Image(runAnim[5]));
                     break;
             }
@@ -210,6 +234,28 @@ public class Player extends ImageView {
 
     public void animateAttack()
     {
-
+        if (isJumping)
+        {
+            tick++;
+            if (tick > 32)
+            {
+                tick = 0;
+            }
+            switch((int) tick)
+            {
+                case 8:
+                    this.setImage(new Image(attackAnim[0]));
+                    break;
+                case 16:
+                    this.setImage(new Image(attackAnim[1]));
+                    break;
+                case 24:
+                    this.setImage(new Image(attackAnim[2]));
+                    break;
+                case 32:
+                    this.setImage(new Image(attackAnim[3]));
+                    break;
+            }
+        }
     }
 }
