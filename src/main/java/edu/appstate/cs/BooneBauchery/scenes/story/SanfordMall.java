@@ -51,6 +51,8 @@ public class SanfordMall extends GameScene{
         }
         else
         {
+            final String BKG3 = "/assets/Backgrounds/sordefend.png";
+            setBackground(BKG3);
             createTextBox(sanford2, 800, 250);
             createChoiceButtons(sanford2choice[0], sanford2choice[1]);
             choice1.setOnAction(new EventHandler<ActionEvent>() {
