@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+// ??
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.hurricanePrompt;
 
 public class LeaveFront extends GameScene{
@@ -46,6 +47,7 @@ public class LeaveFront extends GameScene{
         });
         choice2.setOnAction(new EventHandler<ActionEvent>() {
             //This starts the hurricane minigame!
+            // what comes after hurricane minigame ?
             @Override
             public void handle(ActionEvent actionEvent) {
                 //transition to bad ending we go home sober

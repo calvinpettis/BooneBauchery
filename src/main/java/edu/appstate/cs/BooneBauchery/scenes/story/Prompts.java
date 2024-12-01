@@ -89,6 +89,30 @@ public class Prompts {
         public static final String[] feralAtkChoice = {"SNEAK","LEAVE"};
         
         // -----------------------------------------------------------------
+        // sneaking out of the back
+        public static final String sneaking = "You slowly sneak through the building, trying not to draw\nattention to youself"
+        + "Working your way lower through each floor of Belk Hall,\nyou end up finding a secluded exit.";
+
+        public static final String[] sneak2walking = {"You successfully snuck through the building and found a quiet road to walk on.", 
+                "You avoided all unwanted attention as you were trying to leave.\nSeeing that you have practically assaulted a CS student...",
+                "This does cause you to take a path home you have not travelled before."}; 
+
+        // -----------------------------------------------------------------
+        // walking and see a bar prompts
+
+        public static final String seebar = "Since you are walking a path you have not traveled,\nyou see a new bar you have not been to before."
+                +"\nThe bar, radiates with the smell of booze and debauchery.\n\n" 
+                + "Do you:\nKeep Walking and head home?\nGo inside of the Bar?";
+
+        public static final String[] seeBarChoices = {"Keep Walking", "Go to Bar"};
+
+        public static final String[] chillinginbar = {"You make your way inside of the bar, and it is more vibrant\n than than you could have imagined.",
+                "You begin to scan the crowd and see plenty of fun people to talk to.",
+                "Eventually you begin to settle in at the bar and mingle with the crowd."};
+                
+        public static final String atbar = "You get a vodka redbull and you begin to enjoy the night.\nYou drink vodka redbulls until your tummy hurts and the room spins"
+                + "\nTonight was pretty epic XD\n(CHILL VIBE BAR ENDING)"; 
+        // -----------------------------------------------------------------
         // after leave building -> take back road home
         public static final String[] leaveFront = {"Not thinking even once about your violent actions,\nyou walk outside with swagger and pride.", 
                 "This macho facade quickly crumbles upon seeing a swarm of people\nsurrounding a man holding a sign.\nThe man's sign says 'SINNERS WILL BURN'",
@@ -113,6 +137,13 @@ public class Prompts {
         // (decline) sleepy home ending -> main menu
         public static final String[] walk2sleepy = {"You looked at the phone ringing and determined you\nare simply very tired. You do not care about going out tonigh.",
                 "After a brisk walk you finally arive at your off campus appartment.\nYou feel that the activities of the day have drained you, and you are sleepy."};
+
+
+        // (see bar keep walking) 
+        public static final String[] walkfrombar2sleep = {"Simply you are just to tired to party tonigh.\nYou saw a bar, and decided to walk away.",
+                "As you reflect on the day you guess you never really cared to pary anyway.",
+                "You wind up getting home safe and sound, with no booze,\nand a lot of sleep you need to catch up on."};
+
 
         // sleepy home ending scene (sleepy art)
         public static final String sleepyprompt = "You get into a comfortable mood and change into PJ's.\nYou get into bed only caring to sleep." + 

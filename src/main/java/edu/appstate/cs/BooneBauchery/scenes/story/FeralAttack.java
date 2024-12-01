@@ -36,8 +36,10 @@ public class FeralAttack extends GameScene {
         choice1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // TODO sneak out of back of building away from feral cs student
+                
                 //sneak out of back of building
+                SneakBack sneak = new SneakBack(gameStage);
+                gameStage.setScene(sneak); 
             }
         });
         choice2.setOnAction(new EventHandler<ActionEvent>() {

@@ -221,17 +221,16 @@ public class Display {
     
     Label developerLabel = new Label("Developed by:\n " +
             "-> Calvin Pettis\n " +
-            "-> Hunter Brickers\n " +
-            "-> (ENTER NAME)\n\n");
+            "-> Hunter Brickers\n ");
 
     //(UPDATE WITH RELEVANT INFO)
     Label designerLabel = new Label("Art by: \n" +
-            "Cal \n" +
-            "AI \n" +
-            "and asset devs\n");
+            "-> Calvin Pettis \n" +
+            "-> Hunter Brickers \n" +
+            "\n-> Photo generative AI (chatGPT)");
     //For some reason Tested is cut off from the credits panel
     //So I have extra spaces in order to be 
-    Label testerLabel = new Label("     Tested by: We don't test");
+    Label testerLabel = new Label("   Tested by: OURSELVES.. oldschool style");
     //Label creditsBody = new Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Praesent mattis vestibulum odio,\n vitae placerat lectus euismod ac.\n Nulla sed pulvinar lorem, eu dictum ligula.\n Integer ac ante erat.\n Nunc eros dolor, malesuada tempus lectus sed,\n ullamcorper eleifend urna.\n ");
     
     // Ensure the VBox fills the SubScene and children don't get cut off
