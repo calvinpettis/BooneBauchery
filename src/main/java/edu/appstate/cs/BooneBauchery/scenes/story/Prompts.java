@@ -4,21 +4,21 @@ package edu.appstate.cs.BooneBauchery.scenes.story;
  * Using this class to hold all of our scripts.
  */
 public class Prompts {
-// //////////////////////////////////////////////////////////////////////
-// //////////////////////////////////////////////////////////////////////
+// /// AUX TEXT /////////////////////////////////////////////////////////
+
         public static final String[] gameOver = {"GAME OVER"};
         public static final String[] gameOver2 = {"GAME OVER........"};
 
-
-        //start intro --> belk1,        belk2,          sandford 
+// //// INTRO TEXT ////////////////////////////////////////////////////////////
+        //start intro --> (belk1 || belk2)   ,  sandford 
         public static final String belkintro = "You head out into the hallway.\n\n" +
             "Do you:\nHead outside?\nExplore Belk Hall's Computer Science Department?";
         //intro choices
             public static final String[] introchoices = {"EXPLORE", "GO OUTSIDE"};
 
 // //////////////////////////////////////////////////////////////////////
-// //////////////////////////////////////////////////////////////////////
-        // belk1 (encounter) --> approach       attack
+// // BELK 1 //////////////////////////////////////////////////////////////
+        // belk1 (spooky prof encounter) --> approach       attack
         public static final String belk1 = "As you walk by a classroom, you notice that there is a cloaked figure\n"+
             "hanging upside down from the ceiling. It appears to be asleep." +
             "\n\nDo you:\n" +
@@ -26,23 +26,24 @@ public class Prompts {
             "Or attack it?";
         //belk1 choices 
         public static final String[] belk1choice = {"APPROACH", "ATTACK"};    
+        
         // -----------------------------------------------------------------
-        //belk1 appraoch      -->   dptChair Dialouge 
+        // belk1 appraoch      -->  HEAD OUTSIDE TO SANFORD 
         public static final String belk1response1 = "As you walk closer, the creature awakes.\n" +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
         public static final String [] chilProf = {"You walk outside of the building.\nPondering glorious lectures about data structures.", 
                 "When you get outside you see quite a commotion unfolding..."};
         public static final String[] travelOnward = {"TRAVEL ONWARD"};
-        
-        
-        //belk1 attack          --> canceled
+        // -----------------------------------------------------------------
+        // belk1 attack          --> canceled
         public static final String belk1response2 = "Your first strike was ineffective, and the beast awakes and lunges at you.\n"
             + "He manages to get a chunk of your left shoulder.\n"+
             "Luckily, a strong jab to the achille's did the trick and\nbrings the monster to a whimpering pile on the floor.\n" +
             "You further examine the body";
         public static final String[] examine = {"EXAMINE"};
         
+        // -----------------------------------------------------------------
         //belk canceled         --> GAME OVER
         public static final String[] belkCanceled = {"When you look down at the mangled creature you recoil in horror!\n" ,
                 "You mistook your Software Engineering teacher taking a nap from grading as a monster...\n",
@@ -52,8 +53,9 @@ public class Prompts {
         
         public static final String belkGameOver = "You walk off into the sunset. Pondering life, \n and all the connotations of being an outcast." + 
                         "\nYou never return to class and in turn fail the semester...";
-// ========================================================================
-        //belk2                 --> Run         ATTACK
+        
+        // ========================================================================
+        //belk2 feral cs                 --> Run         ATTACK
         public static final String belk2 = "As you walk through the hallways, a smell akin to onions grows stronger\nand stronger." +
             " When you turn the corner, you realize it is a feral CS student!\nHe spots you and begins to growl.\n\n" +
             "Do you:\n" +
@@ -61,45 +63,60 @@ public class Prompts {
             "Or attack?\n";
         //belk2 choices
         public static final String[] belk2choice = {"RUN AWAY", "ATTACK"};
+        
         // -----------------------------------------------------------------
-        //FeralRun               -->   (go outside) belkWindow
+        // FeralRun               -->   (go outside belkWindow) leads to sanfordmall?  
         public static final String belk2response1= "As you run by, the CS ghoul shrieks a REEEE that disorients you\n" +
                 "and takes you to the floor!" +
             "\nYou manage to get up in the nick of time and escape him by running and\n"+
             "jumping through a window towards the outdoors, the ghoul's only weakness.\nThe sunlight causes the feral student to recoil in pain!";
+        // NU -----------------------------------------------------------------
             // ?? where tf to use this ??
         public static final String belk2response2 = "You manage to escape the ghoul by running by a window emitting"+ 
                 " sunlight, the ghoul's only weakness.";
 
-        // belkWindow           --> sandford
+        // belkWindow NU          --> sandford
         public static final String[] belk2sanford = {"You wake up outside, it is a sunny day, and your head is bleeding.\n"+
                 "There are large groups of people standing under EZ-UPs\nand around a man with a megaphone."};
-
+        
+        // -----------------------------------------------------------------
         // feralATK
         public static final String feralAtk = "Being utterly disturbed by the shreiking CS ghoul,\n" +
                 "You swiftly spear hand the deranged ghoul in the throat\n"
                 + "This causes the ghoul to flail violently, until it stops,\n its face stuck in an evil smile.\n\n" +
-                "Do you:\nSneak out of the building?\nLeave out of the front door?";
+                "Do you:\nLeave out of the front door?\nSneak out of the building?";
         //feralATK choices
         public static final String[] feralAtkChoice = {"SNEAK","LEAVE"};
         
+        // -----------------------------------------------------------------
+        // after leave building -> take back road home
         public static final String[] leaveFront = {"Not thinking even once about your violent actions,\nyou walk outside with swagger and pride.", 
                 "This macho facade quickly crumbles upon seeing a swarm of people\nsurrounding a man holding a sign.\nThe man's sign says 'SINNERS WILL BURN'",
                 "The exessivly large crowd is blocking the way you normally walk to get home.\nYou are forced to cut through a tunnel to get back towards your home."};
-
+        
         public static final String phoneORWalk = "When you are walking down the road to get home your\nphone starts to ring." +
                 " You look and see its one of your classmates calling you.\n\nDo you:\nPick up the phone\nDecline the call and keep walking";
         public static final String[] walkingChoices = {"PICK UP","KEEP WALKING"};
         
+        // -----------------------------------------------------------------
+        // (pickup) one mill beers ending -> main menu
         public static final String[] pickup = {"When you pick the phone up your class mate sounds estatic.",
                 "'HEY MAN! I didn't thikk you were going to pick up.', he says with cheer.",
                 "'Now hear me out bud.. I just bought one million beers and I help drinking them!'",
                 "As you hear his words you think you are misunderstanding.",
                 "You rush over to your friends house and drink one million beers with him XD !!!"};
         
-        public static final String onemil = "You and your friend drink one million beers together.\nIt is quit epic to drink so much beer and you feel complete\nGOOD ENDING 'One Million Beers' "; 
+        public static final String onemil = "You and your friend drink one million beers together.\nIt"
+                + "is quit epic to drink so much beer and you feel complete\nGOOD ENDING 'One Million Beers' "; 
+
         // -----------------------------------------------------------------
-        //
+        // (decline) sleepy home ending -> main menu
+        public static final String[] walk2sleepy = {"You looked at the phone ringing and determined you\nare simply very tired. You do not care about going out tonigh.",
+                "After a brisk walk you finally arive at your off campus appartment.\nYou feel that the activities of the day have drained you, and you are sleepy."};
+
+        // sleepy home ending scene (sleepy art)
+        public static final String sleepyprompt = "You get into a comfortable mood and change into PJ's.\nYou get into bed only caring to sleep." + 
+        "\n(SLEEPY ENDING YOU DONT DRINK BOOZE JUST SLEEP ZZZzzz.....)";
         // ========================================================================
         //sandford1             --> DODGE              REASON
         public static final String sanford1 = "As you were walking by, a man with a sign about Jesus lunges at you!\n" +

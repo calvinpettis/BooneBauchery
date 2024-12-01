@@ -49,7 +49,8 @@ public class LeaveFront extends GameScene{
             @Override
             public void handle(ActionEvent actionEvent) {
                 //transition to bad ending we go home sober
-
+                Transition transition = new Transition(gameStage, Prompts.walk2sleepy, new SleepyHome(gameStage));
+                gameStage.setScene(transition.getTransitionScene());
             }
         });
     }
