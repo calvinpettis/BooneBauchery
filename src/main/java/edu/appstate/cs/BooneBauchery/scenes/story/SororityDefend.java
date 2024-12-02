@@ -34,8 +34,8 @@ public class SororityDefend extends GameScene {
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
-                Transition transition = new Transition(gameStage, sanford2peacock, new PeacockHall(gameStage));
+                // transiton you are told of a possible party...
+                Transition transition = new Transition(gameStage, girlslikethat, new PartyAddy(gameStage));
                 gameStage.setScene(transition.getTransitionScene());
             }
         });

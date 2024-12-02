@@ -1,21 +1,21 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-import edu.appstate.cs.BooneBauchery.tools.Transition;
+import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.hipsterbar;
+
+import edu.appstate.cs.BooneBauchery.main.Main;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
+public class HipBar extends GameScene {
+    
+    private static final String BKG = "/assets/Backgrounds/hipsterbar.png";
 
-
-public class SororityFlee extends GameScene {
-
-    private static final String BKG = "/assets/Backgrounds/gossipgirls.png";
-
-    private static final String approachPrompt = sanford2response1;
+    private static final String approachPrompt = hipsterbar;
 
     private static final String[] choiceAnswers = Prompts.travelOnward;
 
-    public SororityFlee(Stage stage)
+    public HipBar(Stage stage)
     {
         super(stage);
         this.prompt = approachPrompt;
@@ -32,15 +32,12 @@ public class SororityFlee extends GameScene {
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Transition transition = new Transition(gameStage, Prompts.runfromsorority, new WonderWild(gameStage));
-                gameStage.setScene(transition.getTransitionScene());
+                //good ending you get to drink a lot of tasty unique hipster drinks.
+                gameStage.close();
+                Main.startloop(gameStage);
             }
         });
     }
 
 
-    //aux text display method
-    public void displayText(String newText) {
-        textBox.setText(newText);
-    }
 }

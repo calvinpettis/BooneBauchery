@@ -4,14 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.belk2sanford;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
 
 public class JesusReason extends GameScene {
 
-    private static final String BKG = "/assets/Backgrounds/campus.png";
+    private static final String BKG = "/assets/Backgrounds/jesusreason.png";
 
     private static final String approachPrompt = sanford1response2;
 
@@ -34,8 +33,8 @@ public class JesusReason extends GameScene {
         continueBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                // travel onwards transition HERE
-                Transition transition = new Transition(gameStage, sanford2peacock, new PeacockHall(gameStage));
+                // you try to reason (he is crazy) --> you run away , scary man follows you!
+                Transition transition = new Transition(gameStage, crazymantransition, new JesusFollow(gameStage));
                 gameStage.setScene(transition.getTransitionScene());
             }
         });
