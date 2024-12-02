@@ -22,7 +22,7 @@ public class GameLoop {
     private static final int HEIGHT = 720;
     private static final int WIDTH = 1280;
     private static final double FPS = 60;
-    private static final double nsPerFrameDelay= 1000000000 / FPS;
+    private static final double nsPerFrameDelay = 1000000000 / FPS;
     private static final int NUM_DROPS = 150;
     private static final double DROP_WIDTH = 10;
     private static final double DROP_HEIGHT = 20;
@@ -39,7 +39,7 @@ public class GameLoop {
     private ArrayList<Rectangle> raindrops;
 
     private ImageView layer1, layer2, layer3, layer4, layer5, layer6,
-        layer11, layer22, layer33, layer44, layer55, layer66;
+            layer11, layer22, layer33, layer44, layer55, layer66;
 
     public GameLoop(Stage stage) {
         this.primaryStage = stage;
@@ -64,6 +64,7 @@ public class GameLoop {
         createRain(root);
         AnimationTimer gameLoop = new AnimationTimer() {
             private long lastUpdate = 0;
+
             @Override
             public void handle(long now) {
                 //handle start of game
@@ -147,16 +148,13 @@ public class GameLoop {
         });
     }
 
-    private void createRain(Pane root)
-    {
-        if (raindrops == null)
-        {
+    private void createRain(Pane root) {
+        if (raindrops == null) {
             raindrops = new ArrayList<>();
         }
-        for (int i = 0; i < NUM_DROPS; i++)
-        {
+        for (int i = 0; i < NUM_DROPS; i++) {
             Rectangle rainDrop = new Rectangle(DROP_WIDTH, DROP_HEIGHT);
-            rainDrop.setFill(Color.BLUE.deriveColor(0,1,1,0.3));
+            rainDrop.setFill(Color.BLUE.deriveColor(0, 1, 1, 0.3));
             rainDrop.setX(player.x + random.nextInt(WIDTH));
             rainDrop.setY(player.y + random.nextInt(HEIGHT));
             raindrops.add(rainDrop);
@@ -174,6 +172,12 @@ public class GameLoop {
             layer5.setTranslateX(layer5.getTranslateX() + 10);
             layer6.setTranslateX(layer6.getTranslateX() + 12);
 
+            loopBackgroundLayer(layer1, 0);
+            loopBackgroundLayer(layer2, 2);
+            loopBackgroundLayer(layer3, 4);
+            loopBackgroundLayer(layer4, 8);
+            loopBackgroundLayer(layer5, 10);
+            loopBackgroundLayer(layer6, 12);
         }
         if (moveRight) {
             layer1.setTranslateX(layer1.getTranslateX() - 2);
@@ -182,8 +186,28 @@ public class GameLoop {
             layer4.setTranslateX(layer4.getTranslateX() - 8);
             layer5.setTranslateX(layer5.getTranslateX() - 10);
             layer6.setTranslateX(layer6.getTranslateX() - 12);
+
+            loopBackgroundLayer(layer1, 0);
+            loopBackgroundLayer(layer2, 2);
+            loopBackgroundLayer(layer3, 4);
+            loopBackgroundLayer(layer4, 8);
+            loopBackgroundLayer(layer5, 10);
+            loopBackgroundLayer(layer6, 12);
         }
 
+    }
+
+    private void loopBackgroundLayer(ImageView layer, int speed)
+    {
+        double moveX = layer.getTranslateX();
+        if (moveX <= -layer.getFitWidth())
+        {
+            layer.setTranslateX(WIDTH);
+        }
+        else if (moveX >= WIDTH + 150)
+        {
+            layer.setTranslateX(-layer.getFitWidth());
+        }
     }
 
     private void updateRain()

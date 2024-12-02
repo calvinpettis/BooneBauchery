@@ -164,7 +164,7 @@ public class Display {
 
   private void createExtrasButton()
   {
-    MenuButton extraButton = new MenuButton("EXTRAS");
+    MenuButton extraButton = new MenuButton("MINIGAMES");
     addMenuButton(extraButton);
     extraButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
