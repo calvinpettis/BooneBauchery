@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import static edu.appstate.cs.BooneBauchery.scenes.story.Prompts.*;
 
+import edu.appstate.cs.BooneBauchery.tools.Transition;
+
 public class PeacockHall extends GameScene{
 
     // now in business building (random)
@@ -35,13 +37,15 @@ public class PeacockHall extends GameScene{
             choice1.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    Transition transition = new Transition(gameStage, copslikeyou, new CopsHelp(gameStage));
+                gameStage.setScene(transition.getTransitionScene());
                 }
             });
             choice2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-
+                    Transition transition = new Transition(gameStage, sidestepPencil, new DodgePencil(gameStage));
+                gameStage.setScene(transition.getTransitionScene());
                 }
             });
         } else

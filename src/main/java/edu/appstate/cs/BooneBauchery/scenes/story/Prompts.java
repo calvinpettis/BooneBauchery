@@ -41,7 +41,7 @@ public class Prompts {
         public static final String belk1response1 = "As you walk closer, the creature awakes.\n" +
             "Oh, hi professor!\n" +
             "It was just a teacher taking a break from a long day of grading.\n\nYou travel onwards.";
-        public static final String [] chilProf = {"You walk outside of the building.\nPondering glorious lectures about data structures.", 
+        public static final String[] chilProf = {"You walk outside of the building.\nPondering glorious lectures about data structures.", 
                 "When you get outside you see quite a commotion unfolding..."};
         
 // -----------------------------------------------------------------
@@ -101,7 +101,7 @@ public class Prompts {
         
 // -----------------------------------------------------------------
         // sneaking out of the back        --> see bar
-        public static final String sneaking = "You slowly sneak through the building, trying not to draw\nattention to youself"
+        public static final String sneaking = "You slowly sneak through the building, trying not to draw\nattention to yourself."
         + "Working your way lower through each floor of Belk Hall,\nyou end up finding a secluded exit.";
 
         public static final String[] sneak2walking = {"You successfully snuck through the building and found a quiet road to walk on.", 
@@ -129,7 +129,7 @@ public class Prompts {
         // (feralATK -> [leave front]) -> walking down side street then get a call from friend, transition 
         public static final String[] leaveFront = {"Not thinking even once about your violent actions,\nyou walk outside with swagger and pride.", 
                 "This macho facade quickly crumbles upon seeing a swarm of people\nsurrounding a man holding a sign.\nThe man's sign says 'SINNERS WILL BURN'",
-                "The exessivly large crowd is blocking the way you normally walk to get home.\nYou are forced to cut through a tunnel to get back towards your home."};
+                "The excessively large crowd is blocking the way you normally walk to get home.\nYou are forced to cut through a tunnel to get back towards your home."};
         
         //get a call -->    >> Pick up (one mill beers) , >> keep walking (sleepy home)
         public static final String phoneORWalk = "When you are walking down the road to get home your\nphone starts to ring." +
@@ -140,7 +140,7 @@ public class Prompts {
         // (pickup) one mill beers  transition 
         public static final String[] pickup = {"When you pick the phone up your class mate sounds estatic.",
                 "'HEY MAN! I didn't thikk you were going to pick up.', he says with cheer.",
-                "'Now hear me out bud.. I just bought one million beers and I help drinking them!'",
+                "'Now hear me out. I just bought one million beers and I need help drinking them!'",
                 "As you hear his words you think you are misunderstanding.",
                 "You rush over to your friends house and drink one million beers with him XD !!!"};
         // (pickup) one mill beers ending -> main menu
@@ -183,7 +183,7 @@ public class Prompts {
                 "You back away and walk off in order to preserve your brain cells.";
  
         public static final String[] crazymantransition = {"You eventually just walk away from the religious zealot\n"+
-        "He absolutly did not like this, and is angered further by it", "As you expect he breaks out in a full sprint after you following you off campus."};
+        "He absolutely did not like this, and is angered further by it", "As you expect he breaks out in a full sprint after you following you off campus."};
         
         // crazy man folloing you and you see a bar -->  >>keep running , >> rest inside
         public static final String jesusfollow = "At this point you consider this man as absolutely mental\n" 
@@ -193,7 +193,7 @@ public class Prompts {
         public static final String[] followChoices =  {"KEEP RUNNING","STOP INSIDE"};
 // ---------------------------------------------------------------------------
         // (crazy man following, pass by bar) wondering on -->  >> you continue to wonder on. and on.. and on.... ending
-        public static final String[] wonderingon = {"You keept wondering on past the bar, mainly becasue you are frightened\nby the crazy zealot that has been chasing you for what seems to be miles.",
+        public static final String[] wonderingon = {"You kept wondering on past the bar, mainly because you are frightened\nby the crazy zealot that has been chasing you for what seems to be miles.",
                 "Eventually you lose him, seeing that App State is mainly woods\nand it is pretty much dark out now.",
                 "You keep on wondering deeper into the woods."};
 
@@ -225,7 +225,7 @@ public class Prompts {
                 "A gossip ring begins amongst the sorority girls.";
         public static final String sanford2response2 = "You cast your Common Sense shield against the Astrology runes,\n" +
                 "blocking all attacks.\n" +
-                "when they take a moment to recharge, you take a chance and escape.";
+                "When they take a moment to recharge, you take a chance and escape.";
 
         public static final String[] girlslikethat = {"Apparently the sorority girls have never seen such powerful runes before.\nThey completly dig the Common Sense spellz xD",
                 "You recognize this newfound possible opportunity\nand extend out of your comfort zone",
@@ -238,8 +238,8 @@ public class Prompts {
 
         public static final String[] partyaddychoice = {"PICK UP","STAY INSIDE"}; 
 
-        public static final String [] going2frat = {"The sorority DID call back! They were not playing around either\n"
-                +"because you can barley hear what they are saying.","You put on the coolest pair of kicks you own\n"
+        public static final String[] going2frat = {"The sorority DID call back! They were not playing around either\n"
+                +"because you can barely hear what they are saying.","You put on the coolest pair of kicks you own\n"
                 +"And fit as much cash into your pocket as possible."};
 
         public static final String chillfratparty = "The party is jumping! Theres booze everywhere,\nLil Uzi Vert is playing, and you could not be more happy.\n"
@@ -277,18 +277,34 @@ public class Prompts {
         public static final String peacock2response1 = "As soon as you invested, there was a rug pull on AppCoin\nand you lost all of your savings!\nHope you enjoy ramen.";
         public static final String peacock2response2 = "Wise move. Crypto is for dummies.";
         
-        public static final String [] rugpuledPeacock = {"The founder of App coin realized someone was dumb\nenough to invest money into his crypto scam.",
+        public static final String[] rugpuledPeacock = {"The founder of App coin realized someone was dumb\nenough to invest money into his crypto scam.",
                 "You have no money now. All of it disapearing into a cryptic void.", "Uncontrollably you begin to cry.\nYou now have NO MONEY FOR BOOZE!"};
         public static final String nomoney = "You lost everything you owned and now you can't pay tuition for college.\n"+
                         "You cry every day while remembering how much you\njust wanted to be able to drink and party.\nGAME OVER (No money for booze BAD ENDING)";
 
 // ---------------------------------------------------------------------------
-        public static final String peacockDecline[] = {"You decline the offer thinking this is the right choice.\n However, you develope a deep 'Fear Of Missing out.\nF.O.M.O.", 
+        public static final String[] peacockDecline = {"You decline the offer thinking this is the right choice.\n However, you develop a deep 'Fear Of Missing out.\nF.O.M.O.", 
                                 "Eventual you check in on AppCoin in order to see how it is doing\nYou see the value of AppCoin skyrocket to the MOON!", };
 
-        public static final String fomoCoin = "Upon Checking in on AppCoin's value. You realize you mad a mistake!\nYou invest all of your money.\n"
+        public static final String fomoCoin = "Upon Checking in on AppCoin's value. You realize you made a mistake!\nYou invest all of your money.\n"
                                                 + "The second your money is transfered out of your bank you\nsee the live value of App coin CRASH!"
                                                 + "Unfortunatly you still lose all of your money. Crypto is dumb.\nBAD ENDING (YOU ARE BROKE AND HAVE NO MONEY TO PARTY)";                                
+
+// ---------------------------------------------------------------------------
+        //pencil sidestepping 
+        public static final String[] copslikeyou = {"The cops see the man armed with a pencil, and you in distress.",
+        "Swiftly they move to asail the man with the pencil.", "Once the cops taze the suspect enough times\nfor you to"
+        +" be able to smell his hair burning,\nthey ask you what you will be doing later that night."};
+
+        public static final String copsrswag = "After the on-campus cops help you subdue the pencil stabber they tell you\nthat there is a cop party going on at a bar. "
+                +"They ask if you would want to\ncome slam around one million beers with your newfound cop friends.\nThis intrigues you completely and you drop everything\nyou are doing for one million beers.\n"
+                +"Eventually you end up at the cop party,\nready to drink one million beers!!\n(DRINK BEER WITH COPS ENDING)";
+
+        public static final String[] sidestepPencil = {"You get so freaked out by a man running at you with a pencil\nthat you simply ignore the cops for help and run straight for the hills",
+                "The man with the pencil is hot on your tail.\nBut the fear you feel drives you farther and faster than any man has ever ran."};             
+
+        public static final String pencilfear = "Running away from such a scary encounter, you are now traumatized.\nYou never recover from feeling intense irrational fear from seeing pencils."
+                +"\nYou live in constant fear... forever...\n(PTSD ENDING you hate pencils now and it is debilitating)";
 
 // ---------MINIGAMES-------------------------------------------
         public static final String hurricanePrompt[] = {"As you are walking, a dark cloud appears overhead.\n" +
