@@ -16,8 +16,8 @@
 
 1. Navigate to the [Releases](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/releases) tab and download the `.jar` file.
 2. Install dependencies:
-   - Java 21.0.4 or higher
-   - JavaFX 21.0.4 or higher
+   - [Java 21.0.4](https://adoptium.net/temurin/archive/) or higher
+   - [JavaFX 21.0.4](https://www.oracle.com/java/technologies/downloads/archive/#JavaFX) or higher
 
 ## Usage
 To start the game:
