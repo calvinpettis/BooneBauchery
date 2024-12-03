@@ -12,12 +12,12 @@
 3. [Credits](#credits)
 
 ## Installation
-> **Important:** This project requires Java 21 (or higher) and JavaFX 0.8.0 (or higher).
+> **Important:** This project requires Java 21 (or higher) and JavaFX 21 (or higher).
 
 1. Navigate to the [Releases](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/releases) tab and download the `.jar` file.
 2. Install dependencies:
    - Java 21.0.4 or higher
-   - JavaFX 0.8.0 or higher
+   - JavaFX 21.0.4 or higher
 
 ## Usage
 To start the game:
