@@ -1,4 +1,4 @@
-# Boonebauchery
+![GameLogo](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/blob/main/src/main/resources/assets/Logo/logo3big.png)
 ## Team: Aerodactyl
 
 **Team Members:**
