@@ -1,5 +1,7 @@
 ![GameLogo](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/blob/main/src/main/resources/assets/Logo/logo3big.png)
 
+## Status
+[![Java CI with Maven](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml/badge.svg)](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml)
 
 ## Project Description
 "Boonebauchery" is a text-based "choose your adventure" game where the playable character embarks on all sorts of debauchery in Boone, NC!
