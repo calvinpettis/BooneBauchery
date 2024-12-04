@@ -55,10 +55,16 @@ public class GameLoop {
         layer4 = createBackgroundLayer("/assets/Backgrounds/Parallax/44.png", 0);
         layer5 = createBackgroundLayer("/assets/Backgrounds/Parallax/55.png", 0);
         layer6 = createBackgroundLayer("/assets/Backgrounds/Parallax/66.png", 0);
-
+        layer11 = createBackgroundLayer("/assets/Backgrounds/Parallax/11.png", 5120);
+        layer22 = createBackgroundLayer("/assets/Backgrounds/Parallax/22.png", 5120);
+        layer33 = createBackgroundLayer("/assets/Backgrounds/Parallax/33.png", 5120);
+        layer44 = createBackgroundLayer("/assets/Backgrounds/Parallax/44.png", 5120);
+        layer55 = createBackgroundLayer("/assets/Backgrounds/Parallax/55.png", 5120);
+        layer66 = createBackgroundLayer("/assets/Backgrounds/Parallax/66.png", 5120);
         player = new Player(300, 300);
         scene = new Scene(root, WIDTH, HEIGHT);
-        root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6, player);
+        root.getChildren().addAll(layer1, layer2, layer3, layer4, layer5, layer6,
+                layer11, layer22, layer33, layer44, layer55, layer66, player);
 
         createListeners(scene);
         createRain(root);
@@ -171,13 +177,18 @@ public class GameLoop {
             layer4.setTranslateX(layer4.getTranslateX() + 8);
             layer5.setTranslateX(layer5.getTranslateX() + 10);
             layer6.setTranslateX(layer6.getTranslateX() + 12);
-
-            loopBackgroundLayer(layer1, 0);
-            loopBackgroundLayer(layer2, 2);
-            loopBackgroundLayer(layer3, 4);
-            loopBackgroundLayer(layer4, 8);
-            loopBackgroundLayer(layer5, 10);
-            loopBackgroundLayer(layer6, 12);
+            layer11.setTranslateX(layer11.getTranslateX() + 2);
+            layer22.setTranslateX(layer22.getTranslateX() + 4);
+            layer33.setTranslateX(layer33.getTranslateX() + 6);
+            layer44.setTranslateX(layer44.getTranslateX() + 8);
+            layer55.setTranslateX(layer55.getTranslateX() + 10);
+            layer66.setTranslateX(layer66.getTranslateX() + 12);
+//            loopBackgroundLayer(layer1, layer11);
+//            loopBackgroundLayer(layer2, layer22);
+//            loopBackgroundLayer(layer3, layer33);
+//            loopBackgroundLayer(layer4, layer44);
+//            loopBackgroundLayer(layer5, layer55);
+//            loopBackgroundLayer(layer6, layer66);
         }
         if (moveRight) {
             layer1.setTranslateX(layer1.getTranslateX() - 2);
@@ -186,27 +197,33 @@ public class GameLoop {
             layer4.setTranslateX(layer4.getTranslateX() - 8);
             layer5.setTranslateX(layer5.getTranslateX() - 10);
             layer6.setTranslateX(layer6.getTranslateX() - 12);
+            layer11.setTranslateX(layer11.getTranslateX() - 2);
+            layer22.setTranslateX(layer22.getTranslateX() - 4);
+            layer33.setTranslateX(layer33.getTranslateX() - 6);
+            layer44.setTranslateX(layer44.getTranslateX() - 8);
+            layer55.setTranslateX(layer55.getTranslateX() - 10);
+            layer66.setTranslateX(layer66.getTranslateX() - 12);
+//            loopBackgroundLayer(layer1, layer11);
+//            loopBackgroundLayer(layer2, layer22);
+//            loopBackgroundLayer(layer3, layer33);
+//            loopBackgroundLayer(layer4, layer44);
+//            loopBackgroundLayer(layer5, layer55);
+//            loopBackgroundLayer(layer6, layer66);
 
-            loopBackgroundLayer(layer1, 0);
-            loopBackgroundLayer(layer2, 2);
-            loopBackgroundLayer(layer3, 4);
-            loopBackgroundLayer(layer4, 8);
-            loopBackgroundLayer(layer5, 10);
-            loopBackgroundLayer(layer6, 12);
         }
 
     }
 
-    private void loopBackgroundLayer(ImageView layer, int speed)
+    private void loopBackgroundLayer(ImageView layerOne, ImageView layerTwo)
     {
-        double moveX = layer.getTranslateX();
-        if (moveX <= -layer.getFitWidth())
+        double moveX = player.x;
+        if (moveX <= -layerOne.getTranslateX())
         {
-            layer.setTranslateX(WIDTH);
+            layerOne.setTranslateX(WIDTH);
         }
-        else if (moveX >= WIDTH + 150)
+        else if (moveX >= layerTwo.getTranslateX() - 150)
         {
-            layer.setTranslateX(-layer.getFitWidth());
+            layerOne.setTranslateX(-layerTwo.getFitWidth());
         }
     }
 
@@ -215,11 +232,11 @@ public class GameLoop {
         double moveRain = 0;
         if (moveLeft)
         {
-            moveRain = 2;
+            moveRain = 4;
         }
         else if (moveRight)
         {
-            moveRain = -2;
+            moveRain = -4;
         }
         for (Rectangle drop: raindrops)
         {

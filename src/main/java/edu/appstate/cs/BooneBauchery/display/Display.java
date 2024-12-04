@@ -3,6 +3,8 @@ import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
 import edu.appstate.cs.BooneBauchery.scenes.story.Intro;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -19,6 +21,8 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.Background;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +51,11 @@ public class Display {
 
   //we will use a list to store all of our buttons
   List<MenuButton> menuButtons;
+  private Timeline backgroundAnim;
+  private ImageView bkgImg;
+  private boolean animRunning = true;
+  private double speed1 = 0.25, speed2 = 0.5, speed3 = 0.75, speed4 = 1;
+  ImageView bkgg1, bkgg2, bkgg3, bkgg4;
 
   public final static String FONT_PATH = "src/main/resources/assets/Fonts/blood-crow/bloodcrow.ttf";
   /**
@@ -60,10 +69,12 @@ public class Display {
     mainDisplay = new AnchorPane();
     mainScene = new Scene(mainDisplay, WIDTH, HEIGHT);
     mainStage = new Stage();
-    createSubScenes();
     createBackground();
+    mainDisplay.getChildren().addAll(bkgg1, bkgg2, bkgg3, bkgg4);
+    createSubScenes();
     createButtons();
     createLogo();
+
   }
 
   /**
@@ -264,9 +275,43 @@ public class Display {
   private void createBackground()
   {
     //
-    Image background = new Image("/assets/Backgrounds/bkgwappstate.png", true);
-    BackgroundImage backgroundImage = new BackgroundImage(background, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, null);
-    mainDisplay.setBackground(new Background(backgroundImage));
+    Image bkg1 = new Image("/assets/Backgrounds/MainMenu/1.png", true);
+    Image bkg2 = new Image("/assets/Backgrounds/MainMenu/2.png", true);
+    Image bkg3 = new Image("/assets/Backgrounds/MainMenu/3.png", true);
+    Image bkg4 = new Image("/assets/Backgrounds/MainMenu/4.png", true);
+    bkgg1 = new ImageView(bkg1);
+    bkgg2 = new ImageView(bkg2);
+    bkgg3 = new ImageView(bkg3);
+    bkgg4 = new ImageView(bkg4);
+    bkgg1.setFitWidth(5120);
+    bkgg2.setFitWidth(5120);
+    bkgg3.setFitWidth(5120);
+    bkgg4.setFitWidth(5120);
+    backgroundAnim = new Timeline(
+            new KeyFrame(Duration.millis(30), e -> updateBkg())
+    );
+    backgroundAnim.setCycleCount(Timeline.INDEFINITE);
+    backgroundAnim.play();
+  }
+
+  private void updateBkg()
+  {
+    moveBkg(bkgg1, speed1);
+    moveBkg(bkgg2, speed2);
+    moveBkg(bkgg3, speed3);
+    moveBkg(bkgg4, speed4);
+  }
+
+  private void moveBkg(ImageView bkg, double speed)
+  {
+    double x = bkg.getLayoutX();
+    x -= speed;
+
+    if (x <= -bkg.getFitWidth() - 1280)
+    {
+      x = 0;
+    }
+    bkg.setLayoutX(x);
   }
 
   /**
