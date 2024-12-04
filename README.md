@@ -25,7 +25,7 @@ To start the game:
 2. Navigate to the directory where the `.jar` file is located.
 3. Run the following command:
    ```bash
-   java -jar filename.jar
+   java -jar filename.jar #replace filename with the name of the jar.
 
 ## Credits
 **Team: Aerodactyl**
