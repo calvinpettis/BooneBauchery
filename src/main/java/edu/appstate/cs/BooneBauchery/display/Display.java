@@ -1,4 +1,5 @@
 package edu.appstate.cs.BooneBauchery.display;
+
 import edu.appstate.cs.BooneBauchery.display.gui.MenuButton;
 import edu.appstate.cs.BooneBauchery.mingames.GameLoop;
 import edu.appstate.cs.BooneBauchery.scenes.mainmenu.MenuSubSceneManager;
@@ -15,14 +16,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.Background;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -307,7 +303,7 @@ public class Display {
     double x = bkg.getLayoutX();
     x -= speed;
 
-    if (x <= -bkg.getFitWidth() - 1280)
+    if (x <= -bkg.getFitWidth() + 1280)
     {
       x = 0;
     }

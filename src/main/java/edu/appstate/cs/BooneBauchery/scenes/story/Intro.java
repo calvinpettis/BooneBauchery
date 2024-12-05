@@ -1,5 +1,4 @@
 package edu.appstate.cs.BooneBauchery.scenes.story;
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -15,7 +14,6 @@ import javafx.util.Duration;
 import javafx.scene.input.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 
 /**
  * Displays after you click the start button.
@@ -52,6 +50,7 @@ public class Intro {
        this.introStage = stage;
        createIntroScene();
     }
+
 
     public Scene getIntroScene()
     {
