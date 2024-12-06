@@ -134,6 +134,7 @@ public class Intro {
                         showNextLine();
                     } else {
                         isScrolling = false;
+                        mediaPlayer.stop();
                         transitionScene();   //build in scence transion here??
                     }
                 });

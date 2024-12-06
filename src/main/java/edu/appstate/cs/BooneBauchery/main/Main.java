@@ -21,6 +21,7 @@ public class Main extends Application {
     primaryStage = display.getMainStage();
     primaryStage.setTitle("BooneBauchery");
     primaryStage.setScene(display.getMainScene());
+    primaryStage.setResizable(false);
     primaryStage.show();
   }
 

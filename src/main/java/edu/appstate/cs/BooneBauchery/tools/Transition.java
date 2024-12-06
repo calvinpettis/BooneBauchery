@@ -105,7 +105,7 @@ public class Transition {
         sb.setLength(0);
         charindex = 0;
 
-        timeline = new Timeline(new KeyFrame(Duration.seconds(0.08), event ->{
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), event ->{
             // Append each character to the StringBuilder
             sb.append(transitionScript[lineindex].charAt(charindex));
             transitionLabel.setText(sb.toString());  //update label with current text
@@ -116,7 +116,7 @@ public class Transition {
                 lineindex++;
 
                 //Pause when line is fully displayed
-                PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                PauseTransition pause = new PauseTransition(Duration.seconds(0.75));
                 pause.setOnFinished(e -> {
                     transitionLabel.setText("");     //clear label
                     if (lineindex < transitionScript.length) {
