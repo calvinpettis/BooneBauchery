@@ -161,6 +161,7 @@ public class Intro {
             if (timeline != null)
             {
                 timeline.stop();
+                mediaPlayer.stop();
             }
             sb.delete(0, sb.length());
             transitionScene();
