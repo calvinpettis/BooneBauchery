@@ -7,11 +7,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.input.KeyEvent;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -49,8 +55,17 @@ public class Intro {
     {
        this.introStage = stage;
        createIntroScene();
+       createNarrator();
     }
 
+    private MediaPlayer mediaPlayer;
+
+    private void createNarrator() {
+        String audioFile = "src/main/resources/assets/Sounds/intro.wav";
+        Media media = new Media(new File(audioFile).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+    }
 
     public Scene getIntroScene()
     {
@@ -101,7 +116,7 @@ public class Intro {
         sb.setLength(0);
         charindex = 0;
 
-        timeline = new Timeline(new KeyFrame(Duration.seconds(0.08), event ->{
+        timeline = new Timeline(new KeyFrame(Duration.seconds(0.07), event ->{
             // Append each character to the StringBuilder
             sb.append(introScript[lineindex].charAt(charindex));
             introLabel.setText(sb.toString());  //update label with current text
@@ -112,7 +127,7 @@ public class Intro {
                 lineindex++;
 
                 //Pause when line is fully displayed
-                PauseTransition pause = new PauseTransition(Duration.seconds(1.5));
+                PauseTransition pause = new PauseTransition(Duration.seconds(0.35));
                 pause.setOnFinished(e -> {
                     introLabel.setText("");     //clear label
                     if (lineindex < introScript.length) {
