@@ -1,4 +1,4 @@
-![GameLogo](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/blob/main/src/main/resources/assets/Logo/logo3big.png)
+![GameLogo](https://github.com/calvinpettis/BooneBauchery/blob/afc353e8f6741fc62d32bb25af89c6dae39778ba/src/main/resources/assets/Logo/logo3big.png)
 
 ## Status
 [![Java CI with Maven](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml/badge.svg)](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml)
