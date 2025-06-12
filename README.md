@@ -1,7 +1,7 @@
 ![GameLogo](https://github.com/calvinpettis/BooneBauchery/blob/afc353e8f6741fc62d32bb25af89c6dae39778ba/src/main/resources/assets/Logo/logo3big.png)
 
 ## Status
-[![Java CI with Maven](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml/badge.svg)](https://github.com/ASU-Software-Engineering/aerodactyl-fall-2024/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/calvinpettis/BooneBauchery/actions/workflows/maven.yml/badge.svg)](https://github.com/calvinpettis/actions/workflows/maven.yml)
 
 ## Project Description
 "Boonebauchery" is a text-based "choose your adventure" game where the playable character embarks on all sorts of debauchery in Boone, NC!
